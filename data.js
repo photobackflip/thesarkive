@@ -1,4 +1,4 @@
-const totalGames = 296;
+const totalGames = 298;
 
 const gamesById = {
 	
