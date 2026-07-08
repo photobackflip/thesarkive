@@ -3520,7 +3520,7 @@ const gamesById = {
 	  publishers: "DCE Projects",
 	  developers: "DCE Projects",
 	  shortDescription: "World Alone: Dreampools is a single-player Backrooms experience focused on dreamlike liminal pools. The game features a narrative told through cinematic sequences and immersive environments. Feel the true essence of solitude in World Alone... ",
-	  durationPlayed: "D032.G01 - 07.07.26",
+	  durationPlayed: "D032.G01 - 08.07.26",
 	  playedWith: "SARK",
 	  outcome: "",
 	  vodLink: "",
