@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>THE SARKIVE</title>
+  <script src="data.js"></script>
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("sarkive-theme");
+        if (["dark", "light", "sark", "dos", "steam"].includes(savedTheme)) {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+      } catch (error) {}
+    }());
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="terminal">
+    <div class="mobile-topbar" aria-label="Responsive menu bar">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="siteNav" aria-expanded="false">
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+      </button>
+      <div class="mobile-logo" aria-label="Logo">
+        <span class="logo-mark" aria-hidden="true">
+      </span>
+	  
+      </div>
+    </div>
+    <button class="nav-scrim" id="navScrim" type="button" aria-label="Close navigation" tabindex="-1"></button>
+    <div class="body-grid">
+      <nav id="siteNav" aria-label="Primary sections">
+        <div class="nav-logo" aria-label="Logo">
+		  <h2 class="logo-text">The Sarkive</h2>
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 724.11 1024" focusable="false" aria-hidden="true">
+              <path class="logo-mark-line" d="M68.75,1024L0,947.93l81.92-76.07h392.05l70.22,76.07-83.38,76.07H68.75ZM201.19,387.73l-104.39,96.48-51.45-58.51,20.48-244.3,83.68-76.02,68.98,76.07-17.3,206.29ZM531.02,435.93l70.22,76.07-83.38,76.07H193.1l-68.76-76.07,81.92-76.07h324.75ZM724.11,75.34l-83.38,76.8H250.15l-68.75-76.8L263.31,0h390.58l70.22,75.34ZM656.82,842.61l-82.88,76.07-68.34-76,17.3-206.29,103.36-95.13,51.04,57.05-20.48,244.3Z" />
+            </svg>
+          </span>
+          <button class="nav-close" id="navClose" type="button" aria-label="Close navigation">&times;</button>
+        </div>
+        <div class="nav-title">Index</div>
+        <ul class="fixed-nav" id="fixedNav" aria-label="Locked menu options"></ul>
+        <div class="day-nav-heading">DAILY LOGS</div>
+        <ul class="top-nav" id="topNav" aria-label="Daily logs"></ul>
+        <div class="nav-footer">
+          <button class="sidebar-collapse-toggle" id="sidebarCollapseToggle" type="button" aria-label="Collapse sidebar" aria-pressed="false"></button>
+          <div class="theme-picker" id="themePicker">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Choose theme" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="theme-menu" id="themeMenu" role="menu" aria-label="Theme options"></div>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <div class="panel-head">
+          <div class="panel-title" id="panelTitle">HOME</div>
+          <div class="crumbs" id="crumbs">HOME</div>
+        </div>
+        <div class="content" id="content"></div>
+      </main>
+    </div>
+
+  </div>
+  <script>
+
+    function steamPageUrl(appId) {
+      return appId ? `https://store.steampowered.com/app/${appId}/` : "";
+    }
+
+    function steamImageCandidates(game) {
+      if (!game || !game.appId || game.useSteamArt === false) return [];
+
+      const appId = game.appId;
+      const urls = [];
+
+      if (game.assetHash) {
+        urls.push(
+          `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${appId}/${game.assetHash}/library_600x900_2x.jpg`,
+          `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${appId}/${game.assetHash}/library_600x900.jpg`,
+          `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${appId}/${game.assetHash}/library_capsule_2x.jpg`,
+          `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${appId}/${game.assetHash}/library_capsule.jpg`
+        );
+      }
+
+      urls.push(
+        `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/library_600x900_2x.jpg`,
+        `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/library_600x900.jpg`,
+        `https://shared.cloudflare.steamstatic.com/steam/apps/${appId}/library_600x900_2x.jpg`,
+        `https://shared.cloudflare.steamstatic.com/steam/apps/${appId}/library_600x900.jpg`,
+        `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/header.jpg`
+      );
+
+      return urls;
+    }
+
+    function imageCandidates(game) {
+      return [safeImageUrl(game?.image), ...steamImageCandidates(game)].filter(Boolean);
+    }
+
+    function setImageWithFallback(imgElement, game) {
+      const candidates = imageCandidates(game);
+      const fallbackImage = placeholderGameImage(game?.title || "NO ART");
+      let index = 0;
+
+      if (!imgElement) return;
+
+      if (!candidates.length) {
+        imgElement.src = fallbackImage;
+        imgElement.classList.add("is-fallback");
+        return;
+      }
+
+      imgElement.onerror = () => {
+        index++;
+        if (index < candidates.length) {
+          imgElement.src = candidates[index];
+        } else {
+          imgElement.onerror = null;
+          imgElement.classList.add("is-fallback");
+          imgElement.src = fallbackImage;
+        }
+      };
+
+      imgElement.src = candidates[index];
+    }
+
+    const sections = ["HOME", "ABOUT", "PLAYERS", "GAME LIST", "LIBRARY", "WATCH", "SEARCH"];
+    const daySections = Object.keys(dayMenus).map(formatDayMenuLabel);
+    const navSections = [...sections, ...daySections];
+
+    const playerRecords = [
+      {
+        id: "sark",
+        name: "SARK",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/themrsark-profile_image-3efd152fbf57a83c-300x300.jpeg",
+        profile: [
+          { label: "NAME", value: "SARK" },
+          { label: "SUBJECT ID", value: "SBR-PLR-0001" },
+          { divider: true },
+          { label: "DOB", value: "Not logged" },
+          { label: "AGE", value: "Not logged" },
+          { label: "HEIGHT", value: "Not logged" },
+          { label: "WEIGHT", value: "Not logged" },
+          { label: "EYES", value: "Not logged" },
+          { divider: true },
+          { label: "STATUS", value: "Active" }
+        ],
+        bio: "If Mac & Cheese were a videogame I'd be at the top of the leaderboards.",
+        facts: [
+          { label: "Twitch", url: "https://www.twitch.tv/themrsark" },
+          { label: "YouTube", url: "https://www.youtube.com/themrsark" },
+          { label: "Twitter", url: "https://x.com/sark" },
+          { label: "Merch", url: "https://teespring.com/new-mr-sark-s-og-tee-2-0" },
+          { label: "Discord", url: "https://discord.com/invite/themrsark" }
+        ]
+      },
+      {
+        id: "nfen",
+        name: "NFEN",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/02341a41-8e74-47df-ae81-6bdb572eb0d6-profile_image-300x300.png",
+        profile: [
+          { label: "NAME", value: "NFEN" },
+          { label: "SUBJECT ID", value: "SBR-PLR-0002" },
+          { divider: true },
+          { label: "DOB", value: "Not logged" },
+          { label: "AGE", value: "Not logged" },
+          { label: "HEIGHT", value: "Not logged" },
+          { label: "WEIGHT", value: "Not logged" },
+          { label: "EYES", value: "Not logged" },
+          { divider: true },
+          { label: "STATUS", value: "Active" }
+        ],
+        bio: "occasional fun-haver",
+        facts: [
+          { label: "Twitch", url: "https://www.twitch.tv/nfen" },
+          { label: "YouTube", url: "https://www.youtube.com/c/nfen" },
+          { label: "Instagram", url: "https://www.instagram.com/nfen/" }
+        ]
+      },
+      {
+        id: "apl",
+        name: "APL",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/1a98d5c1-0be5-425b-896b-c4247416efcf-profile_image-300x300.png",
+        profile: [
+          { label: "NAME", value: "APL" },
+          { label: "SUBJECT ID", value: "SBR-PLR-0003" },
+          { divider: true },
+          { label: "DOB", value: "Not logged" },
+          { label: "AGE", value: "Not logged" },
+          { label: "HEIGHT", value: "Not logged" },
+          { label: "WEIGHT", value: "Not logged" },
+          { label: "EYES", value: "Not logged" },
+          { divider: true },
+          { label: "STATUS", value: "Active" }
+        ],
+        bio: "Home to the best chat on Twitch.",
+        facts: [
+          { label: "Twitch", url: "https://www.twitch.tv/aplfisher" },
+          { label: "YouTube", url: "https://www.youtube.com/aplfisher" },
+          { label: "Twitter", url: "https://x.com/Aplfisher" },
+          { label: "Discord", url: "https://discord.gg/aplfisher" }
+        ]
+      },
+      {
+        id: "stu",
+        name: "STU",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/7daf9433-22d8-4f7e-923c-249c6073a3eb-profile_image-300x300.png",
+        profile: [
+          { label: "NAME", value: "STU" },
+          { label: "SUBJECT ID", value: "SBR-PLR-0004" },
+          { divider: true },
+          { label: "DOB", value: "Not logged" },
+          { label: "AGE", value: "Not logged" },
+          { label: "HEIGHT", value: "Not logged" },
+          { label: "WEIGHT", value: "Not logged" },
+          { label: "EYES", value: "Not logged" },
+          { divider: true },
+          { label: "STATUS", value: "Active" }
+        ],
+        bio: "Welcome to the Deli Counter, grab a ticket and settle in for a good time! I'm a gamer with a moderate to severe stutter that loves to play games and spread stuttering awareness!",
+        facts: [
+          { label: "Twitch", url: "https://www.twitch.tv/stustutters" },
+          { label: "Twitter", url: "https://x.com/stutter_stream" },
+          { label: "YouTube", url: "https://www.youtube.com/@StuStutters" }
+        ]
+      },
+	  {
+        id: "gassy",
+        name: "GASSY",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/2b2d6aa27d13da42-profile_image-300x300.png",
+        profile: [
+          { label: "NAME", value: "GASSY" },
+          { label: "SUBJECT ID", value: "SBR-PLR-0005" },
+          { divider: true },
+          { label: "DOB", value: "Not logged" },
+          { label: "AGE", value: "Not logged" },
+          { label: "HEIGHT", value: "Not logged" },
+          { label: "WEIGHT", value: "Not logged" },
+          { label: "EYES", value: "Not logged" },
+          { divider: true },
+          { label: "STATUS", value: "Active" }
+        ],
+        bio: "I'm Gassy Mexican or Max. I've been a caster/online entertainer focused in the gaming space for over a decade. I have a beard. I do silly voices sometimes. I typically stream all sorts of games with a focus on good times and a healthy amount of multiplayer action with friends! If you're new here, WELCOME! Hope you enjoy yourself and hopefully I can make yah crack a smile or two ;)",
+        facts: [
+          { label: "Twitch", url: "https://www.twitch.tv/gassymexican" },
+          { label: "Twitter", url: "https://x.com/GassyMexican" },
+          { label: "Instagram", url: "https://www.instagram.com/gassy_mexican/" },
+          { label: "YouTube", url: "https://www.youtube.com/gassymexican" },
+          { label: "TikTok", url: "https://www.tiktok.com/@gassymexican" }
+        ]
+      },
+	  {
+        id: "diction",
+        name: "DICTION",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/3a2d4e04-9df1-4364-8e9d-861603ffa74c-profile_image-300x300.png",
+        profile: [
+          { label: "NAME", value: "DICTION" },
+          { label: "SUBJECT ID", value: "SBR-PLR-0006" },
+          { divider: true },
+          { label: "DOB", value: "Not logged" },
+          { label: "AGE", value: "Not logged" },
+          { label: "HEIGHT", value: "Not logged" },
+          { label: "WEIGHT", value: "Not logged" },
+          { label: "EYES", value: "Not logged" },
+          { divider: true },
+          { label: "STATUS", value: "Active" }
+        ],
+        bio: "I yell at video games. No I don't play Fortnite. Yes I'm cute.",
+        facts: [
+          { label: "Twitch", url: "https://www.twitch.tv/diction" },
+          { label: "Link hub", url: "https://lnk.bio/diction" },
+          { label: "Throne", url: "https://throne.com/diction" },
+          { label: "Twitter", url: "https://x.com/Diction" },
+          { label: "YouTube", url: "https://www.youtube.com/@DictionTV" }
+        ]
+      }
+    ];
+
+    let activeSection = "HOME";
+    let activeDayKey = Object.keys(dayMenus)[0] || null;
+    let selectedGameIndex = 0;
+    let activePlayerId = playerRecords[0]?.id || null;
+    let expandedDayKey = null;
+    let sidebarCollapsed = false;
+    let activeTheme = "dark";
+    let themeMenuOpen = false;
+    const themeOptions = [
+      { key: "dark", label: "DARK" },
+      { key: "light", label: "LIGHT" },
+      { key: "sark", label: "SARK" },
+      { key: "dos", label: "DOS" },
+	  { key: "steam", label: "STEAM" }
+    ];
+    const themeStorageKey = "sarkive-theme";
+    let searchQuery = "";
+    let searchField = "all";
+    let selectedSearchAppId = null;
+    let selectedGameListAppId = null;
+    let selectedLibraryAppId = null;
+    let selectedWatchGameAppId = null;
+    let watchHasStarted = false;
+    let watchPlayer = null;
+    let watchPlayerReady = false;
+    let watchPlayerToken = 0;
+    let watchPlaybackSeconds = 0;
+    let watchPendingAutoplay = false;
+    let watchIsPlaying = false;
+    let watchApiReady = false;
+    let watchApiLoading = false;
+    const watchApiReadyCallbacks = [];
+    let renderedSection = null;
+    let librarySort = "releaseDate";
+    let selectedOperatorName = null;
+    let selectedOperatorGameAppId = null;
+    let selectedOperatorSource = null;
+    let selectedOperatorType = "operator";
+    let homeTimerInterval = null;
+    const homeTrapStartDate = new Date(2026, 4, 6, 8, 0, 9);
+    const homeGamesPlayedText = "189";
+    const homeTotalGamesText = "294";
+
+    const fixedNav = document.getElementById("fixedNav");
+    const topNav = document.getElementById("topNav");
+    const siteNav = document.getElementById("siteNav");
+    const navToggle = document.getElementById("navToggle");
+    const navClose = document.getElementById("navClose");
+    const sidebarCollapseToggle = document.getElementById("sidebarCollapseToggle");
+    const themePicker = document.getElementById("themePicker");
+    const themeToggle = document.getElementById("themeToggle");
+    const themeMenu = document.getElementById("themeMenu");
+    const navScrim = document.getElementById("navScrim");
+    const content = document.getElementById("content");
+    const panelTitle = document.getElementById("panelTitle");
+    const crumbs = document.getElementById("crumbs");
+
+    const searchFields = [
+      { key: "title", label: "Title", tag: "TITLE" },
+      { key: "publishers", label: "Publishers", tag: "PUBLISHER" },
+      { key: "developers", label: "Developers", tag: "DEVELOPER" },
+      { key: "archiveNumber", label: "Archive Number", tag: "ARCHIVE #" },
+      { key: "appId", label: "App ID", tag: "APP ID" }
+    ];
+
+
+    function parseDayMenuKey(dayKey) {
+      const match = String(dayKey).match(/^DAY(\d+)([a-z])?(?:[_-](.+))?$/i);
+      if (!match) return null;
+
+      return {
+        num: String(match[1]).padStart(3, "0"),
+        suffix: match[2] ? match[2].toUpperCase() : "",
+        date: match[3] ? String(match[3]).trim() : ""
+      };
+    }
+
+    function formatDayMenuDate(dateValue) {
+      const cleaned = String(dateValue || "").trim();
+      const match = cleaned.match(/^(\d{2})(\d{2})(\d{2})$/);
+      return match ? `${match[1]}.${match[2]}.${match[3]}` : cleaned;
+    }
+
+    function formatDayMenuLabel(dayKey) {
+      const parsed = parseDayMenuKey(dayKey);
+      if (!parsed) return String(dayKey).toUpperCase();
+      const formattedDate = formatDayMenuDate(parsed.date);
+      return `DAY ${parsed.num}${parsed.suffix}${formattedDate ? ` // ${formattedDate}` : ""}`;
+    }
+
+    function formatNavLabelHtml(label) {
+      const match = String(label).match(/^(DAY\s+\d{3}[A-Z]?)(?:\s+\/\/\s+(.+))?$/);
+      if (!match || !match[2]) return escapeHtml(label);
+      return `${escapeHtml(match[1])} // <span class="nav-label-date">${escapeHtml(match[2])}</span>`;
+    }
+
+    function keyFromDaySection(section) {
+      return Object.keys(dayMenus).find(dayKey => formatDayMenuLabel(dayKey) === section) || null;
+    }
+
+    function isDaySection(section) {
+      return Boolean(keyFromDaySection(section));
+    }
+
+    function escapeSvgText(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function cssColor(name, fallback) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+    }
+
+    function placeholderPlayerImage(name) {
+      const initials = escapeSvgText(String(name || "PL").toUpperCase().slice(0, 4));
+      const bg = cssColor("--bg", "#050505");
+      const text = cssColor("--text", "#B4A870");
+      const dim = cssColor("--text-dim", "#b3b3b3");
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+          <rect width="300" height="300" fill="${bg}"/>
+          <rect x="16" y="16" width="268" height="268" fill="none" stroke="${text}" stroke-width="3" opacity="0.72"/>
+          <path d="M70 224c11-45 41-70 80-70s69 25 80 70" fill="none" stroke="${text}" stroke-width="6" opacity="0.88"/>
+          <circle cx="150" cy="105" r="42" fill="none" stroke="${text}" stroke-width="6" opacity="0.88"/>
+          <text x="150" y="263" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="22" font-weight="700" letter-spacing="3" fill="${dim}">${initials}</text>
+        </svg>
+      `;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function placeholderGameImage(title) {
+      const safeTitle = escapeSvgText(String(title || "NO ART").toUpperCase().slice(0, 26));
+      const panel = cssColor("--panel", "#070707");
+      const text = cssColor("--text", "#B4A870");
+      const dim = cssColor("--text-dim", "#b3b3b3");
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+          <rect width="600" height="900" fill="${panel}"/>
+          <rect x="24" y="24" width="552" height="852" fill="none" stroke="${text}" stroke-width="6" opacity="0.72"/>
+          <path d="M88 188h424M88 712h424M104 104l392 692M496 104 104 796" fill="none" stroke="${text}" stroke-width="3" opacity="0.35"/>
+          <text x="300" y="418" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="54" font-weight="700" letter-spacing="5" fill="${text}">NO ART</text>
+          <text x="300" y="478" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="24" font-weight="700" letter-spacing="2" fill="${dim}">${safeTitle}</text>
+        </svg>
+      `;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function getPlayerById(playerId) {
+      return playerRecords.find(player => player.id === playerId) || playerRecords[0] || null;
+    }
+
+    function renderPlayerProfileRows(player) {
+      const profile = Array.isArray(player?.profile) ? player.profile : [];
+      const visibleProfile = profile.filter(field => {
+        if (!field || field.divider) return true;
+        return String(field.label || "").trim().toUpperCase() !== "STATUS";
+      });
+
+      while (visibleProfile.length && visibleProfile[visibleProfile.length - 1]?.divider) {
+        visibleProfile.pop();
+      }
+
+      return visibleProfile.map(field => {
+        if (field.divider) {
+          return `<div class="player-dossier-divider" aria-hidden="true"></div>`;
+        }
+        return `
+          <div class="player-dossier-row">
+            <div class="player-dossier-label">${escapeHtml(field.label)}</div>
+            <div class="player-dossier-colon">:</div>
+            <div class="player-dossier-value">${escapeHtml(field.value)}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderPlayerFacts(player) {
+      const facts = Array.isArray(player?.facts) ? player.facts : [];
+      if (!facts.length) return `<p class="player-dossier-copy">No links logged.</p>`;
+      return `
+        <ul class="player-facts player-links">
+          ${facts.map(fact => {
+            if (fact && typeof fact === "object") {
+              const label = fact.label || fact.url || "Link";
+              const href = safeExternalUrl(fact.url || "");
+              if (href) {
+                return `<li><a class="detail-link player-link-button" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a></li>`;
+              }
+              return `<li>${escapeHtml(label)}</li>`;
+            }
+            return `<li>${escapeHtml(fact)}</li>`;
+          }).join("")}
+        </ul>
+      `;
+    }
+
+    function getPlayerTwitchUrl(player) {
+      const facts = Array.isArray(player?.facts) ? player.facts : [];
+      const twitchFact = facts.find(fact => fact && typeof fact === "object" && String(fact.label || "").trim().toUpperCase() === "TWITCH");
+      return safeExternalUrl(twitchFact?.url || "");
+    }
+
+    function getPlayerOperatorName(player) {
+      return String(player?.operatorName || player?.name || "").trim();
+    }
+
+
+    function resolveGameById(appId, dayKey = "", slotIndex = 0) {
+      const game = gamesById[appId] || {
+        appId,
+        title: `Unknown AppID ${appId}`,
+        archiveNumber: "Not logged",
+        releaseDate: "Not logged",
+        publishers: "Not logged",
+        developers: "Not logged",
+        shortDescription: "No description logged.",
+        durationPlayed: "Not logged",
+        playedWith: "Not logged",
+        outcome: "Not logged",
+        vodLink: "",
+		vodLink2: "",
+		vodLink3: "",
+		vodLink4: "",
+		vodLink5: "",
+        notes: []
+      };
+
+      return {
+        ...game,
+        appId: game.appId || appId,
+        notes: Array.isArray(game.notes) ? game.notes : [],
+        _dayKey: dayKey,
+        _dayLabel: dayKey ? formatDayMenuLabel(dayKey) : "",
+        _slotIndex: slotIndex
+      };
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function safeExternalUrl(value) {
+      if (!value) return "";
+
+      try {
+        const url = new URL(String(value), window.location.href);
+        return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+      } catch {
+        return "";
+      }
+    }
+
+    function safeImageUrl(value) {
+      if (!value) return "";
+
+      const raw = String(value).trim();
+      if (!raw) return "";
+
+      if (!/^[a-z][a-z0-9+.-]*:/i.test(raw)) return raw;
+
+      try {
+        const url = new URL(raw, window.location.href);
+        return ["http:", "https:", "file:"].includes(url.protocol) || raw.startsWith("data:image/") ? raw : "";
+      } catch {
+        return "";
+      }
+    }
+
+    function getStoredTheme() {
+      try {
+        const storedTheme = localStorage.getItem(themeStorageKey);
+        return themeOptions.some(theme => theme.key === storedTheme) ? storedTheme : "dark";
+      } catch {
+        return "dark";
+      }
+    }
+
+    function refreshThemeDependentAssets() {
+      playerRecords.forEach(player => {
+        if (!player.image) player.image = placeholderPlayerImage(player.name);
+      });
+    }
+
+    function syncThemeControls() {
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-expanded", String(themeMenuOpen));
+        themeToggle.title = `Theme: ${activeTheme.toUpperCase()}`;
+        themeToggle.innerHTML = `
+          <span class="nav-button-inner">
+            <span class="nav-icon">${navIcon("palette")}</span>
+            <span class="nav-label">Theme</span>
+          </span>
+        `;
+      }
+
+      if (themePicker) {
+        themePicker.classList.toggle("is-open", themeMenuOpen);
+      }
+
+      if (themeMenu) {
+        themeMenu.innerHTML = themeOptions.map(theme => `
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="${theme.key === activeTheme}" data-theme-key="${theme.key}">
+            ${escapeHtml(theme.label)}
+          </button>
+        `).join("");
+
+        themeMenu.querySelectorAll(".theme-option").forEach(button => {
+          button.addEventListener("click", () => setTheme(button.dataset.themeKey));
+        });
+      }
+    }
+
+    function setTheme(themeKey, options = {}) {
+      const nextTheme = themeOptions.some(theme => theme.key === themeKey) ? themeKey : "dark";
+      activeTheme = nextTheme;
+      document.documentElement.dataset.theme = nextTheme;
+      document.body.dataset.theme = nextTheme;
+
+      try {
+        localStorage.setItem(themeStorageKey, nextTheme);
+      } catch {}
+
+      refreshThemeDependentAssets();
+      themeMenuOpen = false;
+      syncThemeControls();
+
+      if (!options.skipRender) render();
+    }
+
+    function toggleThemeMenu() {
+      themeMenuOpen = !themeMenuOpen;
+      syncThemeControls();
+    }
+
+    function closeThemeMenu() {
+      if (!themeMenuOpen) return;
+      themeMenuOpen = false;
+      syncThemeControls();
+    }
+
+    function isResponsiveNav() {
+      return window.matchMedia("(max-width: 960px)").matches;
+    }
+
+    function syncResponsiveNav(open = document.body.classList.contains("nav-open")) {
+      const shouldOpen = Boolean(open && isResponsiveNav());
+      document.body.classList.toggle("nav-open", shouldOpen);
+
+      if (navToggle) {
+        navToggle.setAttribute("aria-expanded", String(shouldOpen));
+        navToggle.setAttribute("aria-label", shouldOpen ? "Close navigation" : "Open navigation");
+      }
+
+      if (siteNav) {
+        const navIsHidden = isResponsiveNav() && !shouldOpen;
+        siteNav.setAttribute("aria-hidden", String(navIsHidden));
+        siteNav.inert = navIsHidden;
+      }
+    }
+
+    function openResponsiveNav() {
+      syncResponsiveNav(true);
+    }
+
+    function closeResponsiveNav() {
+      syncResponsiveNav(false);
+    }
+
+    function syncSidebarCollapse(collapsed = sidebarCollapsed) {
+      const shouldCollapse = Boolean(collapsed && !isResponsiveNav());
+      document.body.classList.toggle("sidebar-collapsed", shouldCollapse);
+      if (shouldCollapse) closeThemeMenu();
+
+      if (sidebarCollapseToggle) {
+        sidebarCollapseToggle.setAttribute("aria-pressed", String(shouldCollapse));
+        sidebarCollapseToggle.setAttribute("aria-label", shouldCollapse ? "Expand sidebar" : "Collapse sidebar");
+        sidebarCollapseToggle.title = shouldCollapse ? "Expand sidebar" : "Collapse sidebar";
+        sidebarCollapseToggle.innerHTML = `
+          <span class="nav-button-inner">
+            <span class="nav-icon">${navIcon("sidebar")}</span>
+            <span class="nav-label">${shouldCollapse ? "" : ""}</span>
+          </span>
+        `;
+      }
+    }
+
+    function toggleSidebarCollapse() {
+      if (isResponsiveNav()) return;
+      sidebarCollapsed = !sidebarCollapsed;
+      syncSidebarCollapse(sidebarCollapsed);
+    }
+
+    function setActiveSection(section) {
+      activeSection = section;
+      resetTransientStateFor(section);
+      if (isDaySection(section)) {
+        activeDayKey = keyFromDaySection(section) || activeDayKey;
+        selectedGameIndex = 0;
+        expandedDayKey = activeDayKey;
+      }
+      render();
+    }
+
+    function goBackToRoot() {
+      activeSection = "HOME";
+      selectedGameIndex = 0;
+      activePlayerId = null;
+      selectedSearchAppId = null;
+      selectedGameListAppId = null;
+      selectedLibraryAppId = null;
+      resetWatchSession();
+      selectedOperatorName = null;
+      selectedOperatorGameAppId = null;
+      selectedOperatorSource = null;
+      selectedOperatorType = "operator";
+      render();
+    }
+
+    function selectGame(index) {
+      selectedGameIndex = index;
+      expandedDayKey = activeDayKey;
+      render();
+    }
+
+    function selectPlayer(playerId) {
+      activePlayerId = playerId;
+      activeSection = "PLAYER BIO";
+      render();
+    }
+
+    function backToPlayers() {
+      activeSection = "PLAYERS";
+      activePlayerId = null;
+      selectedOperatorName = null;
+      selectedOperatorGameAppId = null;
+      selectedOperatorSource = null;
+      selectedOperatorType = "operator";
+      render();
+    }
+
+    function selectPlayerGames(playerId) {
+      const player = getPlayerById(playerId);
+      if (!player) return;
+
+      activePlayerId = player.id;
+      selectedOperatorName = getPlayerOperatorName(player);
+      selectedOperatorGameAppId = null;
+      selectedOperatorType = "operator";
+      selectedOperatorSource = {
+        type: "player-profile",
+        playerId: player.id,
+        title: player.name || "PROFILE"
+      };
+      activeSection = "OPERATOR_LIST";
+      render();
+    }
+
+    function backToPlayerProfile() {
+      const playerId = selectedOperatorSource?.playerId || activePlayerId;
+      selectedOperatorName = null;
+      selectedOperatorGameAppId = null;
+      selectedOperatorSource = null;
+      selectedOperatorType = "operator";
+      activePlayerId = playerId;
+      activeSection = "PLAYER BIO";
+      render();
+    }
+
+    function normalizeSearchValue(value) {
+      return String(value ?? "")
+        .toLowerCase()
+        .replace(/[_\-:]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function getSearchableGames() {
+      return Object.values(gamesById)
+        .filter(game => game && game.title)
+        .sort(compareGameListEntries);
+    }
+
+    function stringifySearchValue(value) {
+      if (Array.isArray(value)) return value.filter(Boolean).join(" ");
+      return String(value ?? "");
+    }
+
+    function getSearchFieldDefinition(fieldKey) {
+      return searchFields.find(field => field.key === fieldKey) || searchFields[0];
+    }
+
+    function getActiveSearchFields() {
+      return searchField === "all" ? searchFields : [getSearchFieldDefinition(searchField)];
+    }
+
+    function readSearchField(game, field) {
+      if (!game || !field) return "";
+      const value = typeof field.read === "function" ? field.read(game) : game[field.key];
+      return stringifySearchValue(value);
+    }
+
+    function getSearchResultForGame(game, query) {
+      for (const field of getActiveSearchFields()) {
+        const value = readSearchField(game, field);
+        if (normalizeSearchValue(value).includes(query)) {
+          return { game, field, value };
+        }
+      }
+      return null;
+    }
+
+    function getSearchResults() {
+      const query = normalizeSearchValue(searchQuery);
+      if (!query) return [];
+
+      return getSearchableGames()
+        .map(game => getSearchResultForGame(game, query))
+        .filter(Boolean);
+    }
+
+    function selectSearchGame(appId) {
+      selectedSearchAppId = appId;
+      activeSection = "SEARCH_DETAIL";
+      render();
+    }
+
+    function backToSearchResults() {
+      activeSection = "SEARCH";
+      selectedSearchAppId = null;
+      render();
+    }
+
+    function selectGameListGame(appId) {
+      selectedGameListAppId = appId;
+      activeSection = "GAME_LIST_DETAIL";
+      render();
+    }
+
+    function backToGameList() {
+      activeSection = "GAME LIST";
+      selectedGameListAppId = null;
+      selectedOperatorName = null;
+      selectedOperatorGameAppId = null;
+      selectedOperatorSource = null;
+      selectedOperatorType = "operator";
+      render();
+    }
+
+    function selectLibrarySort(sortKey) {
+      librarySort = sortKey === "archiveNumber" ? "archiveNumber" : "releaseDate";
+      activeSection = "LIBRARY";
+      selectedLibraryAppId = null;
+      render();
+    }
+
+    function selectLibraryGame(appId) {
+      selectedLibraryAppId = appId;
+      activeSection = "LIBRARY_DETAIL";
+      render();
+    }
+
+    function backToLibrary() {
+      activeSection = "LIBRARY";
+      selectedLibraryAppId = null;
+      render();
+    }
+
+    function getOperatorSourceFromGame(game) {
+      if (!game || !game.appId) return null;
+
+      return {
+        appId: game.appId,
+        title: game.title || `AppID ${game.appId}`,
+        activeSection,
+        activeDayKey,
+        selectedGameIndex,
+        selectedSearchAppId,
+        selectedGameListAppId,
+        selectedLibraryAppId,
+        selectedOperatorName,
+        selectedOperatorGameAppId,
+        selectedOperatorType
+      };
+    }
+
+    function normalizeOperatorType(operatorType) {
+      const value = String(operatorType || "operator").toLowerCase();
+      return ["operator", "developer", "publisher"].includes(value) ? value : "operator";
+    }
+
+    function operatorTypeSingular(operatorType = selectedOperatorType) {
+      const type = normalizeOperatorType(operatorType);
+      if (type === "developer") return "Developer";
+      if (type === "publisher") return "Publisher";
+      return "Operator";
+    }
+
+    function operatorGameListTitle(operatorName, operatorType = selectedOperatorType) {
+      const type = normalizeOperatorType(operatorType);
+      const title = type === "developer" ? "DEVELOPER GAMES" : type === "publisher" ? "PUBLISHER GAMES" : "GAME LIST";
+      return `${title} - ${escapeHtml(operatorName)}`;
+    }
+
+    function operatorPanelTitle() {
+      if (selectedOperatorSource?.type === "player-profile") return "PLAYERS";
+      return `${operatorTypeSingular().toUpperCase()} LIST`;
+    }
+
+    function selectOperator(operatorName, sourceGame = null, operatorType = "operator") {
+      if (sourceGame) selectedOperatorSource = getOperatorSourceFromGame(sourceGame);
+      selectedOperatorType = normalizeOperatorType(operatorType);
+      selectedOperatorName = String(operatorName || "").trim();
+      selectedOperatorGameAppId = null;
+      activeSection = "OPERATOR_LIST";
+      render();
+    }
+
+    function selectOperatorFromGameList(operatorName, operatorType = "operator") {
+      selectedOperatorSource = { type: "game-list", activeSection: "GAME LIST" };
+      selectOperator(operatorName, null, operatorType);
+    }
+
+    function selectOperatorGame(appId) {
+      selectedOperatorGameAppId = appId;
+      activeSection = "OPERATOR_GAME_DETAIL";
+      render();
+    }
+
+    function backToOperatorList() {
+      activeSection = "OPERATOR_LIST";
+      selectedOperatorGameAppId = null;
+      render();
+    }
+
+    function operatorSourceTitle() {
+      if (!selectedOperatorSource) return "";
+      const sourceGame = selectedOperatorSource.appId ? resolveGameById(selectedOperatorSource.appId) : null;
+      return sourceGame?.title || selectedOperatorSource.title || "GAME";
+    }
+
+    function backToOperatorSourceGame() {
+      const source = selectedOperatorSource;
+      if (!source) return;
+
+      activeSection = source.activeSection || "GAME_LIST_DETAIL";
+      activeDayKey = source.activeDayKey || activeDayKey;
+      selectedGameIndex = Number.isFinite(Number(source.selectedGameIndex)) ? Number(source.selectedGameIndex) : selectedGameIndex;
+      selectedSearchAppId = source.selectedSearchAppId;
+      selectedGameListAppId = source.selectedGameListAppId;
+      selectedLibraryAppId = source.selectedLibraryAppId;
+      selectedOperatorName = source.selectedOperatorName;
+      selectedOperatorGameAppId = source.selectedOperatorGameAppId;
+      selectedOperatorType = normalizeOperatorType(source.selectedOperatorType);
+
+      if (activeSection === "SEARCH_DETAIL") selectedSearchAppId = source.appId;
+      if (activeSection === "GAME_LIST_DETAIL") selectedGameListAppId = source.appId;
+      if (activeSection === "LIBRARY_DETAIL") selectedLibraryAppId = source.appId;
+      if (activeSection === "OPERATOR_GAME_DETAIL") selectedOperatorGameAppId = source.appId;
+
+      selectedOperatorSource = null;
+      render();
+    }
+
+    function navIcon(type) {
+      const icons = {
+        home: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-6h5v6"/></svg>`,
+        info: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>`,
+        folder: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h6l2 2h9v9.5a2 2 0 0 1-2 2h-15z"/><path d="M3.5 8.5v-2a2 2 0 0 1 2-2h3.2l2 2"/></svg>`,
+        file: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 13h5"/><path d="M9.5 16h5"/></svg>`,
+        back: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7 5 12l5 5"/><path d="M5 12h10a5 5 0 0 1 5 5v1"/></svg>`,
+        players: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 19c.8-4 2.8-6 5.5-6s4.7 2 5.5 6"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M14.5 14c2.8.2 4.8 1.8 6 5"/></svg>`,
+        gamepad: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 9h9a5 5 0 0 1 4.7 6.7l-.5 1.4a2.4 2.4 0 0 1-4.1.7L15 16H9l-1.6 1.8a2.4 2.4 0 0 1-4.1-.7l-.5-1.4A5 5 0 0 1 7.5 9Z"/><path d="M7.5 12v3"/><path d="M6 13.5h3"/><path d="M15.5 13h.01"/><path d="M18 15h.01"/></svg>`,
+        library: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v12.5H7.5A2.5 2.5 0 0 1 5 17Z"/><path d="M7.5 4.5v12A2.5 2.5 0 0 0 10 19"/><path d="M9.5 8h5"/><path d="M9.5 11h5"/></svg>`,
+        watch: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="12" rx="2"/><path d="m10 9 5 2.5-5 2.5Z"/><path d="M8 21h8"/><path d="M12 17.5V21"/></svg>`,
+        search: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>`,
+        tile: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="1.8"/><path d="M8 8h8"/><path d="M8 12h5"/><path d="M8 16h8"/></svg>`,
+        palette: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 0 0 0 16h1.3a1.7 1.7 0 0 0 1.2-2.9 1.7 1.7 0 0 1 1.2-2.9H17a3 3 0 0 0 3-3A7.2 7.2 0 0 0 12 4Z"/><circle cx="8.5" cy="10" r=".7"/><circle cx="11" cy="7.8" r=".7"/><circle cx="14.2" cy="8.4" r=".7"/><circle cx="15.6" cy="11.2" r=".7"/></svg>`,
+        sidebar: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 5v14"/><path d="m14 9 3 3-3 3"/></svg>`
+      };
+
+      return icons[type] || icons.file;
+    }
+
+    function chevronIcon() {
+      return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>`;
+    }
+
+    function addNavItem(targetList, label, value, isActive, onClick, className = "", iconType = "file", hasChevron = false) {
+      const li = document.createElement("li");
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = [isActive ? "active" : "", className].filter(Boolean).join(" ");
+      if (isActive) button.setAttribute("aria-current", "page");
+      button.onclick = () => {
+        onClick();
+        closeResponsiveNav();
+      };
+      button.innerHTML = `
+        <span class="nav-button-inner">
+          <span class="nav-icon">${navIcon(iconType)}</span>
+          <span class="nav-label">${formatNavLabelHtml(label)}</span>
+          ${hasChevron ? `<span class="nav-chevron">${chevronIcon()}</span>` : ""}
+        </span>
+      `;
+      li.appendChild(button);
+      targetList.appendChild(li);
+      return li;
+    }
+
+    function lockedNavIcon(section) {
+      const icons = {
+        HOME: "home",
+        ABOUT: "info",
+        PLAYERS: "players",
+        "GAME LIST": "gamepad",
+        LIBRARY: "library",
+        WATCH: "watch",
+        SEARCH: "search"
+      };
+
+      return icons[section] || "file";
+    }
+
+    function resetTransientStateFor(section) {
+      if (section !== "PLAYER BIO") activePlayerId = null;
+      if (section !== "SEARCH_DETAIL") selectedSearchAppId = null;
+      if (section !== "GAME_LIST_DETAIL") selectedGameListAppId = null;
+      if (section !== "LIBRARY_DETAIL") selectedLibraryAppId = null;
+      if (!["OPERATOR_LIST", "OPERATOR_GAME_DETAIL"].includes(section)) {
+        selectedOperatorName = null;
+        selectedOperatorGameAppId = null;
+        selectedOperatorSource = null;
+        selectedOperatorType = "operator";
+      }
+    }
+
+    function toggleDayDropdown(dayKey) {
+      expandedDayKey = expandedDayKey === dayKey ? null : dayKey;
+      renderTopNav();
+    }
+
+    function selectDayGame(dayKey, index) {
+      const section = formatDayMenuLabel(dayKey);
+      activeSection = section;
+      activeDayKey = dayKey;
+      selectedGameIndex = index;
+      expandedDayKey = dayKey;
+      resetTransientStateFor(section);
+      render();
+    }
+
+    function addDayNavItem(dayKey) {
+      const section = formatDayMenuLabel(dayKey);
+      const isActiveDay = activeDayKey === dayKey && isDaySection(activeSection);
+      const isOpen = expandedDayKey === dayKey;
+      const li = document.createElement("li");
+      const button = document.createElement("button");
+      const subNavId = `day-subnav-${dayKey}`;
+
+      li.className = ["day-nav-item", isOpen ? "is-open" : "", isActiveDay ? "active-day" : ""].filter(Boolean).join(" ");
+      button.type = "button";
+      button.className = ["day-nav-toggle", isActiveDay ? "active" : ""].filter(Boolean).join(" ");
+      button.setAttribute("aria-expanded", String(isOpen));
+      button.setAttribute("aria-controls", subNavId);
+      button.onclick = () => toggleDayDropdown(dayKey);
+      button.innerHTML = `
+        <span class="nav-button-inner">
+          <span class="nav-icon">${navIcon("folder")}</span>
+          <span class="nav-label">${formatNavLabelHtml(section)}</span>
+          <span class="nav-chevron">${chevronIcon()}</span>
+        </span>
+      `;
+
+      li.appendChild(button);
+
+      if (isOpen) {
+        const entries = dayMenus[dayKey] || [];
+        const gamesList = document.createElement("ul");
+        gamesList.className = "day-subnav";
+        gamesList.id = subNavId;
+        gamesList.setAttribute("aria-label", `${section} games`);
+
+        entries.forEach((appId, index) => {
+          const item = resolveGameById(appId, dayKey, index);
+          const isActiveGame = isActiveDay && index === selectedGameIndex;
+          addNavItem(gamesList, item.title, `__game__${index}`, isActiveGame, () => selectDayGame(dayKey, index), "day-game-link", "tile", false);
+        });
+
+        li.appendChild(gamesList);
+      }
+
+      topNav.appendChild(li);
+    }
+
+    function renderLockedNav() {
+      const playerGamesActive = selectedOperatorSource?.type === "player-profile" && ["OPERATOR_LIST", "OPERATOR_GAME_DETAIL"].includes(activeSection);
+
+      sections.forEach((section) => {
+        const iconType = lockedNavIcon(section);
+        const isActive = section === activeSection ||
+          (section === "PLAYERS" && (activeSection === "PLAYER BIO" || playerGamesActive)) ||
+          (section === "GAME LIST" && (["GAME_LIST_DETAIL"].includes(activeSection) || (["OPERATOR_LIST", "OPERATOR_GAME_DETAIL"].includes(activeSection) && !playerGamesActive))) ||
+          (section === "LIBRARY" && activeSection === "LIBRARY_DETAIL") ||
+          (section === "SEARCH" && activeSection === "SEARCH_DETAIL");
+        addNavItem(fixedNav, section, section, isActive, () => setActiveSection(section), "", iconType, false);
+      });
+    }
+
+    function renderTopNav() {
+      fixedNav.innerHTML = "";
+      topNav.innerHTML = "";
+
+      renderLockedNav();
+
+      Object.keys(dayMenus).forEach(addDayNavItem);
+    }
+
+    function render() {
+      prepareWatchForRender();
+      stopHomeTimer();
+      renderTopNav();
+      panelTitle.textContent = activeSection;
+
+      if (activeSection === "HOME") {
+        crumbs.textContent = "HOME";
+        renderHome();
+        return;
+      }
+
+      if (activeSection === "ABOUT") {
+        crumbs.textContent = "ABOUT";
+        renderAbout();
+        return;
+      }
+
+      if (activeSection === "PLAYERS") {
+        crumbs.textContent = "PLAYERS";
+        renderPlayers();
+        return;
+      }
+
+      if (activeSection === "PLAYER BIO") {
+        const player = getPlayerById(activePlayerId);
+        crumbs.innerHTML = `<button class="search-back-button player-back-button" type="button">&lt;- BACK TO PLAYERS</button>`;
+        const playerBackButton = crumbs.querySelector(".player-back-button");
+        if (playerBackButton) playerBackButton.addEventListener("click", backToPlayers);
+        renderPlayerBio(player);
+        return;
+      }
+
+      if (activeSection === "GAME LIST") {
+        crumbs.textContent = "GAME LIST";
+        renderGameList();
+        return;
+      }
+
+      if (activeSection === "GAME_LIST_DETAIL") {
+        panelTitle.textContent = "GAME LIST";
+        crumbs.innerHTML = `<button class="search-back-button game-list-back-button" type="button">&lt;- BACK TO GAME LIST</button>`;
+        const gameListBackButton = crumbs.querySelector(".game-list-back-button");
+        if (gameListBackButton) gameListBackButton.addEventListener("click", backToGameList);
+        renderGameListGameDetail();
+        return;
+      }
+
+      if (activeSection === "OPERATOR_LIST") {
+        panelTitle.textContent = operatorPanelTitle();
+        if (selectedOperatorSource?.type === "player-profile") {
+          crumbs.innerHTML = `<button class="search-back-button player-profile-back-button" type="button">&lt;- BACK TO PROFILE</button>`;
+          const playerProfileBackButton = crumbs.querySelector(".player-profile-back-button");
+          if (playerProfileBackButton) playerProfileBackButton.addEventListener("click", backToPlayerProfile);
+        } else if (selectedOperatorSource?.type === "game-list") {
+          crumbs.innerHTML = `<button class="search-back-button game-list-back-button" type="button">&lt;- BACK TO GAME LIST</button>`;
+          const gameListBackButton = crumbs.querySelector(".game-list-back-button");
+          if (gameListBackButton) gameListBackButton.addEventListener("click", backToGameList);
+        } else if (selectedOperatorSource) {
+          crumbs.innerHTML = `<button class="search-back-button operator-source-back-button" type="button">&lt;- BACK TO ${escapeHtml(operatorSourceTitle())}</button>`;
+          const operatorSourceBackButton = crumbs.querySelector(".operator-source-back-button");
+          if (operatorSourceBackButton) operatorSourceBackButton.addEventListener("click", backToOperatorSourceGame);
+        } else {
+          crumbs.textContent = operatorPanelTitle();
+        }
+        renderOperatorGameList();
+        return;
+      }
+
+      if (activeSection === "OPERATOR_GAME_DETAIL") {
+        panelTitle.textContent = operatorPanelTitle();
+        crumbs.innerHTML = `<button class="search-back-button operator-list-back-button" type="button">&lt;- BACK TO GAME LIST</button>`;
+        const operatorListBackButton = crumbs.querySelector(".operator-list-back-button");
+        if (operatorListBackButton) operatorListBackButton.addEventListener("click", backToOperatorList);
+        renderOperatorGameDetail();
+        return;
+      }
+
+      if (activeSection === "LIBRARY") {
+        panelTitle.textContent = "LIBRARY";
+        renderLibraryCrumbs();
+        renderLibrary();
+        return;
+      }
+
+      if (activeSection === "LIBRARY_DETAIL") {
+        panelTitle.textContent = "LIBRARY";
+        crumbs.innerHTML = `<button class="search-back-button library-back-button" type="button">&lt;- BACK TO LIBRARY</button>`;
+        const libraryBackButton = crumbs.querySelector(".library-back-button");
+        if (libraryBackButton) libraryBackButton.addEventListener("click", backToLibrary);
+        renderLibraryGameDetail();
+        return;
+      }
+
+      if (activeSection === "WATCH") {
+        crumbs.textContent = "WATCH";
+        renderWatch();
+        return;
+      }
+
+      if (activeSection === "SEARCH") {
+        crumbs.textContent = "SEARCH";
+        renderSearch();
+        return;
+      }
+
+      if (activeSection === "SEARCH_DETAIL") {
+        panelTitle.textContent = "SEARCH";
+        crumbs.innerHTML = `<button class="search-back-button" type="button">&lt;- BACK TO SEARCH RESULTS</button>`;
+        const searchBackButton = crumbs.querySelector(".search-back-button");
+        if (searchBackButton) searchBackButton.addEventListener("click", backToSearchResults);
+        renderSearchGameDetail();
+        return;
+      }
+
+      const entries = currentDayEntries();
+      const selectedGame = entries[selectedGameIndex] ? resolveGameById(entries[selectedGameIndex], activeDayKey, selectedGameIndex) : null;
+      crumbs.textContent = selectedGame ? `${activeSection} / ${selectedGame.title.toUpperCase()}` : `ROOT://${activeSection}`;
+      renderDay();
+    }
+
+    function renderHome() {
+      content.innerHTML = `
+        <section class="screen home-dashboard" aria-label="The Sarkive home counter">
+          <div class="home-counter-shell">
+            <section class="home-timer-panel" aria-label="Time trapped in the backrooms">
+              <h1 class="home-counter-heading">Sark has been trapped in the backrooms for...</h1>
+              <div class="home-timer-display" aria-live="polite">
+                <div class="home-time-unit">
+                  <span class="home-time-value" data-home-timer-part="months">00</span>
+                  <span class="home-counter-label">Months</span>
+                </div>
+                <span class="home-time-separator" aria-hidden="true">:</span>
+                <div class="home-time-unit">
+                  <span class="home-time-value" data-home-timer-part="days">00</span>
+                  <span class="home-counter-label">Days</span>
+                </div>
+                <span class="home-time-separator" aria-hidden="true">:</span>
+                <div class="home-time-unit">
+                  <span class="home-time-value" data-home-timer-part="hours">00</span>
+                  <span class="home-counter-label">Hours</span>
+                </div>
+                <span class="home-time-separator" aria-hidden="true">:</span>
+                <div class="home-time-unit">
+                  <span class="home-time-value" data-home-timer-part="minutes">00</span>
+                  <span class="home-counter-label">Minutes</span>
+                </div>
+                <span class="home-time-separator" aria-hidden="true">:</span>
+                <div class="home-time-unit">
+                  <span class="home-time-value" data-home-timer-part="seconds">00</span>
+                  <span class="home-counter-label">Seconds</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="home-games-panel" aria-label="Games played total">
+              <h2 class="home-counter-heading">Sark has played a total of...</h2>
+              <div class="home-games-display">
+                <div class="home-game-unit">
+                  <span class="home-game-value">${escapeHtml(homeGamesPlayedText)}</span>
+                  <span class="home-counter-label">Games Played</span>
+                </div>
+                <span class="home-game-separator" aria-hidden="true">/</span>
+                <div class="home-game-unit">
+                  <span class="home-game-value">${escapeHtml(homeTotalGamesText)}</span>
+                  <span class="home-counter-label">Total Games</span>
+                </div>
+              </div>
+              <div class="home-teaser-actions">
+                <button class="home-teaser-button" id="homeTeaserButton" type="button" aria-haspopup="dialog">WATCH THE TEASER</button>
+              </div>
+            </section>
+          </div>
+          <div class="home-teaser-lightbox" id="homeTeaserLightbox" hidden>
+            <button class="home-teaser-backdrop" type="button" aria-label="Close teaser video"></button>
+            <div class="home-teaser-dialog" role="dialog" aria-modal="true" aria-label="Sarkive teaser video">
+              <button class="home-teaser-close" id="homeTeaserClose" type="button" aria-label="Close teaser video">&times;</button>
+              <video class="home-teaser-video" id="homeTeaserVideo" controls preload="metadata">
+                <source src="assets/video/SBR_INTRO.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+      `;
+
+      wireHomeTeaser();
+      startHomeTimer();
+    }
+
+    function wireHomeTeaser() {
+      const teaserButton = content.querySelector("#homeTeaserButton");
+      const teaserLightbox = content.querySelector("#homeTeaserLightbox");
+      const teaserClose = content.querySelector("#homeTeaserClose");
+      const teaserBackdrop = content.querySelector(".home-teaser-backdrop");
+      const teaserVideo = content.querySelector("#homeTeaserVideo");
+      let lastFocusedElement = null;
+
+      if (!teaserButton || !teaserLightbox || !teaserVideo) return;
+
+      function openTeaser() {
+        lastFocusedElement = document.activeElement;
+        teaserLightbox.hidden = false;
+        document.body.classList.add("home-teaser-open");
+        if (teaserClose) teaserClose.focus();
+      }
+
+      function closeTeaser() {
+        teaserVideo.pause();
+        teaserVideo.currentTime = 0;
+        teaserLightbox.hidden = true;
+        document.body.classList.remove("home-teaser-open");
+        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+          lastFocusedElement.focus();
+        }
+      }
+
+      teaserButton.addEventListener("click", openTeaser);
+      if (teaserClose) teaserClose.addEventListener("click", closeTeaser);
+      if (teaserBackdrop) teaserBackdrop.addEventListener("click", closeTeaser);
+
+      teaserLightbox.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeTeaser();
+      });
+    }
+
+    function padHomeCounter(value) {
+      return String(Math.max(0, value)).padStart(2, "0");
+    }
+
+    function homeElapsedParts(now) {
+      if (!(now instanceof Date)) now = new Date();
+
+      if (now <= homeTrapStartDate) {
+        return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
+
+      let months = (now.getFullYear() - homeTrapStartDate.getFullYear()) * 12 + (now.getMonth() - homeTrapStartDate.getMonth());
+      let anchor = new Date(homeTrapStartDate.getTime());
+      anchor.setMonth(homeTrapStartDate.getMonth() + months);
+
+      if (anchor > now) {
+        months -= 1;
+        anchor = new Date(homeTrapStartDate.getTime());
+        anchor.setMonth(homeTrapStartDate.getMonth() + months);
+      }
+
+      let remaining = now.getTime() - anchor.getTime();
+      const dayMs = 24 * 60 * 60 * 1000;
+      const hourMs = 60 * 60 * 1000;
+      const minuteMs = 60 * 1000;
+
+      const days = Math.floor(remaining / dayMs);
+      remaining -= days * dayMs;
+      const hours = Math.floor(remaining / hourMs);
+      remaining -= hours * hourMs;
+      const minutes = Math.floor(remaining / minuteMs);
+      remaining -= minutes * minuteMs;
+      const seconds = Math.floor(remaining / 1000);
+
+      return { months, days, hours, minutes, seconds };
+    }
+
+    function updateHomeTimer() {
+      const timer = content.querySelector(".home-timer-display");
+      if (!timer) return;
+
+      const parts = homeElapsedParts(new Date());
+      Object.entries(parts).forEach(([part, value]) => {
+        const node = timer.querySelector(`[data-home-timer-part="${part}"]`);
+        if (node) node.textContent = padHomeCounter(value);
+      });
+    }
+
+    function startHomeTimer() {
+      stopHomeTimer();
+      updateHomeTimer();
+      homeTimerInterval = window.setInterval(updateHomeTimer, 1000);
+    }
+
+    function stopHomeTimer() {
+      if (homeTimerInterval !== null) {
+        window.clearInterval(homeTimerInterval);
+        homeTimerInterval = null;
+      }
+    }
+
+
+    function renderAbout() {
+      content.innerHTML = `
+        <section class="screen about-text">
+          <h2>The Backrooms Origins</h2>
+          <p class="dim about-border">The Backrooms began as a single image: a dead, yellow, fluorescent-lit room that looked too familiar and too wrong at the same time. In May 2019, the image was posted to 4chan’s paranormal board with a short piece of horror text about “no-clipping” out of reality and ending up somewhere you were never meant to see. That was the seed: an endless maze of damp carpet, buzzing lights, old wallpaper, empty rooms, and the feeling that the world had a hidden service corridor behind it.<br /><br />
+
+For years, the photo itself had no confirmed origin, which helped the myth grow teeth. It felt like evidence from nowhere. In 2024, internet researchers traced the image back to a real renovation photo from a former furniture store in Oshkosh, Wisconsin, later used by HobbyTown. The ordinary source somehow made it creepier: the Backrooms were not invented from castles, monsters, or hellscapes, but from the bland architecture of forgotten commercial space.<br /><br />
+
+From there, the Backrooms became shared internet folklore. Wikis, Reddit posts, videos, games, and fan projects expanded the idea into “levels,” entities, survival rules, exits, colonies, documents, and warnings. Some versions treat it like an SCP-style archive. Others keep it minimal: you fall through reality, land in the wrong place, and something about the silence tells you the building is alive.<br /><br />
+
+The most influential modern version came from Kane Parsons, known online as Kane Pixels. In 2022, he released The Backrooms (Found Footage), a short analog-horror film that turned the meme into a believable lost tape: handheld camera panic, VHS damage, impossible office geometry, and a hidden research project studying the space. His series gave the Backrooms a sharper identity, mixing liminal horror, government/industrial secrecy, and nightmare architecture.<br /><br />
+
+That YouTube series eventually became the foundation for a feature film from A24, directed by Parsons himself. The Backrooms had completed the weirdest possible route: from anonymous imageboard post, to collaborative wiki myth, to indie horror videos, to cinema release. What started as “a room that feels off” is now one of the clearest examples of internet horror becoming modern folklore in real time.</p><br />
+
+<p class="dim">LINKS</p>
+
+<a class="about-link" href="https://www.youtube.com/playlist?list=PLVAh-MgDVqvDUEq6qDXqORBioE4Yhol_z" target="_blank" rel="noopener noreferrer">Kane Pixels - The Backrooms playlist</a>
+<a class="about-link" href="https://www.youtube.com/watch?v=abO0iO7W7Vc" target="_blank" rel="noopener noreferrer">RED - Kane Pixels Backrooms Lore Recap and Event Timeline | The Backrooms Recap</a>
+<a class="about-link" href="https://backrooms.fandom.com/wiki/Backrooms_Wiki" target="_blank" rel="noopener noreferrer">Backrooms Wiki - Fandom</a>
+<a class="about-link" href="https://backrooms-wiki.wikidot.com/" target="_blank" rel="noopener noreferrer">Backrooms Wiki - Wikidot</a>
+<a class="about-link" href="https://en.wikipedia.org/wiki/The_Backrooms" target="_blank" rel="noopener noreferrer">The Backrooms - Wikipedia</a>
+<a class="about-link" href="https://www.imdb.com/title/tt26657236/" target="_blank" rel="noopener noreferrer">The Backrooms (2026) - IMDB</a>
+
+        </section>
+      `;
+    }
+
+    function renderPlayers() {
+      content.innerHTML = `
+        <section class="screen players-page">
+          <div class="detail-section players-intro">
+          </div>
+          <div class="players-grid" aria-label="Players">
+            ${playerRecords.map(player => `
+              <button class="player-card" type="button" data-player-id="${escapeHtml(player.id)}">
+                <img class="player-image" src="${escapeHtml(player.image)}" alt="${escapeHtml(player.name)} Twitch profile image" loading="lazy" />
+                <span class="player-name">${escapeHtml(player.name)}</span>
+              </button>
+            `).join("")}
+          </div>
+        </section>
+      `;
+
+      content.querySelectorAll(".player-card").forEach(card => {
+        card.addEventListener("click", () => selectPlayer(card.dataset.playerId));
+      });
+    }
+
+    function renderPlayerBio(player) {
+      if (!player) {
+        content.innerHTML = `
+          <section class="screen">
+            <p class="empty-note">No player record selected.</p>
+          </section>
+        `;
+        return;
+      }
+
+      const twitchUrl = getPlayerTwitchUrl(player);
+
+      content.innerHTML = `
+        <section class="screen player-dossier-page">
+          <article class="player-dossier">
+            <h2 class="game-detail-title player-dossier-main-title">${escapeHtml(player.name)}</h2>
+            <div class="player-dossier-head">
+              <div class="player-dossier-photo-wrap" aria-label="Player portrait">
+                <img class="player-dossier-photo" src="${escapeHtml(player.image)}" alt="${escapeHtml(player.name)} Twitch profile image" loading="lazy" />
+              </div>
+
+              <section class="player-dossier-fields" aria-label="Player info">
+                ${renderPlayerProfileRows(player)}
+                <div class="player-action-buttons" aria-label="Player links">
+                  <button class="detail-link player-action-link player-games-button" type="button" data-player-id="${escapeHtml(player.id)}">GAMES</button>
+                  <a class="detail-link player-action-link${twitchUrl ? "" : " is-empty"}" href="${escapeHtml(twitchUrl)}" target="_blank" rel="noopener noreferrer">TWITCH</a>
+                </div>
+              </section>
+            </div>
+
+            <section class="player-dossier-section" aria-label="Player bio">
+              <h2 class="player-dossier-title">Bio</h2>
+              <p class="player-dossier-copy">${escapeHtml(player.bio || "No bio logged.")}</p>
+            </section>
+
+            <section class="player-dossier-section" aria-label="Player links">
+              <h2 class="player-dossier-title">Links</h2>
+              ${renderPlayerFacts(player)}
+            </section>
+          </article>
+        </section>
+      `;
+
+      content.querySelectorAll(".player-games-button").forEach(button => {
+        button.addEventListener("click", () => selectPlayerGames(button.dataset.playerId));
+      });
+    }
+
+    function searchFieldTag(field) {
+      return field?.tag || String(field?.label || field?.key || "FIELD").toUpperCase();
+    }
+
+    function renderSearchFieldOptions() {
+      const options = [
+        { key: "all", label: "ALL" },
+        ...searchFields.map(field => ({ key: field.key, label: field.label.toUpperCase() }))
+      ];
+
+      return options.map(option => {
+        const selected = option.key === searchField ? " selected" : "";
+        return `<option value="${escapeHtml(option.key)}"${selected}>${escapeHtml(option.label)}</option>`;
+      }).join("");
+    }
+
+    function searchResultSnippet(result) {
+      const game = result.game;
+      if (result.field.key === "title") {
+        return game.shortDescription || `${game.archiveNumber || "---"} / APPID ${game.appId}`;
+      }
+
+      const value = result.value || "Not logged";
+      return `${result.field.label}: ${value}`;
+    }
+
+    function renderSearchResultsHTML() {
+      const query = searchQuery.trim();
+      if (!query) return "";
+
+      const results = getSearchResults();
+      if (!results.length) {
+        return `<div class="search-empty">No matching records logged.</div>`;
+      }
+
+      return `
+        <div class="search-results-panel" role="listbox" aria-label="Search results">
+          ${results.map(result => {
+            const game = result.game;
+            return `
+              <button class="search-result-button" type="button" data-app-id="${escapeHtml(game.appId)}" role="option">
+                <span class="search-result-icon" aria-hidden="true"></span>
+                <span class="search-result-copy">
+                  <span class="search-result-title">${escapeHtml(game.title)}</span>
+                  <span class="search-result-snippet">${escapeHtml(searchResultSnippet(result))}</span>
+                </span>
+                <span class="search-result-tag">${escapeHtml(searchFieldTag(result.field))}</span>
+              </button>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function attachSearchResultHandlers(resultsElement) {
+      if (!resultsElement) return;
+      resultsElement.querySelectorAll(".search-result-button").forEach(button => {
+        button.addEventListener("click", () => selectSearchGame(Number(button.dataset.appId)));
+      });
+    }
+
+    function refreshSearchResults(resultsElement, shell) {
+      if (!resultsElement) return;
+      resultsElement.innerHTML = renderSearchResultsHTML();
+      if (shell) shell.classList.toggle("has-results", Boolean(searchQuery.trim()));
+      attachSearchResultHandlers(resultsElement);
+    }
+
+    function renderSearch() {
+      content.innerHTML = `
+        <section class="screen search-page">
+          <div class="search-shell${searchQuery.trim() ? " has-results" : ""}">
+		  <h2 class="search-title-text">Search title names, developers, publishers and more.</h2>
+            <div class="search-field-wrap">
+              <div class="search-mode-wrap">
+                <select class="search-mode-select" id="archiveSearchField" aria-label="Search field">
+                  ${renderSearchFieldOptions()}
+                </select>
+                <span class="search-mode-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="m7 9 5 5 5-5"></path></svg>
+                </span>
+              </div>
+              <input class="search-input" id="archiveSearchInput" type="search" autocomplete="off" spellcheck="false" aria-label="Search archive" placeholder="" />
+              <button class="search-action" id="archiveSearchClear" type="button" aria-label="Clear search" disabled>
+                <svg class="search-icon search-icon-magnify" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg>
+                <svg class="search-icon search-icon-clear" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
+              </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </section>
+      `;
+
+      const input = document.getElementById("archiveSearchInput");
+      const fieldSelect = document.getElementById("archiveSearchField");
+      const clearButton = document.getElementById("archiveSearchClear");
+      const shell = content.querySelector(".search-shell");
+      const resultsElement = document.getElementById("searchResults");
+
+      if (!input || !resultsElement) return;
+
+      function syncSearchUI() {
+        const hasTypedValue = Boolean(searchQuery.length);
+        if (shell) shell.classList.toggle("has-query", hasTypedValue);
+        if (clearButton) clearButton.disabled = !hasTypedValue;
+      }
+
+      input.value = searchQuery;
+      if (fieldSelect) fieldSelect.value = searchField;
+      refreshSearchResults(resultsElement, shell);
+      syncSearchUI();
+
+      input.addEventListener("input", () => {
+        searchQuery = input.value;
+        refreshSearchResults(resultsElement, shell);
+        syncSearchUI();
+      });
+
+      if (fieldSelect) {
+        fieldSelect.addEventListener("change", () => {
+          searchField = fieldSelect.value;
+          refreshSearchResults(resultsElement, shell);
+          input.focus({ preventScroll: true });
+        });
+      }
+
+      if (clearButton) {
+        clearButton.addEventListener("click", () => {
+          searchQuery = "";
+          input.value = "";
+          refreshSearchResults(resultsElement, shell);
+          syncSearchUI();
+          input.focus({ preventScroll: true });
+        });
+      }
+
+      input.focus({ preventScroll: true });
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+
+    function renderSearchGameDetail() {
+      const selectedGame = selectedSearchAppId ? resolveGameById(selectedSearchAppId) : null;
+
+      content.innerHTML = `
+        <section class="screen files-layout">
+          <div class="viewer">
+            <div class="browser-meta"></div>
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!viewerFrame) return;
+
+      if (!selectedGame) {
+        viewerFrame.innerHTML = `<div class="empty-note">No search result selected.</div>`;
+        return;
+      }
+
+      renderGameDetail(viewerFrame, selectedGame);
+    }
+
+    function getWatchableGames() {
+      return Object.values(gamesById)
+        .filter(game => game && game.title && parseYouTubeVodUrl(game.vodLink))
+        .sort(compareGameListEntries);
+    }
+
+    function parseYouTubeTime(value) {
+      const raw = String(value ?? "").trim().toLowerCase();
+      if (!raw) return 0;
+      if (/^\d+(?:\.\d+)?$/.test(raw)) return Math.max(0, Math.floor(Number(raw)));
+
+      if (/^\d+:\d{1,2}(?::\d{1,2})?$/.test(raw)) {
+        const parts = raw.split(":").map(part => Number(part));
+        if (parts.length === 2) return (parts[0] * 60) + parts[1];
+        return (parts[0] * 3600) + (parts[1] * 60) + parts[2];
+      }
+
+      let total = 0;
+      let matched = false;
+      raw.replace(/(\d+(?:\.\d+)?)\s*([hms])/g, (match, amount, unit) => {
+        matched = true;
+        const number = Number(amount);
+        if (unit === "h") total += number * 3600;
+        if (unit === "m") total += number * 60;
+        if (unit === "s") total += number;
+        return match;
+      });
+
+      return matched ? Math.max(0, Math.floor(total)) : 0;
+    }
+
+    function parseYouTubeVodUrl(value) {
+      const externalUrl = safeExternalUrl(value);
+      if (!externalUrl) return null;
+
+      try {
+        const url = new URL(externalUrl);
+        const host = url.hostname.replace(/^www\./i, "").toLowerCase();
+        let videoId = "";
+
+        if (host === "youtu.be") {
+          videoId = url.pathname.split("/").filter(Boolean)[0] || "";
+        } else if (["youtube.com", "m.youtube.com", "music.youtube.com", "youtube-nocookie.com"].includes(host)) {
+          const pathParts = url.pathname.split("/").filter(Boolean);
+          if (pathParts[0] === "embed" || pathParts[0] === "shorts" || pathParts[0] === "live") {
+            videoId = pathParts[1] || "";
+          } else {
+            videoId = url.searchParams.get("v") || "";
+          }
+        }
+
+        videoId = String(videoId).replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 32);
+        if (!videoId) return null;
+
+        const hashTime = url.hash.replace(/^#(?:t=)?/i, "");
+        const startSeconds = parseYouTubeTime(
+          url.searchParams.get("t") ||
+          url.searchParams.get("start") ||
+          url.searchParams.get("time_continue") ||
+          hashTime
+        );
+
+        return { videoId, startSeconds };
+      } catch {
+        return null;
+      }
+    }
+
+    function getSelectedWatchGame() {
+      return watchHasStarted && selectedWatchGameAppId ? gamesById[selectedWatchGameAppId] : null;
+    }
+
+    function getSelectedWatchVod() {
+      const selectedGame = getSelectedWatchGame();
+      if (!selectedGame) return null;
+      const parsed = parseYouTubeVodUrl(selectedGame.vodLink);
+      return parsed ? { game: selectedGame, ...parsed } : null;
+    }
+
+    function selectedWatchStartSeconds(game) {
+      const parsed = parseYouTubeVodUrl(game?.vodLink);
+      return parsed ? parsed.startSeconds : 0;
+    }
+
+    function watchResumeSecondsFor(game) {
+      if (!game) return 0;
+      if (Number.isFinite(watchPlaybackSeconds) && watchPlaybackSeconds > 0) return Math.floor(watchPlaybackSeconds);
+      return selectedWatchStartSeconds(game);
+    }
+
+    function syncWatchControls() {
+      const playPauseButton = document.getElementById("watchPlayPauseButton");
+      const nextButton = document.getElementById("watchNextButton");
+
+      if (playPauseButton) {
+        playPauseButton.textContent = watchIsPlaying ? "PAUSE" : "PLAY";
+        playPauseButton.disabled = false;
+        playPauseButton.setAttribute("aria-pressed", String(watchIsPlaying));
+      }
+
+      if (nextButton) {
+        nextButton.disabled = !watchHasStarted;
+        nextButton.setAttribute("aria-disabled", String(!watchHasStarted));
+      }
+    }
+
+    function loadYouTubeIframeAPI(callback) {
+      if (window.YT && window.YT.Player) {
+        watchApiReady = true;
+        callback();
+        return;
+      }
+
+      watchApiReadyCallbacks.push(callback);
+      if (watchApiLoading) return;
+
+      watchApiLoading = true;
+      const previousReadyHandler = window.onYouTubeIframeAPIReady;
+
+      window.onYouTubeIframeAPIReady = function () {
+        watchApiReady = true;
+        if (typeof previousReadyHandler === "function") previousReadyHandler();
+
+        while (watchApiReadyCallbacks.length) {
+          const readyCallback = watchApiReadyCallbacks.shift();
+          readyCallback();
+        }
+      };
+
+      const script = document.createElement("script");
+      script.src = "https://www.youtube.com/iframe_api";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    function storeWatchCurrentTime() {
+      if (!watchPlayer || typeof watchPlayer.getCurrentTime !== "function") return watchPlaybackSeconds;
+
+      try {
+        const currentTime = watchPlayer.getCurrentTime();
+        if (Number.isFinite(currentTime) && currentTime >= 0) {
+          watchPlaybackSeconds = Math.max(0, Math.floor(currentTime));
+        }
+      } catch {}
+
+      return watchPlaybackSeconds;
+    }
+
+    function destroyWatchPlayer() {
+      const player = watchPlayer;
+      watchPlayer = null;
+      watchPlayerReady = false;
+      watchPendingAutoplay = false;
+      watchPlayerToken++;
+
+      if (player && typeof player.destroy === "function") {
+        try {
+          player.destroy();
+        } catch {}
+      }
+    }
+
+    function pauseAndStoreWatchState() {
+      storeWatchCurrentTime();
+
+      if (watchPlayer && typeof watchPlayer.pauseVideo === "function") {
+        try {
+          watchPlayer.pauseVideo();
+        } catch {}
+      }
+
+      watchIsPlaying = false;
+      syncWatchControls();
+      destroyWatchPlayer();
+    }
+
+    function resetWatchSession() {
+      pauseAndStoreWatchState();
+      selectedWatchGameAppId = null;
+      watchHasStarted = false;
+      watchPlaybackSeconds = 0;
+      watchIsPlaying = false;
+      syncWatchControls();
+    }
+
+    function prepareWatchForRender() {
+      if (renderedSection === "WATCH") pauseAndStoreWatchState();
+      renderedSection = activeSection;
+    }
+
+    function selectRandomWatchGame() {
+      const games = getWatchableGames();
+      if (!games.length) return null;
+
+      if (games.length === 1) return games[0];
+
+      const currentId = Number(selectedWatchGameAppId);
+      let nextGame = games[Math.floor(Math.random() * games.length)];
+      let guard = 0;
+
+      while (Number(nextGame.appId) === currentId && guard < 8) {
+        nextGame = games[Math.floor(Math.random() * games.length)];
+        guard++;
+      }
+
+      return nextGame;
+    }
+
+    function createOrLoadWatchPlayer({ autoplay = false } = {}) {
+      const vod = getSelectedWatchVod();
+      const playerElement = document.getElementById("watchPlayer");
+      if (!vod || !playerElement) return;
+
+      const startSeconds = watchResumeSecondsFor(vod.game);
+      titleWatchPlayer(vod.game);
+      watchPendingAutoplay = Boolean(autoplay);
+      playerElement.innerHTML = `<div id="watchYoutubePlayer" class="watch-iframe" aria-label="${escapeHtml(`Now playing: ${vod.game.title}`)}"></div>`;
+      const thisToken = ++watchPlayerToken;
+
+      loadYouTubeIframeAPI(() => {
+        if (thisToken !== watchPlayerToken || activeSection !== "WATCH") return;
+        const target = document.getElementById("watchYoutubePlayer");
+        if (!target) return;
+
+        watchPlayer = new YT.Player(target, {
+          width: "100%",
+          height: "100%",
+          videoId: vod.videoId,
+          playerVars: {
+            autoplay: autoplay ? 1 : 0,
+            controls: 1,
+            rel: 0,
+            modestbranding: 1,
+            playsinline: 1,
+            start: startSeconds
+          },
+          events: {
+            onReady: () => {
+              if (thisToken !== watchPlayerToken) return;
+              watchPlayerReady = true;
+
+              if (watchPendingAutoplay && watchPlayer && typeof watchPlayer.playVideo === "function") {
+                try {
+                  watchPlayer.playVideo();
+                } catch {}
+              }
+            },
+            onStateChange: (event) => {
+              if (thisToken !== watchPlayerToken) return;
+              if (!window.YT || !window.YT.PlayerState) return;
+
+              if (event.data === YT.PlayerState.PLAYING) {
+                watchIsPlaying = true;
+              } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                storeWatchCurrentTime();
+                watchIsPlaying = false;
+              }
+
+              syncWatchControls();
+            }
+          }
+        });
+      });
+    }
+
+    function titleWatchPlayer(game) {
+      const titleElement = document.getElementById("watchNowPlaying");
+      if (titleElement) titleElement.textContent = game ? `Now playing: ${game.title}` : "Now playing: —";
+    }
+
+    function updateWatchPlayer(game) {
+      const playerElement = document.getElementById("watchPlayer");
+      if (!playerElement) return;
+
+      titleWatchPlayer(game);
+
+      if (!game) {
+        playerElement.innerHTML = `<div class="watch-empty-state">Press PLAY to pull a random VOD from the archive.</div>`;
+        watchIsPlaying = false;
+        syncWatchControls();
+        return;
+      }
+
+      if (!parseYouTubeVodUrl(game.vodLink)) {
+        playerElement.innerHTML = `<div class="watch-empty-state">This VOD link could not be loaded.</div>`;
+        watchIsPlaying = false;
+        syncWatchControls();
+        return;
+      }
+
+      createOrLoadWatchPlayer({ autoplay: watchIsPlaying });
+      syncWatchControls();
+    }
+
+    function playSelectedWatchVideo() {
+      const selectedGame = getSelectedWatchGame();
+      if (!selectedGame) return;
+
+      watchIsPlaying = true;
+      syncWatchControls();
+
+      if (!watchPlayer) {
+        createOrLoadWatchPlayer({ autoplay: true });
+        return;
+      }
+
+      if (watchPlayerReady && typeof watchPlayer.playVideo === "function") {
+        try {
+          watchPlayer.playVideo();
+        } catch {}
+      } else {
+        watchPendingAutoplay = true;
+      }
+    }
+
+    function pauseSelectedWatchVideo() {
+      storeWatchCurrentTime();
+      watchIsPlaying = false;
+      watchPendingAutoplay = false;
+      syncWatchControls();
+
+      if (watchPlayer && typeof watchPlayer.pauseVideo === "function") {
+        try {
+          watchPlayer.pauseVideo();
+        } catch {}
+      }
+    }
+
+    function playNextWatchVideo() {
+      const nextGame = selectRandomWatchGame();
+      if (!nextGame) return;
+
+      destroyWatchPlayer();
+      watchHasStarted = true;
+      selectedWatchGameAppId = nextGame.appId;
+      watchPlaybackSeconds = selectedWatchStartSeconds(nextGame);
+      watchIsPlaying = true;
+      updateWatchPlayer(nextGame);
+    }
+
+    function toggleWatchPlayback() {
+      if (!watchHasStarted) {
+        playNextWatchVideo();
+        return;
+      }
+
+      if (watchIsPlaying) {
+        pauseSelectedWatchVideo();
+      } else {
+        playSelectedWatchVideo();
+      }
+    }
+
+    function renderWatch() {
+      const selectedGame = getSelectedWatchGame();
+
+      content.innerHTML = `
+        <section class="screen watch-page" aria-label="Watch random archive VOD">
+          <div class="watch-shell">
+            <h1 class="watch-now-playing" id="watchNowPlaying">Now playing: —</h1>
+            <div class="watch-player" id="watchPlayer" aria-live="polite"></div>
+            <div class="watch-controls" aria-label="Watch controls">
+              <button class="watch-control-button watch-play-button" id="watchPlayPauseButton" type="button" aria-pressed="false">PLAY</button>
+              <button class="watch-control-button watch-next-button" id="watchNextButton" type="button" disabled aria-disabled="true">NEXT</button>
+            </div>
+          </div>
+        </section>
+      `;
+
+      const playPauseButton = document.getElementById("watchPlayPauseButton");
+      const nextButton = document.getElementById("watchNextButton");
+      if (playPauseButton) playPauseButton.addEventListener("click", toggleWatchPlayback);
+      if (nextButton) nextButton.addEventListener("click", () => {
+        if (!watchHasStarted) return;
+        playNextWatchVideo();
+      });
+
+      loadYouTubeIframeAPI(() => {});
+      updateWatchPlayer(selectedGame);
+    }
+
+    function renderGameListGameDetail() {
+      const selectedGame = selectedGameListAppId !== null ? resolveGameById(selectedGameListAppId) : null;
+
+      content.innerHTML = `
+        <section class="screen files-layout">
+          <div class="viewer">
+            <div class="browser-meta"></div>
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!viewerFrame) return;
+
+      if (!selectedGame) {
+        viewerFrame.innerHTML = `<div class="empty-note">No game list item selected.</div>`;
+        return;
+      }
+
+      renderGameDetail(viewerFrame, selectedGame);
+    }
+
+    function gameListValue(game, key) {
+      const value = game?.[key];
+      if (Array.isArray(value)) return value.filter(Boolean).join(", ");
+      return String(value ?? "");
+    }
+
+    function getArchiveSortNumber(game) {
+      const value = String(game?.archiveNumber ?? "").trim();
+      if (!value || value === "---") return null;
+
+      const number = Number(value);
+      return Number.isFinite(number) ? number : null;
+    }
+
+    function compareGameListEntries(a, b) {
+      const aNum = getArchiveSortNumber(a);
+      const bNum = getArchiveSortNumber(b);
+      const aHasNumber = aNum !== null;
+      const bHasNumber = bNum !== null;
+
+      if (aHasNumber && bHasNumber && aNum !== bNum) return aNum - bNum;
+      if (aHasNumber && !bHasNumber) return -1;
+      if (!aHasNumber && bHasNumber) return 1;
+
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    }
+
+
+    function getOperatorNames(playedWith) {
+      const values = Array.isArray(playedWith) ? playedWith : String(playedWith ?? "").split(/\s*-\s*/);
+      const ignored = new Set(["", "not logged", "none", "n/a", "---"]);
+
+      return values
+        .map(value => String(value ?? "").trim())
+        .filter(value => !ignored.has(value.toLowerCase()));
+    }
+
+    function getCreditNames(value) {
+      const values = Array.isArray(value) ? value : String(value ?? "").split(/\s*,\s*/);
+      const ignored = new Set(["", "not logged", "none", "n/a", "---"]);
+
+      return values
+        .map(item => String(item ?? "").trim())
+        .filter(item => !ignored.has(item.toLowerCase()));
+    }
+
+    function getGameEntityNames(game, operatorType = selectedOperatorType) {
+      const type = normalizeOperatorType(operatorType);
+      if (type === "developer") return getCreditNames(game?.developers);
+      if (type === "publisher") return getCreditNames(game?.publishers);
+      return getOperatorNames(game?.playedWith);
+    }
+
+    function operatorKey(value) {
+      return normalizeSearchValue(value);
+    }
+
+    function gameHasOperator(game, operatorName, operatorType = selectedOperatorType) {
+      const selectedKey = operatorKey(operatorName);
+      if (!selectedKey) return false;
+
+      return getGameEntityNames(game, operatorType).some(operator => operatorKey(operator) === selectedKey);
+    }
+
+    function getGamesForOperator(operatorName, operatorType = selectedOperatorType) {
+      return Object.values(gamesById)
+        .filter(game => game && game.title && gameHasOperator(game, operatorName, operatorType))
+        .sort(compareGameListEntries);
+    }
+
+    function renderOperatorLinksHTML(selectedGame) {
+      const operators = getOperatorNames(selectedGame?.playedWith);
+      if (!operators.length) {
+        return `<p class="detail-value">${escapeHtml(selectedGame?.playedWith || "Not logged")}</p>`;
+      }
+
+      return `
+        <div class="detail-value operator-links" aria-label="Operators">
+          ${operators.map(operator => `
+            <button class="operator-link" type="button" data-operator-name="${escapeHtml(operator)}" data-operator-type="operator">${escapeHtml(operator)}</button>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderCreditLinksHTML(selectedGame, fieldKey, operatorType, ariaLabel) {
+      const names = getCreditNames(selectedGame?.[fieldKey]);
+      if (!names.length) {
+        return `<p class="detail-value">${escapeHtml(selectedGame?.[fieldKey] || "Not logged")}</p>`;
+      }
+
+      return `
+        <div class="detail-value operator-links" aria-label="${escapeHtml(ariaLabel)}">
+          ${names.map(name => `
+            <button class="operator-link" type="button" data-operator-name="${escapeHtml(name)}" data-operator-type="${escapeHtml(operatorType)}">${escapeHtml(name)}</button>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderGameListCreditLinksHTML(game, fieldKey, operatorType, ariaLabel) {
+      const names = getCreditNames(game?.[fieldKey]);
+      const fallbackValue = gameListValue(game, fieldKey) || "Not logged";
+
+      if (!names.length) {
+        return escapeHtml(fallbackValue);
+      }
+
+      return `
+        <span class="game-list-credit-links" aria-label="${escapeHtml(ariaLabel)}">
+          ${names.map(name => `
+            <a class="game-list-title-link game-list-credit-link" href="#${escapeHtml(operatorType)}-${encodeURIComponent(name)}" data-operator-name="${escapeHtml(name)}" data-operator-type="${escapeHtml(operatorType)}">${escapeHtml(name)}</a>
+          `).join(" ")}
+        </span>
+      `;
+    }
+
+    function renderGameList() {
+      const games = Object.values(gamesById).sort(compareGameListEntries);
+
+      content.innerHTML = `
+        <section class="screen files-layout game-list-page">
+          <div class="viewer">
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!games.length) {
+        viewerFrame.innerHTML = `<div class="empty-note">No canonical game records logged.</div>`;
+        return;
+      }
+
+      viewerFrame.innerHTML = `
+        <table class="game-list-table" aria-label="Game list">
+          <thead>
+            <tr class="game-list-row game-list-header">
+              <th class="game-list-cell game-list-number" scope="col">#</th>
+              <th class="game-list-cell" scope="col">TITLE</th>
+              <th class="game-list-cell" scope="col">DEVELOPER</th>
+              <th class="game-list-cell" scope="col">PUBLISHER</th>
+              <th class="game-list-cell game-list-appid" scope="col">APPID</th>
+            </tr>
+          </thead>
+          <tbody class="game-list-body">
+            ${games.map(game => {
+              const appId = gameListValue(game, "appId");
+              const title = gameListValue(game, "title") || "Not logged";
+
+              return `
+                <tr class="game-list-row">
+                  <td class="game-list-cell game-list-number" title="${escapeHtml(gameListValue(game, "archiveNumber") || "---")}">${escapeHtml(gameListValue(game, "archiveNumber") || "---")}</td>
+                  <td class="game-list-cell" title="${escapeHtml(title)}"><a class="game-list-title-link" href="#game-${encodeURIComponent(appId)}" data-app-id="${escapeHtml(appId)}">${escapeHtml(title)}</a></td>
+                  <td class="game-list-cell" title="${escapeHtml(gameListValue(game, "developers"))}">${renderGameListCreditLinksHTML(game, "developers", "developer", "Developers")}</td>
+                  <td class="game-list-cell" title="${escapeHtml(gameListValue(game, "publishers"))}">${renderGameListCreditLinksHTML(game, "publishers", "publisher", "Publishers")}</td>
+                  <td class="game-list-cell game-list-appid" title="${escapeHtml(appId)}">${escapeHtml(appId || "---")}</td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      `;
+
+      viewerFrame.querySelectorAll(".game-list-title-link:not(.game-list-credit-link)").forEach(link => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          selectGameListGame(link.dataset.appId);
+        });
+      });
+
+      viewerFrame.querySelectorAll(".game-list-credit-link").forEach(link => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          selectOperatorFromGameList(link.dataset.operatorName, link.dataset.operatorType);
+        });
+      });
+    }
+
+    function compareByArchiveNumber(a, b) {
+      const aNumber = getArchiveSortNumber(a);
+      const bNumber = getArchiveSortNumber(b);
+      const aHasNumber = aNumber !== null;
+      const bHasNumber = bNumber !== null;
+
+      if (aHasNumber && bHasNumber && aNumber !== bNumber) return aNumber - bNumber;
+      if (aHasNumber && !bHasNumber) return -1;
+      if (!aHasNumber && bHasNumber) return 1;
+      return String(a?.title || "").localeCompare(String(b?.title || ""));
+    }
+
+    function releaseDateSortValue(game) {
+      const time = Date.parse(String(game?.releaseDate ?? ""));
+      return Number.isNaN(time) ? null : time;
+    }
+
+    function compareByReleaseDate(a, b) {
+      const aTime = releaseDateSortValue(a);
+      const bTime = releaseDateSortValue(b);
+      const aHasDate = aTime !== null;
+      const bHasDate = bTime !== null;
+
+      if (aHasDate && bHasDate && aTime !== bTime) return bTime - aTime;
+      if (aHasDate !== bHasDate) return aHasDate ? -1 : 1;
+
+      return compareByArchiveNumber(a, b);
+    }
+
+    function getLibraryGames() {
+      const games = Object.values(gamesById).filter(game => game && game.title);
+      return games.sort(librarySort === "archiveNumber" ? compareByArchiveNumber : compareByReleaseDate);
+    }
+
+    function libraryTileMeta(game) {
+      if (librarySort === "archiveNumber") return game?.archiveNumber || "---";
+      return game?.releaseDate || "Not logged";
+    }
+
+    function renderLibraryCrumbs() {
+      crumbs.innerHTML = `
+        <span class="library-crumbs">
+          <span class="library-crumb-title">LIBRARY</span>
+          <span class="library-order-label">ORDER</span>
+          <button class="library-sort-button${librarySort === "releaseDate" ? " active" : ""}" type="button" data-sort="releaseDate">RELEASE DATE</button>
+          <button class="library-sort-button${librarySort === "archiveNumber" ? " active" : ""}" type="button" data-sort="archiveNumber">PLAY ORDER</button>
+        </span>
+      `;
+
+      crumbs.querySelectorAll(".library-sort-button").forEach(button => {
+        button.addEventListener("click", () => selectLibrarySort(button.dataset.sort));
+      });
+    }
+
+    function renderLibrary() {
+      const games = getLibraryGames();
+
+      content.innerHTML = `
+        <section class="screen files-layout library-page">
+          <div class="viewer">
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!viewerFrame) return;
+
+      if (!games.length) {
+        viewerFrame.innerHTML = `<div class="empty-note">No library records logged.</div>`;
+        return;
+      }
+
+      viewerFrame.innerHTML = `
+        <div class="library-grid" aria-label="Game artwork library">
+          ${games.map(game => {
+            const appId = gameListValue(game, "appId");
+            const title = gameListValue(game, "title") || "Not logged";
+
+            return `
+              <button class="library-tile" type="button" data-app-id="${escapeHtml(appId)}" title="${escapeHtml(title)}">
+                <span class="library-art-wrap">
+                  <img class="library-art" alt="${escapeHtml(title)} cover art" loading="lazy" />
+                  <span class="library-tile-meta">${escapeHtml(libraryTileMeta(game))}</span>
+                </span>
+              </button>
+            `;
+          }).join("")}
+        </div>
+      `;
+
+      viewerFrame.querySelectorAll(".library-tile").forEach(tile => {
+        tile.addEventListener("click", () => selectLibraryGame(tile.dataset.appId));
+      });
+
+      viewerFrame.querySelectorAll(".library-art").forEach((img, index) => {
+        setImageWithFallback(img, games[index]);
+      });
+    }
+
+    function renderLibraryGameDetail() {
+      const selectedGame = selectedLibraryAppId !== null ? resolveGameById(selectedLibraryAppId) : null;
+
+      content.innerHTML = `
+        <section class="screen files-layout">
+          <div class="viewer">
+            <div class="browser-meta"></div>
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!viewerFrame) return;
+
+      if (!selectedGame) {
+        viewerFrame.innerHTML = `<div class="empty-note">No library item selected.</div>`;
+        return;
+      }
+
+      renderGameDetail(viewerFrame, selectedGame);
+    }
+
+    function renderOperatorGameList() {
+      const operatorName = selectedOperatorName || "";
+      const operatorType = normalizeOperatorType(selectedOperatorType);
+      const games = getGamesForOperator(operatorName, operatorType);
+
+      content.innerHTML = `
+        <section class="screen files-layout game-list-page operator-game-list-page">
+          <div class="viewer">
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!viewerFrame) return;
+
+      if (!operatorName) {
+        viewerFrame.innerHTML = `<div class="empty-note">No ${escapeHtml(operatorTypeSingular(operatorType).toLowerCase())} selected.</div>`;
+        return;
+      }
+
+      if (!games.length) {
+        viewerFrame.innerHTML = `<div class="empty-note">No games logged for ${escapeHtml(operatorName)}.</div>`;
+        return;
+      }
+
+      viewerFrame.innerHTML = `
+        <div class="operator-list-heading">
+          <h2 class="operator-list-title">${operatorGameListTitle(operatorName, operatorType)}</h2>
+        </div>
+        <table class="game-list-table operator-game-list-table" aria-label="Game list for ${escapeHtml(operatorName)}">
+          <thead>
+            <tr class="game-list-row game-list-header">
+              <th class="game-list-cell" scope="col">TITLE</th>
+            </tr>
+          </thead>
+          <tbody class="game-list-body">
+            ${games.map(game => {
+              const appId = gameListValue(game, "appId");
+              const title = gameListValue(game, "title") || "Not logged";
+
+              return `
+                <tr class="game-list-row">
+                  <td class="game-list-cell" title="${escapeHtml(title)}"><a class="game-list-title-link operator-game-title-link" href="#operator-game-${encodeURIComponent(appId)}" data-app-id="${escapeHtml(appId)}">${escapeHtml(title)}</a></td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      `;
+
+      viewerFrame.querySelectorAll(".operator-game-title-link").forEach(link => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          selectOperatorGame(link.dataset.appId);
+        });
+      });
+    }
+
+    function renderOperatorGameDetail() {
+      const selectedGame = selectedOperatorGameAppId !== null ? resolveGameById(selectedOperatorGameAppId) : null;
+
+      content.innerHTML = `
+        <section class="screen files-layout">
+          <div class="viewer">
+            <div class="browser-meta"></div>
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+      if (!viewerFrame) return;
+
+      if (!selectedGame) {
+        viewerFrame.innerHTML = `<div class="empty-note">No operator game selected.</div>`;
+        return;
+      }
+
+      renderGameDetail(viewerFrame, selectedGame);
+    }
+
+    function currentDayEntries() {
+      return dayMenus[activeDayKey] || [];
+    }
+
+    function getGameAppearances(appId) {
+      return Object.entries(dayMenus).flatMap(([dayKey, entries]) => {
+        return entries
+          .map((entryAppId, index) => ({ entryAppId, index }))
+          .filter(({ entryAppId }) => Number(entryAppId) === Number(appId))
+          .map(({ index }) => ({
+            dayKey,
+            dayLabel: formatDayMenuLabel(dayKey),
+            index
+          }));
+      });
+    }
+
+    function renderAppearancesHTML(selectedGame) {
+      const appearances = getGameAppearances(selectedGame.appId);
+      if (appearances.length <= 1) return "";
+
+      return `
+        <section class="detail-section" aria-label="Appearances">
+          <h3 class="detail-section-title">Appearances</h3>
+          <ul class="detail-notes">
+            ${appearances.map(item => {
+              const isCurrent = item.dayKey === selectedGame._dayKey && item.index === selectedGame._slotIndex;
+              const label = `${item.dayLabel}${isCurrent ? " / current log" : ""}`;
+              return `<li>${escapeHtml(label)}</li>`;
+            }).join("")}
+          </ul>
+        </section>
+      `;
+    }
+
+    function renderDay() {
+      const entries = currentDayEntries();
+      if (selectedGameIndex >= entries.length) selectedGameIndex = Math.max(0, entries.length - 1);
+      const selectedGame = entries[selectedGameIndex] ? resolveGameById(entries[selectedGameIndex], activeDayKey, selectedGameIndex) : null;
+
+      content.innerHTML = `
+        <section class="screen files-layout">
+          <div class="viewer">
+            <div class="browser-meta"></div>
+            <div class="viewer-frame" id="viewerFrame"></div>
+          </div>
+        </section>
+      `;
+
+      const viewerFrame = document.getElementById("viewerFrame");
+
+      if (!selectedGame) {
+        viewerFrame.innerHTML = `<div class="empty-note">No game selected.</div>`;
+        return;
+      }
+
+      renderGameDetail(viewerFrame, selectedGame);
+    }
+
+
+    function renderGameDetail(target, selectedGame) {
+      const steamLink = safeExternalUrl(selectedGame.steamLink || (selectedGame.useSteamArt === false ? "" : steamPageUrl(selectedGame.appId)));
+      const vodLink = safeExternalUrl(selectedGame.vodLink);
+	  const vodLink2 = safeExternalUrl(selectedGame.vodLink2);
+	  const vodLink3 = safeExternalUrl(selectedGame.vodLink3);
+	  const vodLink4 = safeExternalUrl(selectedGame.vodLink4);
+	  const vodLink5 = safeExternalUrl(selectedGame.vodLink5);
+      const imageCandidateUrls = imageCandidates(selectedGame);
+      const imageUrl = imageCandidateUrls[0] || "";
+      const notes = Array.isArray(selectedGame.notes)
+        ? selectedGame.notes.map(note => String(note ?? "").trim()).filter(Boolean)
+        : [];
+      const hasNotes = notes.length > 0;
+
+      target.innerHTML = `
+        <article class="game-detail-layout">
+          <h2 class="game-detail-title">${escapeHtml(selectedGame.title)}</h2>
+
+          <div class="detail-main">
+            <div class="detail-image-wrap" aria-label="Game artwork">
+              ${imageUrl ? `<img class="detail-image" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(selectedGame.title)} cover art" loading="lazy" />` : ""}
+            </div>
+
+            <section class="detail-info" aria-label="Game info">
+			<div class="detail-row">
+                <div class="detail-label">ID</div>
+                <div class="detail-colon">:</div>
+                <p class="detail-value">${escapeHtml(selectedGame.appId)}</p>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Order</div>
+                <div class="detail-colon">:</div>
+                <p class="detail-value">${escapeHtml(selectedGame.archiveNumber)} / ${escapeHtml(totalGames)}</p>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">LAUNCHED</div>
+                <div class="detail-colon">:</div>
+                <p class="detail-value">${escapeHtml(selectedGame.durationPlayed)}</p>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Operator</div>
+                <div class="detail-colon">:</div>
+                ${renderOperatorLinksHTML(selectedGame)}
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Result</div>
+                <div class="detail-colon">:</div>
+                <p class="detail-value">${escapeHtml(selectedGame.outcome)}</p>
+              </div>
+
+              <hr class="detail-divider" aria-hidden="true" />
+
+              <div class="detail-row">
+                <div class="detail-label">Released</div>
+                <div class="detail-colon">:</div>
+                <p class="detail-value">${escapeHtml(selectedGame.releaseDate)}</p>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Developers</div>
+                <div class="detail-colon">:</div>
+                ${renderCreditLinksHTML(selectedGame, "developers", "developer", "Developers")}
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Publishers</div>
+                <div class="detail-colon">:</div>
+                ${renderCreditLinksHTML(selectedGame, "publishers", "publisher", "Publishers")}
+              </div>
+            </section>
+          </div>
+
+          <section class="detail-section" aria-label="Short description">
+            <h3 class="detail-section-title">Short Description</h3>
+            <p class="detail-value">${escapeHtml(selectedGame.shortDescription)}</p>
+          </section>
+
+          <section class="detail-section" aria-label="External records">
+            <h3 class="detail-section-title">External Records</h3>
+            <div class="detail-links">
+              <a class="detail-link${vodLink ? "" : " is-empty"}" href="${escapeHtml(vodLink)}" target="_blank" rel="noopener noreferrer">Open VOD</a>
+			  <a class="detail-link${vodLink2 ? "" : " is-empty"}" href="${escapeHtml(vodLink2)}" target="_blank" rel="noopener noreferrer">Open VOD 2</a>
+			  <a class="detail-link${vodLink3 ? "" : " is-empty"}" href="${escapeHtml(vodLink3)}" target="_blank" rel="noopener noreferrer">Open VOD 3</a>
+			  <a class="detail-link${vodLink4 ? "" : " is-empty"}" href="${escapeHtml(vodLink4)}" target="_blank" rel="noopener noreferrer">Open VOD 4</a>
+			  <a class="detail-link${vodLink5 ? "" : " is-empty"}" href="${escapeHtml(vodLink5)}" target="_blank" rel="noopener noreferrer">Open VOD 5</a>
+              <a class="detail-link${steamLink ? "" : " is-empty"}" href="${escapeHtml(steamLink)}" target="_blank" rel="noopener noreferrer">Steam Page</a>
+            </div>
+          </section>
+
+          ${renderAppearancesHTML(selectedGame)}
+
+          <section class="detail-section" aria-label="Field notes">
+            <h3 class="detail-section-title">Field Notes</h3>
+            ${hasNotes ? `<ul class="detail-notes">${notes.map(note => `<li>${escapeHtml(note)}</li>`).join("")}</ul>` : `<p class="detail-value">No notes logged.</p>`}
+          </section>
+        </article>
+      `;
+
+      target.querySelectorAll(".operator-link").forEach(button => {
+        button.addEventListener("click", () => selectOperator(button.dataset.operatorName, selectedGame, button.dataset.operatorType));
+      });
+
+      const detailImage = target.querySelector(".detail-image");
+      if (detailImage) setImageWithFallback(detailImage, selectedGame);
+    }
+
+    if (navToggle) {
+      navToggle.addEventListener("click", () => {
+        if (document.body.classList.contains("nav-open")) {
+          closeResponsiveNav();
+        } else {
+          openResponsiveNav();
+        }
+      });
+    }
+
+    if (navClose) {
+      navClose.addEventListener("click", closeResponsiveNav);
+    }
+
+    if (navScrim) {
+      navScrim.addEventListener("click", closeResponsiveNav);
+    }
+
+    if (sidebarCollapseToggle) {
+      sidebarCollapseToggle.addEventListener("click", toggleSidebarCollapse);
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleThemeMenu();
+      });
+    }
+
+    if (themeMenu) {
+      themeMenu.addEventListener("click", event => event.stopPropagation());
+    }
+
+    document.addEventListener("click", closeThemeMenu);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeThemeMenu();
+        closeResponsiveNav();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      syncResponsiveNav();
+      syncSidebarCollapse(sidebarCollapsed);
+    });
+
+    setTheme(getStoredTheme(), { skipRender: true });
+    render();
+    syncResponsiveNav(false);
+    syncSidebarCollapse(false);
+    syncThemeControls();
+  </script>
+
+</body>
+</html>
