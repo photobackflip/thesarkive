@@ -1,6 +1,21 @@
 {
   "name": "thesarkive",
   "compatibility_date": "2026-07-09",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "thesarkive.com",
+      "custom_domain": true
+    }
+  ],
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}{
+  "name": "thesarkive",
+  "compatibility_date": "2026-07-09",
   "assets": {
     "directory": ".",
     "html_handling": "auto-trailing-slash",
