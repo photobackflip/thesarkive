@@ -3515,7 +3515,7 @@ const gamesById = {
 	  appId: 3646280,
 	  archiveNumber: "189",
 	  title: "World Alone: Dreampools",
-	  assetHash: "",
+	  assetHash: "9cff000299eef8a241cb973cb20073a6ba7b93f0",
 	  releaseDate: "Apr 28, 2025",
 	  publishers: "DCE Projects",
 	  developers: "DCE Projects",
