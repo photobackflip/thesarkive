@@ -3563,6 +3563,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3672540: {
+	  appId: 3672540,
+	  archiveNumber: "192",
+	  title: "Backrooms Loop",
+	  assetHash: "72e608889fbf598139e8179ecdcc676706ce3ee7",
+	  releaseDate: "May 9, 2025",
+	  publishers: "N.C Bana",
+	  developers: "N.C Bana",
+	  shortDescription: "Backroom Loop is a first-person psychological horror (entertainment) game. You are trapped in a familiar-feeling space, exploring and escaping… only to return to the start. Can you break free from the loop?",
+	  durationPlayed: "D032.G04 - 08.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -3598,6 +3616,6 @@ const dayMenus = {
   DAY029_250626: [4704690,3166250,3301970,3291890,3169330,2900660,3119220],
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
-  DAY032_080726: [3646280,3423660,3490820]
+  DAY032_080726: [3646280,3423660,3490820,3672540]
 };
 
