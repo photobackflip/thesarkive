@@ -3612,7 +3612,7 @@ const gamesById = {
 	  shortDescription: "Pool core games. Explore the open pool core, find all the ducks, and unlock new scenes. Relaxing sound effects, no ghost elements, short process, produced by a 15 year old junior high school student alone.",
 	  durationPlayed: "D032.G06 - 08.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "DNF",
 	  vodLink: "",
 	  notes: [
 		""
