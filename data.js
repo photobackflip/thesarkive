@@ -3558,7 +3558,7 @@ const gamesById = {
 	  shortDescription: "Meme hordes are attacking! Choose one of four heroes and survive 30 minutes in the hellish Bullet Hell Backrooms!",
 	  durationPlayed: "D032.G03 - 08.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "NEXT!",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3577,6 +3577,24 @@ const gamesById = {
 	  durationPlayed: "D032.G04 - 08.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	2568000: {
+	  appId: 2568000,
+	  archiveNumber: "193",
+	  title: "漫游后室 Roaming Backrooms",
+	  assetHash: "",
+	  releaseDate: "May 11, 2025",
+	  publishers: "冷笑黑妖 ",
+	  developers: "搞机居委会",
+	  shortDescription: "This is a back room style game. There are many rooms in the game, like a maze, where players need to find a way out. Mainly focused on exploration, with some frightening elements. There may be monsters waiting for players around the corner, or chasing them. There is no bloody content.",
+	  durationPlayed: "D032.G05 - 08.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3616,6 +3634,6 @@ const dayMenus = {
   DAY029_250626: [4704690,3166250,3301970,3291890,3169330,2900660,3119220],
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
-  DAY032_080726: [3646280,3423660,3490820,3672540]
+  DAY032_080726: [3646280,3423660,3490820,3672540,2568000]
 };
 
