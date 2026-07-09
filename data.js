@@ -3615,7 +3615,7 @@ const gamesById = {
 	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
-		""
+		"Sark spent about 30mins running to the edge of the map to find a wall."
 	  ]
 	}
 };
