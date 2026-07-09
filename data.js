@@ -3522,6 +3522,42 @@ const gamesById = {
 	  shortDescription: "World Alone: Dreampools is a single-player Backrooms experience focused on dreamlike liminal pools. The game features a narrative told through cinematic sequences and immersive environments. Feel the true essence of solitude in World Alone... ",
 	  durationPlayed: "D032.G01 - 08.07.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3423660: {
+	  appId: 3423660,
+	  archiveNumber: "190",
+	  title: "Backrooms: Exploration",
+	  assetHash: "",
+	  releaseDate: "May 2, 2025",
+	  publishers: "HNStudios",
+	  developers: "HNStudios",
+	  shortDescription: "Backrooms: Exploration is a single-player horror game, which takes place in 2020. Two friends have lost their jobs due to COVID-19, but they still have to bring food to the table. After a failed heist, one of them ends up in the Backrooms. Now your only mission is to survive.",
+	  durationPlayed: "D032.G02 - 08.07.26",
+	  playedWith: "SARK",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3490820: {
+	  appId: 3490820,
+	  archiveNumber: "191",
+	  title: "Meme Survivors: Backrooms",
+	  assetHash: "",
+	  releaseDate: "May 8, 2025",
+	  publishers: "Gemütlich Kayling",
+	  developers: "Gemütlich Kayling",
+	  shortDescription: "Meme hordes are attacking! Choose one of four heroes and survive 30 minutes in the hellish Bullet Hell Backrooms!",
+	  durationPlayed: "D032.G03 - 08.07.26",
+	  playedWith: "SARK",
 	  outcome: "",
 	  vodLink: "",
 	  notes: [
@@ -3562,5 +3598,6 @@ const dayMenus = {
   DAY029_250626: [4704690,3166250,3301970,3291890,3169330,2900660,3119220],
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
-  DAY032_080726: [3646280]
+  DAY032_080726: [3646280,3423660,3490820]
 };
+
