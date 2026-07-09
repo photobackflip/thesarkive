@@ -1,4 +1,4 @@
-const totalGames = 298;
+const totalGames = 299;
 
 const gamesById = {
 	
@@ -3589,10 +3589,28 @@ const gamesById = {
 	  title: "漫游后室 Roaming Backrooms",
 	  assetHash: "",
 	  releaseDate: "May 11, 2025",
-	  publishers: "冷笑黑妖 ",
+	  publishers: "冷笑黑妖",
 	  developers: "搞机居委会",
 	  shortDescription: "This is a back room style game. There are many rooms in the game, like a maze, where players need to find a way out. Mainly focused on exploration, with some frightening elements. There may be monsters waiting for players around the corner, or chasing them. There is no bloody content.",
 	  durationPlayed: "D032.G05 - 08.07.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	2398260: {
+	  appId: 2398260,
+	  archiveNumber: "194",
+	  title: "池畔追思 Poolcore Reflection",
+	  assetHash: "",
+	  releaseDate: "Oct 14, 2023",
+	  publishers: "冷笑黑妖",
+	  developers: "搞机居委会",
+	  shortDescription: "Pool core games. Explore the open pool core, find all the ducks, and unlock new scenes. Relaxing sound effects, no ghost elements, short process, produced by a 15 year old junior high school student alone.",
+	  durationPlayed: "D032.G06 - 08.07.26",
 	  playedWith: "SARK",
 	  outcome: "",
 	  vodLink: "",
@@ -3634,6 +3652,6 @@ const dayMenus = {
   DAY029_250626: [4704690,3166250,3301970,3291890,3169330,2900660,3119220],
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
-  DAY032_080726: [3646280,3423660,3490820,3672540,2568000]
+  DAY032_080726: [3646280,3423660,3490820,3672540,2568000,2398260]
 };
 
