@@ -3576,7 +3576,7 @@ const gamesById = {
 	  shortDescription: "Backroom Loop is a first-person psychological horror (entertainment) game. You are trapped in a familiar-feeling space, exploring and escaping… only to return to the start. Can you break free from the loop?",
 	  durationPlayed: "D032.G04 - 08.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
 		""
