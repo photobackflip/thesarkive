@@ -3720,7 +3720,7 @@ const gamesById = {
 	  shortDescription: "Backrooms Lost Runners is a co-op survival horror with team play, voice-reactive AI, and immersive puzzles. This isn’t a “walking simulator”: explore liminal spaces, outsmart entities, and remember—even a whisper can give you away.",
 	  durationPlayed: "D033.G06 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "-",
+	  outcome: "NEXT!",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3738,7 +3738,7 @@ const gamesById = {
 	  shortDescription: " You are the exploration team from company Async, you arrive to reported anomaly place and searching for anomalies, but what would you find? Prepare yourself for a gripping and heart-pounding adventure in EXPEDITION TO THE BACKROOMS, where every step could be your last. ",
 	  durationPlayed: "D033.G07 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "-",
+	  outcome: "NEXT!",
 	  vodLink: "",
 	  notes: [
 		""
