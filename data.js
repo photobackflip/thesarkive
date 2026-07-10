@@ -3523,7 +3523,7 @@ const gamesById = {
 	  durationPlayed: "D032.G01 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/3UsLINJjpPU?t=3556",
 	  notes: [
 		""
 	  ]
@@ -3541,7 +3541,7 @@ const gamesById = {
 	  durationPlayed: "D032.G02 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/3UsLINJjpPU?t=5863",
 	  notes: [
 		""
 	  ]
@@ -3559,7 +3559,7 @@ const gamesById = {
 	  durationPlayed: "D032.G03 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/3UsLINJjpPU?t=10050",
 	  notes: [
 		""
 	  ]
@@ -3577,7 +3577,7 @@ const gamesById = {
 	  durationPlayed: "D032.G04 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/3UsLINJjpPU?t=13920",
 	  notes: [
 		""
 	  ]
@@ -3595,7 +3595,7 @@ const gamesById = {
 	  durationPlayed: "D032.G05 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/3UsLINJjpPU?t=21417",
 	  notes: [
 		""
 	  ]
@@ -3613,7 +3613,7 @@ const gamesById = {
 	  durationPlayed: "D032.G06 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/3UsLINJjpPU?t=25061",
 	  notes: [
 		"Sark spent about 30mins running to the edge of the map to find a wall."
 	  ]
