@@ -1,4 +1,4 @@
-const totalGames = 299;
+const totalGames = 301;
 
 const gamesById = {
 	
@@ -3520,7 +3520,7 @@ const gamesById = {
 	  publishers: "DCE Projects",
 	  developers: "DCE Projects",
 	  shortDescription: "World Alone: Dreampools is a single-player Backrooms experience focused on dreamlike liminal pools. The game features a narrative told through cinematic sequences and immersive environments. Feel the true essence of solitude in World Alone... ",
-	  durationPlayed: "D032.G01 - 08.07.26",
+	  durationPlayed: "D032.G01 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "",
@@ -3538,7 +3538,7 @@ const gamesById = {
 	  publishers: "HNStudios",
 	  developers: "HNStudios",
 	  shortDescription: "Backrooms: Exploration is a single-player horror game, which takes place in 2020. Two friends have lost their jobs due to COVID-19, but they still have to bring food to the table. After a failed heist, one of them ends up in the Backrooms. Now your only mission is to survive.",
-	  durationPlayed: "D032.G02 - 08.07.26",
+	  durationPlayed: "D032.G02 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "NEXT!",
 	  vodLink: "",
@@ -3556,7 +3556,7 @@ const gamesById = {
 	  publishers: "Gemütlich Kayling",
 	  developers: "Gemütlich Kayling",
 	  shortDescription: "Meme hordes are attacking! Choose one of four heroes and survive 30 minutes in the hellish Bullet Hell Backrooms!",
-	  durationPlayed: "D032.G03 - 08.07.26",
+	  durationPlayed: "D032.G03 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "NEXT!",
 	  vodLink: "",
@@ -3574,7 +3574,7 @@ const gamesById = {
 	  publishers: "N.C Bana",
 	  developers: "N.C Bana",
 	  shortDescription: "Backroom Loop is a first-person psychological horror (entertainment) game. You are trapped in a familiar-feeling space, exploring and escaping… only to return to the start. Can you break free from the loop?",
-	  durationPlayed: "D032.G04 - 08.07.26",
+	  durationPlayed: "D032.G04 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "",
@@ -3592,7 +3592,7 @@ const gamesById = {
 	  publishers: "冷笑黑妖",
 	  developers: "搞机居委会",
 	  shortDescription: "This is a back room style game. There are many rooms in the game, like a maze, where players need to find a way out. Mainly focused on exploration, with some frightening elements. There may be monsters waiting for players around the corner, or chasing them. There is no bloody content.",
-	  durationPlayed: "D032.G05 - 08.07.26",
+	  durationPlayed: "D032.G05 - 09.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "",
@@ -3610,12 +3610,30 @@ const gamesById = {
 	  publishers: "冷笑黑妖",
 	  developers: "搞机居委会",
 	  shortDescription: "Pool core games. Explore the open pool core, find all the ducks, and unlock new scenes. Relaxing sound effects, no ghost elements, short process, produced by a 15 year old junior high school student alone.",
-	  durationPlayed: "D032.G06 - 08.07.26",
+	  durationPlayed: "D032.G06 - 09.07.26",
 	  playedWith: "SARK",
-	  outcome: "DONE",
+	  outcome: "NEXT!",
 	  vodLink: "",
 	  notes: [
 		"Sark spent about 30mins running to the edge of the map to find a wall."
+	  ]
+	},
+	
+	2719940: {
+	  appId: 2719940,
+	  archiveNumber: "195",
+	  title: "The Bonerooms",
+	  assetHash: "",
+	  releaseDate: "Oct 14, 2023",
+	  publishers: "Jasozz Games",
+	  developers: "Jasozz Games",
+	  shortDescription: "The Bonerooms is a goofy horror-themed multiplayer game about surviving in a living maze. What will be your downfall? The spooky inhabitants of the maze, or your fellow players?",
+	  durationPlayed: "D033.G01 - 11.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		""
 	  ]
 	}
 };
@@ -3652,6 +3670,7 @@ const dayMenus = {
   DAY029_250626: [4704690,3166250,3301970,3291890,3169330,2900660,3119220],
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
-  DAY032_080726: [3646280,3423660,3490820,3672540,2568000,2398260]
+  DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
+  DAY033_110726: [2719940]
 };
 
