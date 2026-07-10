@@ -3630,12 +3630,30 @@ const gamesById = {
 	  shortDescription: "The Bonerooms is a goofy horror-themed multiplayer game about surviving in a living maze. What will be your downfall? The spooky inhabitants of the maze, or your fellow players?",
 	  durationPlayed: "D033.G01 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "",
+	  outcome: "NEXT!",
 	  vodLink: "",
 	  notes: [
 		""
 	  ]
-	}
+	},
+	
+	3333740: {
+	  appId: 3333740,
+	  archiveNumber: "196",
+	  title: "Exit Together",
+	  assetHash: "",
+	  releaseDate: "May 30, 2025",
+	  publishers: "Çınar's Art",
+	  developers: "Çınar's Art",
+	  shortDescription: " ANOMALY LOOP ADVENTURE Play solo or with up to 6 players. Spot anomalies, solve puzzles, and escape the loop. Will you reach Room 9 or stay trapped forever? ",
+	  durationPlayed: "D033.G02 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
 };
 
 const dayMenus = {
@@ -3671,6 +3689,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940]
+  DAY033_110726: [2719940,3333740]
 };
 
