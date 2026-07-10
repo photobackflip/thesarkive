@@ -705,7 +705,7 @@ b, strong { font-weight: 700; }
   display: grid;
   gap: 28px;
   width: 100%;
-  max-width: 620px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
