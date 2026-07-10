@@ -3654,6 +3654,42 @@ const gamesById = {
 		""
 	  ]
 	},
+	
+	2246350: {
+	  appId: 2246350,
+	  archiveNumber: "197",
+	  title: "Backroom Warfare II",
+	  assetHash: "",
+	  releaseDate: "May 30, 2025",
+	  publishers: "Naughty Clogs",
+	  developers: "Naughty Clogs",
+	  shortDescription: "Fight for survival in the Backrooms. Play with friends in multiplayer or solo against AI bots. Unearth the terrifying monster scorestreak and get ready for an intense experience!",
+	  durationPlayed: "D033.G03 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	2702190: {
+	  appId: 2702190,
+	  archiveNumber: "198",
+	  title: "BACKROOMS: DON'T LOOK AWAY",
+	  assetHash: "1978f7b1f69db9ab4f555fba0aa0a1810a063519",
+	  releaseDate: "Jan 26, 2026",
+	  publishers: "DMNT Interactive",
+	  developers: "DMNT Interactive",
+	  shortDescription: "A terrifying multiplayer horror experience set in the Backrooms. Four survivors against player-controlled mannequins that can only move when nobody is watching!",
+	  durationPlayed: "D033.G04 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	}
 };
 
 const dayMenus = {
@@ -3689,6 +3725,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740]
+  DAY033_110726: [2719940,3333740,2246350,2702190]
 };
 
