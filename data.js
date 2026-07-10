@@ -3676,7 +3676,7 @@ const gamesById = {
 	2702190: {
 	  appId: 2702190,
 	  archiveNumber: "198",
-	  title: "BACKROOMS: DON'T LOOK AWAY",
+	  title: "Backrooms: Don't Look Away",
 	  assetHash: "1978f7b1f69db9ab4f555fba0aa0a1810a063519",
 	  releaseDate: "Jan 26, 2026",
 	  publishers: "DMNT Interactive",
