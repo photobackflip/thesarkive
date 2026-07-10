@@ -3676,7 +3676,7 @@ const gamesById = {
 	2702190: {
 	  appId: 2702190,
 	  archiveNumber: "198",
-	  title: "Backrooms: Don't Look Away",
+	  title: "BACKROOMS: DON'T LOOK AWAY",
 	  assetHash: "1978f7b1f69db9ab4f555fba0aa0a1810a063519",
 	  releaseDate: "Jan 26, 2026",
 	  publishers: "DMNT Interactive",
@@ -3701,6 +3701,24 @@ const gamesById = {
 	  developers: "Headlight Studio",
 	  shortDescription: "Cooperate with up to 6 players to explore, search, and extract lost agents within the Backrooms. Solve puzzles, unlock tools, survive against entities, and progress through increasingly dangerous levels.",
 	  durationPlayed: "D033.G05 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3072120: {
+	  appId: 3072120,
+	  archiveNumber: "200",
+	  title: "Backrooms Lost Runners",
+	  assetHash: "",
+	  releaseDate: "Jun 18, 2026",
+	  publishers: "ShimStudioGames",
+	  developers: "ShimStudioGames",
+	  shortDescription: "Backrooms Lost Runners is a co-op survival horror with team play, voice-reactive AI, and immersive puzzles. This isn’t a “walking simulator”: explore liminal spaces, outsmart entities, and remember—even a whisper can give you away.",
+	  durationPlayed: "D033.G06 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "-",
 	  vodLink: "",
@@ -3743,6 +3761,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120]
 };
 
