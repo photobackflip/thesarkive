@@ -3749,7 +3749,7 @@ const gamesById = {
 	  appId: 3812010,
 	  archiveNumber: "202",
 	  title: "Backrooms: The Wrong Level",
-	  assetHash: "",
+	  assetHash: "bbd9c082b1d9e34de507bf7947756dfb9f72911b",
 	  releaseDate: "Feb 9, 2026",
 	  publishers: "SUDT Games",
 	  developers: "SUDT Games",
