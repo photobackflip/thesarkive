@@ -3725,6 +3725,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3038290: {
+	  appId: 3038290,
+	  archiveNumber: "201",
+	  title: "Expedition to the Backrooms",
+	  assetHash: "",
+	  releaseDate: "Jul 21, 2025",
+	  publishers: "1_Cutter_1",
+	  developers: "1_Cutter_1",
+	  shortDescription: " You are the exploration team from company Async, you arrive to reported anomaly place and searching for anomalies, but what would you find? Prepare yourself for a gripping and heart-pounding adventure in EXPEDITION TO THE BACKROOMS, where every step could be your last. ",
+	  durationPlayed: "D033.G07 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -3761,6 +3779,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290]
 };
 
