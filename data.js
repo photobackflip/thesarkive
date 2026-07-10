@@ -3676,7 +3676,7 @@ const gamesById = {
 	2702190: {
 	  appId: 2702190,
 	  archiveNumber: "198",
-	  title: "Backrooms: Don't Look Away",
+	  title: "BACKROOMS: DON'T LOOK AWAY",
 	  assetHash: "1978f7b1f69db9ab4f555fba0aa0a1810a063519",
 	  releaseDate: "Jan 26, 2026",
 	  publishers: "DMNT Interactive",
@@ -3743,6 +3743,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3812010: {
+	  appId: 3812010,
+	  archiveNumber: "202",
+	  title: "Backrooms: The Wrong Level",
+	  assetHash: "",
+	  releaseDate: "Feb 9, 2026",
+	  publishers: "SUDT Games",
+	  developers: "SUDT Games",
+	  shortDescription: "Backrooms: The Wrong Level is a cooperative horror game for 1–4 players. Alone or with friends, you will explore the game, trying to understand where you are, what is happening and how to survive on this hellish level.",
+	  durationPlayed: "D033.G08 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -3779,6 +3797,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010]
 };
 
