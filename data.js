@@ -3629,7 +3629,7 @@ const gamesById = {
 	  developers: "Jasozz Games",
 	  shortDescription: "The Bonerooms is a goofy horror-themed multiplayer game about surviving in a living maze. What will be your downfall? The spooky inhabitants of the maze, or your fellow players?",
 	  durationPlayed: "D033.G01 - 11.07.26",
-	  playedWith: "SARK",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "",
 	  vodLink: "",
 	  notes: [
