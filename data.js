@@ -3666,7 +3666,7 @@ const gamesById = {
 	  shortDescription: "Fight for survival in the Backrooms. Play with friends in multiplayer or solo against AI bots. Unearth the terrifying monster scorestreak and get ready for an intense experience!",
 	  durationPlayed: "D033.G03 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "-",
+	  outcome: "NEXT!",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3683,6 +3683,24 @@ const gamesById = {
 	  developers: "DMNT Interactive",
 	  shortDescription: "A terrifying multiplayer horror experience set in the Backrooms. Four survivors against player-controlled mannequins that can only move when nobody is watching!",
 	  durationPlayed: "D033.G04 - 11.07.26",
+	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	2835530: {
+	  appId: 2835530,
+	  archiveNumber: "199",
+	  title: "Backrooms: Extractions",
+	  assetHash: "",
+	  releaseDate: "May 1, 2025",
+	  publishers: "Headlight Studio",
+	  developers: "Headlight Studio",
+	  shortDescription: "Cooperate with up to 6 players to explore, search, and extract lost agents within the Backrooms. Solve puzzles, unlock tools, survive against entities, and progress through increasingly dangerous levels.",
+	  durationPlayed: "D033.G05 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "-",
 	  vodLink: "",
@@ -3725,6 +3743,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530]
 };
 
