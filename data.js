@@ -3774,6 +3774,24 @@ const gamesById = {
 	  shortDescription: "Backrooms: The Wrong Door is a cooperative psychological horror game for 1–4 players. A single wrong door leads you into a shifting nightmare where reality feels broken, familiar places become hostile, and every step forward may bring you closer to something watching from the dark.",
 	  durationPlayed: "D033.G09 - 11.08.26",
 	  playedWith: "SARK - NFEN",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4721000: {
+	  appId: 4721000,
+	  archiveNumber: "204",
+	  title: "Backrooms: Blackhole",
+	  assetHash: "76a7ca46d6fa39d72c31e3a7b21ad6c4c3167a6b",
+	  releaseDate: "June 5, 2026",
+	  publishers: "SUDT Games",
+	  developers: "SUDT Games",
+	  shortDescription: "Backrooms: Blackhole is a cooperative psychological horror game for 1–4 players. Somewhere deep within the endless halls, reality begins collapsing into a growing void that consumes light, sound, and everything around it. The deeper you descend, the less the world makes sense — and the harder...",
+	  durationPlayed: "D033.G10 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -3815,6 +3833,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000]
 };
 
