@@ -3846,6 +3846,24 @@ const gamesById = {
 	  shortDescription: "Backrooms: The True Level is a cooperative horror game for 1–4 players. Together or alone, you will explore this level trying to understand whether it is real, but can the darkness in this world be peaceful?",
 	  durationPlayed: "D033.G13 - 11.08.26",
 	  playedWith: "SARK - NFEN",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4618090: {
+	  appId: 4618090,
+	  archiveNumber: "208",
+	  title: "Backrooms: The Last Observer",
+	  assetHash: "f453295ac6061ff1abf4b3bce32ba48ece5415de",
+	  releaseDate: "May 15, 2026",
+	  publishers: "Skmaestro",
+	  developers: "Skmaestro",
+	  shortDescription: "Backrooms: The Last Observer is a cooperative horror game. Descend into something that resists understanding, where perception itself begins to fracture. You are here not to fight, but to witness — and sometimes, witnessing is the worst thing you can do.",
+	  durationPlayed: "D033.G14 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -3887,6 +3905,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090]
 };
 
