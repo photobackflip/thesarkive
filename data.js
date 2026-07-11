@@ -2807,6 +2807,7 @@ const gamesById = {
 	  playedWith: "SARK - STU - NFEN",
 	  outcome: "DNF",
 	  vodLink: "https://youtu.be/Ky5kovUUfyU?t=15647",
+	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=27369",
 	  notes: [
 		"Actually a good game."
 	  ]
@@ -3631,7 +3632,7 @@ const gamesById = {
 	  durationPlayed: "D033.G01 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=3177",
 	  notes: [
 		""
 	  ]
@@ -3649,9 +3650,10 @@ const gamesById = {
 	  durationPlayed: "D033.G02 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DNF",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=6368",
+	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=35151",
 	  notes: [
-		""
+		"Game was played at the beginning and end of the stream"
 	  ]
 	},
 	
@@ -3667,7 +3669,7 @@ const gamesById = {
 	  durationPlayed: "D033.G03 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=8822",
 	  notes: [
 		""
 	  ]
@@ -3685,7 +3687,7 @@ const gamesById = {
 	  durationPlayed: "D033.G04 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DNF",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=11041",
 	  notes: [
 		""
 	  ]
@@ -3703,7 +3705,7 @@ const gamesById = {
 	  durationPlayed: "D033.G05 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=11594",
 	  notes: [
 		""
 	  ]
@@ -3721,7 +3723,7 @@ const gamesById = {
 	  durationPlayed: "D033.G06 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DNF",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13089",
 	  notes: [
 		""
 	  ]
@@ -3739,7 +3741,7 @@ const gamesById = {
 	  durationPlayed: "D033.G07 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DNF",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13897",
 	  notes: [
 		""
 	  ]
@@ -3757,7 +3759,7 @@ const gamesById = {
 	  durationPlayed: "D033.G08 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20013",
 	  notes: [
 		""
 	  ]
@@ -3775,7 +3777,7 @@ const gamesById = {
 	  durationPlayed: "D033.G09 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20014",
 	  notes: [
 		""
 	  ]
@@ -3793,7 +3795,7 @@ const gamesById = {
 	  durationPlayed: "D033.G10 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20678",
 	  notes: [
 		""
 	  ]
@@ -3811,7 +3813,7 @@ const gamesById = {
 	  durationPlayed: "D033.G11 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=21422",
 	  notes: [
 		""
 	  ]
@@ -3829,9 +3831,9 @@ const gamesById = {
 	  durationPlayed: "D033.G12 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=22576",
 	  notes: [
-		"Epic gamer moment."
+		"Finally they got a SK win."
 	  ]
 	},
 	
@@ -3847,7 +3849,7 @@ const gamesById = {
 	  durationPlayed: "D033.G13 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=23680",
 	  notes: [
 		""
 	  ]
@@ -3865,7 +3867,7 @@ const gamesById = {
 	  durationPlayed: "D033.G14 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=24243",
 	  notes: [
 		""
 	  ]
@@ -3883,7 +3885,7 @@ const gamesById = {
 	  durationPlayed: "D033.G15 - 11.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "-",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=24804",
 	  notes: [
 		""
 	  ]
@@ -3923,6 +3925,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740]
 };
 
