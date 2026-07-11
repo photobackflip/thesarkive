@@ -3630,7 +3630,7 @@ const gamesById = {
 	  shortDescription: "The Bonerooms is a goofy horror-themed multiplayer game about surviving in a living maze. What will be your downfall? The spooky inhabitants of the maze, or your fellow players?",
 	  durationPlayed: "D033.G01 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "NEXT!",
+	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3648,7 +3648,7 @@ const gamesById = {
 	  shortDescription: " ANOMALY LOOP ADVENTURE Play solo or with up to 6 players. Spot anomalies, solve puzzles, and escape the loop. Will you reach Room 9 or stay trapped forever? ",
 	  durationPlayed: "D033.G02 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "-",
+	  outcome: "DNF",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3666,7 +3666,7 @@ const gamesById = {
 	  shortDescription: "Fight for survival in the Backrooms. Play with friends in multiplayer or solo against AI bots. Unearth the terrifying monster scorestreak and get ready for an intense experience!",
 	  durationPlayed: "D033.G03 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "NEXT!",
+	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3684,7 +3684,7 @@ const gamesById = {
 	  shortDescription: "A terrifying multiplayer horror experience set in the Backrooms. Four survivors against player-controlled mannequins that can only move when nobody is watching!",
 	  durationPlayed: "D033.G04 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "-",
+	  outcome: "DNF",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3720,7 +3720,7 @@ const gamesById = {
 	  shortDescription: "Backrooms Lost Runners is a co-op survival horror with team play, voice-reactive AI, and immersive puzzles. This isn’t a “walking simulator”: explore liminal spaces, outsmart entities, and remember—even a whisper can give you away.",
 	  durationPlayed: "D033.G06 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "NEXT!",
+	  outcome: "DNF",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3738,7 +3738,7 @@ const gamesById = {
 	  shortDescription: " You are the exploration team from company Async, you arrive to reported anomaly place and searching for anomalies, but what would you find? Prepare yourself for a gripping and heart-pounding adventure in EXPEDITION TO THE BACKROOMS, where every step could be your last. ",
 	  durationPlayed: "D033.G07 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "NEXT!",
+	  outcome: "DNF",
 	  vodLink: "",
 	  notes: [
 		""
@@ -3756,6 +3756,24 @@ const gamesById = {
 	  shortDescription: "Backrooms: The Wrong Level is a cooperative horror game for 1–4 players. Alone or with friends, you will explore the game, trying to understand where you are, what is happening and how to survive on this hellish level.",
 	  durationPlayed: "D033.G08 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4720860: {
+	  appId: 4720860,
+	  archiveNumber: "203",
+	  title: "Backrooms: Fade",
+	  assetHash: "e7fb94ef507b599e70e08ccf908a01056d19a1dc",
+	  releaseDate: "May 31, 2026",
+	  publishers: "SUDT Games",
+	  developers: "SUDT Games",
+	  shortDescription: "Backrooms: The Wrong Door is a cooperative psychological horror game for 1–4 players. A single wrong door leads you into a shifting nightmare where reality feels broken, familiar places become hostile, and every step forward may bring you closer to something watching from the dark.",
+	  durationPlayed: "D033.G09 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -3797,6 +3815,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860]
 };
 
