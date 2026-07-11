@@ -3766,7 +3766,7 @@ const gamesById = {
 	4720860: {
 	  appId: 4720860,
 	  archiveNumber: "203",
-	  title: "Backrooms: Fade",
+	  title: "Backrooms: The Wrong Door",
 	  assetHash: "e7fb94ef507b599e70e08ccf908a01056d19a1dc",
 	  releaseDate: "May 31, 2026",
 	  publishers: "SUDT Games",
