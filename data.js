@@ -3810,6 +3810,24 @@ const gamesById = {
 	  shortDescription: "Backrooms: Fade is a cooperative horror game for 1–4 players. Alone or with friends, you will explore a nightmarish level, trying to understand where you are, what is happening, and how to survive.",
 	  durationPlayed: "D033.G11 - 11.08.26",
 	  playedWith: "SARK - NFEN",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4163010: {
+	  appId: 4163010,
+	  archiveNumber: "206",
+	  title: "Backrooms: Labyrinth Glitch",
+	  assetHash: "13898f16b0cd52ebbd0a9e3b72f3990fe850b035",
+	  releaseDate: "Nov 29, 2025",
+	  publishers: "Skmaestro",
+	  developers: "Skmaestro",
+	  shortDescription: "Backrooms: Labyrinth Glitch is a cooperative horror experience for 1–4 players.Silence has a sound — and it’s not what it should be.Every step feels wrong, every shadow seems to move when you’re not looking.The only question is: how long can you keep going?",
+	  durationPlayed: "D033.G12 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -3851,6 +3869,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010]
 };
 
