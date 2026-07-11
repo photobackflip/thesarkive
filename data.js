@@ -3864,6 +3864,24 @@ const gamesById = {
 	  shortDescription: "Backrooms: The Last Observer is a cooperative horror game. Descend into something that resists understanding, where perception itself begins to fracture. You are here not to fight, but to witness — and sometimes, witnessing is the worst thing you can do.",
 	  durationPlayed: "D033.G14 - 11.08.26",
 	  playedWith: "SARK - NFEN",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4617040: {
+	  appId: 4617040,
+	  archiveNumber: "209",
+	  title: "Backrooms: Into the Hole",
+	  assetHash: "5565ecee92f7d36f974983e72999f6d1fb268f1d",
+	  releaseDate: "May 30, 2026",
+	  publishers: "Skmaestro",
+	  developers: "Skmaestro",
+	  shortDescription: "Discover an in-between space inspired by the Backrooms series. Make your way forward by jumping into holes, find alternative paths, and survive in this labyrinthine dimension. Play solo or in co-op mode and choose your path to the exit… if there is one.",
+	  durationPlayed: "D033.G15 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -3905,6 +3923,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040]
 };
 
