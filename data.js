@@ -3792,12 +3792,30 @@ const gamesById = {
 	  shortDescription: "Backrooms: Blackhole is a cooperative psychological horror game for 1–4 players. Somewhere deep within the endless halls, reality begins collapsing into a growing void that consumes light, sound, and everything around it. The deeper you descend, the less the world makes sense — and the harder...",
 	  durationPlayed: "D033.G10 - 11.08.26",
 	  playedWith: "SARK - NFEN",
+	  outcome: "NEXT!",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4720870: {
+	  appId: 4720870,
+	  archiveNumber: "205",
+	  title: "Backrooms: Fade",
+	  assetHash: "02d9e157f8f5b85655681dcce5440df6cddeaf03",
+	  releaseDate: "Jul 10, 2026",
+	  publishers: "SUDT Games",
+	  developers: "SUDT Games",
+	  shortDescription: "Backrooms: Fade is a cooperative horror game for 1–4 players. Alone or with friends, you will explore a nightmarish level, trying to understand where you are, what is happening, and how to survive.",
+	  durationPlayed: "D033.G11 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
 		""
 	  ]
-	}
+	},
 };
 
 const dayMenus = {
@@ -3833,6 +3851,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870]
 };
 
