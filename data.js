@@ -3828,12 +3828,30 @@ const gamesById = {
 	  shortDescription: "Backrooms: Labyrinth Glitch is a cooperative horror experience for 1–4 players.Silence has a sound — and it’s not what it should be.Every step feels wrong, every shadow seems to move when you’re not looking.The only question is: how long can you keep going?",
 	  durationPlayed: "D033.G12 - 11.08.26",
 	  playedWith: "SARK - NFEN",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		"Epic gamer moment."
+	  ]
+	},
+	
+	3811970: {
+	  appId: 3811970,
+	  archiveNumber: "207",
+	  title: "Backrooms: The True Level",
+	  assetHash: "1d7f4c147b4e2c72af6d609ff2c96e46d671ced9",
+	  releaseDate: "Jan 6, 2026",
+	  publishers: "Skmaestro",
+	  developers: "Skmaestro",
+	  shortDescription: "Backrooms: The True Level is a cooperative horror game for 1–4 players. Together or alone, you will explore this level trying to understand whether it is real, but can the darkness in this world be peaceful?",
+	  durationPlayed: "D033.G13 - 11.08.26",
+	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
 		""
 	  ]
-	},
+	}
 };
 
 const dayMenus = {
@@ -3869,6 +3887,6 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970]
 };
 
