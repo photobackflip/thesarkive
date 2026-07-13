@@ -3704,7 +3704,7 @@ const gamesById = {
 	  shortDescription: "Cooperate with up to 6 players to explore, search, and extract lost agents within the Backrooms. Solve puzzles, unlock tools, survive against entities, and progress through increasingly dangerous levels.",
 	  durationPlayed: "D033.G05 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "NEXT!",
+	  outcome: "UNFINISHED BIZ",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=11594",
 	  notes: [
 		""
@@ -3722,7 +3722,7 @@ const gamesById = {
 	  shortDescription: "Backrooms Lost Runners is a co-op survival horror with team play, voice-reactive AI, and immersive puzzles. This isn’t a “walking simulator”: explore liminal spaces, outsmart entities, and remember—even a whisper can give you away.",
 	  durationPlayed: "D033.G06 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "DNF",
+	  outcome: "UNFINISHED BIZ",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13089",
 	  notes: [
 		""
@@ -3740,7 +3740,7 @@ const gamesById = {
 	  shortDescription: " You are the exploration team from company Async, you arrive to reported anomaly place and searching for anomalies, but what would you find? Prepare yourself for a gripping and heart-pounding adventure in EXPEDITION TO THE BACKROOMS, where every step could be your last. ",
 	  durationPlayed: "D033.G07 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "DNF",
+	  outcome: "UNFINISHED BIZ",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13897",
 	  notes: [
 		""
@@ -3925,6 +3925,7 @@ const dayMenus = {
   DAY030_260626: [3169330,3166250,3542420,3373750,3424830,2820390],
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
-  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740]
+  DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
+  DAY034_140726: [3119220]
 };
 
