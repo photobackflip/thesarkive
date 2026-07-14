@@ -3412,11 +3412,11 @@ const gamesById = {
 	  shortDescription: "Ethereal Abyss is a single-player third-person shooter with psychological horror elements, inspired by the Backrooms. Navigate multi-dimensional levels, solve puzzles with time-inversion mechanic, while resisting enslavement by your mind.",
 	  durationPlayed: "D029.G06 - 25.06.26",
 	  playedWith: "SARK",
-	  outcome: "NEXT!",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/X4EfWpg8cu4?t=21354",
+	  vodLink2: "",
 	  notes: [
-		"Done, but not done.",
-		"TBC"
+		""
 	  ]
 	},
 	
@@ -3431,10 +3431,10 @@ const gamesById = {
 	  shortDescription: "What would you do if you were trapped in a dimension of seemingly endless rooms that went on for eternity?",
 	  durationPlayed: "D029.G07 - 25.06.26",
 	  playedWith: "SARK",
-	  outcome: "DNF",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/X4EfWpg8cu4?t=26735",
 	  notes: [
-		"TBC"
+		""
 	  ]
 	},
 	
@@ -3926,6 +3926,6 @@ const dayMenus = {
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
   DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
-  DAY034_140726: [3119220]
+  DAY034_140726: [3119220,2900660,2453060]
 };
 
