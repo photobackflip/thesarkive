@@ -2987,10 +2987,11 @@ const gamesById = {
 	  shortDescription: "Experience backrooms like never before. Dreamcore is the ultimate psychological exploration game, set in the largest liminal world ever made. No guides, no path—only intuition. Will you keep your bearings in a world designed to make you lose them?",
 	  durationPlayed: "D024.G07 - 16.06.26",
 	  playedWith: "SARK",
-	  outcome: "DNF",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/gbFIjJjDk_g?t=27341",
 	  vodLink2: "https://youtu.be/cp8hoMqjE14?t=1039",
 	  vodLink3: "https://youtu.be/z7ys0t_FhEY?t=1766",
+	  vodLink4: "",
 	  notes: [
 		""
 	  ]
@@ -3653,7 +3654,7 @@ const gamesById = {
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=6368",
 	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=35151",
 	  notes: [
-		"Game was played at the beginning and end of the stream"
+		"VOD1 is with the pals. Rest are solo Sark."
 	  ]
 	},
 	
@@ -3889,7 +3890,25 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
-	}
+	},
+	
+	2950760: {
+	  appId: 2950760,
+	  archiveNumber: "210",
+	  title: "EXIT16: Byilhan Hotel ",
+	  assetHash: "",
+	  releaseDate: "Mar 26, 2025",
+	  publishers: "SXTEEN",
+	  developers: "SXTEEN",
+	  shortDescription: " You are locked inside a Hotel filled with anomalies, inspired by internet culture and streamer Byilhan. You must find all the anomalies on each floor to escape. The game also features other available environments to explore. ",
+	  durationPlayed: "D034.G01 - 14.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		"AKA - EXIT: Anomalous Zones "
+	  ]
+	},
 };
 
 const dayMenus = {
@@ -3926,6 +3945,6 @@ const dayMenus = {
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
   DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
-  DAY034_140726: [3119220,2900660,2453060]
+  DAY034_140726: [3119220,2900660,2453060,2950760,3333740]
 };
 
