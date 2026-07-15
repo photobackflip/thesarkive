@@ -3909,6 +3909,24 @@ const gamesById = {
 		"AKA - EXIT: Anomalous Zones "
 	  ]
 	},
+	
+	3657530: {
+	  appId: 3657530,
+	  archiveNumber: "211",
+	  title: "BACKROOMS LIMINAL ESCAPE",
+	  assetHash: "c478ed5c097cf5c6d5d0518c7a682d17dfe113eb",
+	  releaseDate: "May 13, 2025",
+	  publishers: "kc6067",
+	  developers: "kc6067",
+	  shortDescription: "BACKROOMS: LIMINAL ESCAPE is a VHS-style horror game where you explore eerie liminal spaces through a camcorder. BACKROOMS: LIMINAL ESCAPE is More than just a walking sim, it features intense levels that require you to hide, run, stay quite, and survive in a creepy, analog nightmare.",
+	  durationPlayed: "D035.G01 - 15.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	}
 };
 
 const dayMenus = {
@@ -3945,6 +3963,7 @@ const dayMenus = {
   DAY031_270626: [4704690,2820390],
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
   DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
-  DAY034_140726: [3119220,2900660,2453060,2950760,3333740]
+  DAY034_140726: [3119220,2900660,2453060,2950760,3333740],
+  DAY035_150726: [3657530]
 };
 
