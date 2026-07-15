@@ -3743,8 +3743,10 @@ const gamesById = {
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "UNFINISHED BIZ",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13897",
+	  vodLink2: "",
 	  notes: [
-		""
+		"VOD1 is with Vanoss/Nogla/Terror",
+		"VOD2 is with APL"
 	  ]
 	},
 	
@@ -3926,6 +3928,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3322980: {
+	  appId: 3322980,
+	  archiveNumber: "212",
+	  title: "Hotel 188",
+	  assetHash: "",
+	  releaseDate: "May 20, 2025",
+	  publishers: "Andes Interactive",
+	  developers: "Leonn Camayo",
+	  shortDescription: "Dive into a realistic experience of the Backrooms, without jumpscares, getting lost in impossible spaces and feeling like something is watching you. The uncertainty of not knowing where you're going will make you want to quit… Will you be able to make it to the end?",
+	  durationPlayed: "D035.G03 - 15.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -3964,6 +3984,6 @@ const dayMenus = {
   DAY032_090726: [3646280,3423660,3490820,3672540,2568000,2398260],
   DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
   DAY034_140726: [3119220,2900660,2453060,2950760,3333740],
-  DAY035_150726: [3657530]
+  DAY035_150726: [3657530,3038290,3657530,3322980]
 };
 
