@@ -3743,7 +3743,7 @@ const gamesById = {
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13897",
-	  vodLink2: "",
+	  vodLink2: "https://youtu.be/LGVoTddWHrE?t=6132",
 	  vodLink3: "",
 	  notes: [
 		"VOD1 is with Vanoss/Nogla/Terror",
@@ -3926,7 +3926,8 @@ const gamesById = {
 	  durationPlayed: "D035.G01 - 15.08.26",
 	  playedWith: "SARK",
 	  outcome: "-",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/LGVoTddWHrE?t=1537",
+	  vodLink2: "https://youtu.be/LGVoTddWHrE?t=21050",
 	  notes: [
 		""
 	  ]
@@ -3944,7 +3945,8 @@ const gamesById = {
 	  durationPlayed: "D036.G02 - 15.08.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/LGVoTddWHrE?t=23255",
+	  vodLink2: "",
 	  notes: [
 		""
 	  ]
