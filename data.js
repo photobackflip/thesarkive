@@ -3981,6 +3981,24 @@ const gamesById = {
 	  shortDescription: "Enter the disturbing world of Backrooms Level X, a first-person narrative survival horror game that immerses you in an endless labyrinth of desolate and liminal spaces. 13 levels and giant enemies await you in this unique experience.",
 	  durationPlayed: "D036.G04 - 15.08.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3746210: {
+	  appId: 3746210,
+	  archiveNumber: "215",
+	  title: "Backrooms Bodycam",
+	  assetHash: "30839897e87745a225ff30881806f08b504a51a8",
+	  releaseDate: "Jun 7, 2025",
+	  publishers: "Pine Games",
+	  developers: "Pine Games",
+	  shortDescription: "These are still the same yellow corridors and rooms inhabited by dangerous entities, but now you can fight them back!",
+	  durationPlayed: "D036.G05 - 15.08.26",
+	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -4025,6 +4043,6 @@ const dayMenus = {
   DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
   DAY034_140726: [3119220,2900660,2453060,2950760,3333740],
   DAY035_150726: [3657530,3038290,3657530,3322980],
-  DAY036_160726: [3038290,3322980,2559530,3303230]
+  DAY036_160726: [3038290,3322980,2559530,3303230,3746210]
 };
 
