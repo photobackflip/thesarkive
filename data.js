@@ -1,4 +1,4 @@
-const totalGames = 303;
+const totalGames = 304;
 
 const gamesById = {
 	
@@ -3154,7 +3154,7 @@ const gamesById = {
 	  durationPlayed: "D026.G06 - 20.06.26",
 	  playedWith: "SARK - APL - NFEN - STU",
 	  outcome: "NEXT!",
-	  vodLink: "https://youtu.be/jbumG5omtOs?t=14412",
+	  vodLink: "https://youtu.be/jbumG5omtOs?t=15934",
 	  vodLink2: "https://youtu.be/jbumG5omtOs?t=17527",
 	  notes: [
 		"VOD2 \"What's this Children of the Corn Malachi looking beast got to do with any of this?\"",
@@ -3744,7 +3744,7 @@ const gamesById = {
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13897",
 	  vodLink2: "https://youtu.be/LGVoTddWHrE?t=6132",
-	  vodLink3: "",
+	  vodLink3: "https://youtu.be/i1D9jgs6wso?t=1426",
 	  notes: [
 		"VOD1 is with Vanoss/Nogla/Terror",
 		"VOD2 is with APL",
@@ -3779,7 +3779,7 @@ const gamesById = {
 	  publishers: "SUDT Games",
 	  developers: "SUDT Games",
 	  shortDescription: "Backrooms: The Wrong Door is a cooperative psychological horror game for 1–4 players. A single wrong door leads you into a shifting nightmare where reality feels broken, familiar places become hostile, and every step forward may bring you closer to something watching from the dark.",
-	  durationPlayed: "D033.G09 - 11.08.26",
+	  durationPlayed: "D033.G09 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20014",
@@ -3797,7 +3797,7 @@ const gamesById = {
 	  publishers: "SUDT Games",
 	  developers: "SUDT Games",
 	  shortDescription: "Backrooms: Blackhole is a cooperative psychological horror game for 1–4 players. Somewhere deep within the endless halls, reality begins collapsing into a growing void that consumes light, sound, and everything around it. The deeper you descend, the less the world makes sense — and the harder...",
-	  durationPlayed: "D033.G10 - 11.08.26",
+	  durationPlayed: "D033.G10 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20678",
@@ -3815,7 +3815,7 @@ const gamesById = {
 	  publishers: "SUDT Games",
 	  developers: "SUDT Games",
 	  shortDescription: "Backrooms: Fade is a cooperative horror game for 1–4 players. Alone or with friends, you will explore a nightmarish level, trying to understand where you are, what is happening, and how to survive.",
-	  durationPlayed: "D033.G11 - 11.08.26",
+	  durationPlayed: "D033.G11 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=21422",
@@ -3833,7 +3833,7 @@ const gamesById = {
 	  publishers: "Skmaestro",
 	  developers: "Skmaestro",
 	  shortDescription: "Backrooms: Labyrinth Glitch is a cooperative horror experience for 1–4 players.Silence has a sound — and it’s not what it should be.Every step feels wrong, every shadow seems to move when you’re not looking.The only question is: how long can you keep going?",
-	  durationPlayed: "D033.G12 - 11.08.26",
+	  durationPlayed: "D033.G12 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=22576",
@@ -3851,7 +3851,7 @@ const gamesById = {
 	  publishers: "Skmaestro",
 	  developers: "Skmaestro",
 	  shortDescription: "Backrooms: The True Level is a cooperative horror game for 1–4 players. Together or alone, you will explore this level trying to understand whether it is real, but can the darkness in this world be peaceful?",
-	  durationPlayed: "D033.G13 - 11.08.26",
+	  durationPlayed: "D033.G13 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=23680",
@@ -3869,7 +3869,7 @@ const gamesById = {
 	  publishers: "Skmaestro",
 	  developers: "Skmaestro",
 	  shortDescription: "Backrooms: The Last Observer is a cooperative horror game. Descend into something that resists understanding, where perception itself begins to fracture. You are here not to fight, but to witness — and sometimes, witnessing is the worst thing you can do.",
-	  durationPlayed: "D033.G14 - 11.08.26",
+	  durationPlayed: "D033.G14 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "NEXT!",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=24243",
@@ -3887,7 +3887,7 @@ const gamesById = {
 	  publishers: "Skmaestro",
 	  developers: "Skmaestro",
 	  shortDescription: "Discover an in-between space inspired by the Backrooms series. Make your way forward by jumping into holes, find alternative paths, and survive in this labyrinthine dimension. Play solo or in co-op mode and choose your path to the exit… if there is one.",
-	  durationPlayed: "D033.G15 - 11.08.26",
+	  durationPlayed: "D033.G15 - 11.07.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=24804",
@@ -3905,7 +3905,7 @@ const gamesById = {
 	  publishers: "SXTEEN",
 	  developers: "SXTEEN",
 	  shortDescription: " You are locked inside a Hotel filled with anomalies, inspired by internet culture and streamer Byilhan. You must find all the anomalies on each floor to escape. The game also features other available environments to explore. ",
-	  durationPlayed: "D034.G01 - 14.08.26",
+	  durationPlayed: "D034.G01 - 14.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "",
@@ -3923,7 +3923,7 @@ const gamesById = {
 	  publishers: "kc6067",
 	  developers: "kc6067",
 	  shortDescription: "BACKROOMS: LIMINAL ESCAPE is a VHS-style horror game where you explore eerie liminal spaces through a camcorder. BACKROOMS: LIMINAL ESCAPE is More than just a walking sim, it features intense levels that require you to hide, run, stay quite, and survive in a creepy, analog nightmare.",
-	  durationPlayed: "D035.G01 - 15.08.26",
+	  durationPlayed: "D035.G01 - 15.07.26",
 	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "https://youtu.be/LGVoTddWHrE?t=1537",
@@ -3942,11 +3942,11 @@ const gamesById = {
 	  publishers: "Andes Interactive",
 	  developers: "Leonn Camayo",
 	  shortDescription: "Dive into a realistic experience of the Backrooms, without jumpscares, getting lost in impossible spaces and feeling like something is watching you. The uncertainty of not knowing where you're going will make you want to quit… Will you be able to make it to the end?",
-	  durationPlayed: "D036.G02 - 15.08.26",
+	  durationPlayed: "D035.G02 - 15.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/LGVoTddWHrE?t=23255",
-	  vodLink2: "",
+	  vodLink2: "https://youtu.be/i1D9jgs6wso?t=8558",
 	  notes: [
 		""
 	  ]
@@ -3961,10 +3961,10 @@ const gamesById = {
 	  publishers: "Phoenix Cockroach Studio",
 	  developers: "哈基轩",
 	  shortDescription: "This is a Backrooms game created by fans. In this game, the main experience is the \"Level!\" in Backroom(or \"Run For Your Life\").",
-	  durationPlayed: "D036.G03 - 15.08.26",
+	  durationPlayed: "D036.G03 - 16.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/i1D9jgs6wso?t=17349",
 	  notes: [
 		""
 	  ]
@@ -3979,10 +3979,10 @@ const gamesById = {
 	  publishers: "Firenut Games",
 	  developers: "José Manuel Conesa Hernández",
 	  shortDescription: "Enter the disturbing world of Backrooms Level X, a first-person narrative survival horror game that immerses you in an endless labyrinth of desolate and liminal spaces. 13 levels and giant enemies await you in this unique experience.",
-	  durationPlayed: "D036.G04 - 15.08.26",
+	  durationPlayed: "D036.G04 - 16.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/i1D9jgs6wso?t=21077",
 	  notes: [
 		""
 	  ]
@@ -3997,14 +3997,32 @@ const gamesById = {
 	  publishers: "Pine Games",
 	  developers: "Pine Games",
 	  shortDescription: "These are still the same yellow corridors and rooms inhabited by dangerous entities, but now you can fight them back!",
-	  durationPlayed: "D036.G05 - 15.08.26",
+	  durationPlayed: "D036.G05 - 16.07.26",
 	  playedWith: "SARK",
-	  outcome: "-",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/i1D9jgs6wso?t=26577",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3140990: {
+	  appId: 3140990,
+	  archiveNumber: "216",
+	  title: "Backrooms Cleanup Crew",
+	  assetHash: "",
+	  releaseDate: "Apr 17, 2025",
+	  publishers: "On The Bridge Games",
+	  developers: "On The Bridge Games",
+	  shortDescription: "You and your crew are tasked with cleaning up after the last exploration team's ill-fated journey into the Backrooms. Dodge deadly incursions, scrub every surface, and leave no trace.",
+	  durationPlayed: "D037.G01 - 17.07.26",
+	  playedWith: "SARK - NFEN - GASSY - BETH",
+	  outcome: "",
 	  vodLink: "",
 	  notes: [
 		""
 	  ]
-	}
+	},
 };
 
 const dayMenus = {
@@ -4043,6 +4061,7 @@ const dayMenus = {
   DAY033_110726: [2719940,3333740,2246350,2702190,2835530,3072120,3038290,3812010,4720860,4721000,4720870,4163010,3811970,4618090,4617040,1943950,3333740],
   DAY034_140726: [3119220,2900660,2453060,2950760,3333740],
   DAY035_150726: [3657530,3038290,3657530,3322980],
-  DAY036_160726: [3038290,3322980,2559530,3303230,3746210]
+  DAY036_160726: [3038290,3322980,2559530,3303230,3746210],
+  DAY037_170726: [3140990]
 };
 
