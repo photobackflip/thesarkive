@@ -1878,7 +1878,7 @@ const gamesById = {
 	  shortDescription: "Backrooms: The Hunt - This is a simple online first-person shooter... Just have fun with your friends or enemies... It's a very simple, primitive and casual game, play and have fun, The presence of primitive bots in the game",
 	  durationPlayed: "D018.G00 - 06.06.26",
 	  playedWith: "SARK - NFEN",
-	  outcome: "VOID",
+	  outcome: "DNL",
 	  vodLink: "https://youtu.be/E7vzSHBu06M?t=14448",
 	  notes: [
 		"Game did not load - record kept but game is not counted"
@@ -2842,7 +2842,7 @@ const gamesById = {
 	  shortDescription: "Backrooms: Lost supports multiplayer, allowing players to navigate mysterious environments, evading lethal entities while striving to escape. All future content updates, like new levels and game modes, will remain complimentary.",
 	  durationPlayed: "D023.G16 - 13.06.26",
 	  playedWith: "SARK",
-	  outcome: "DONE - UNFINISHED",
+	  outcome: "UNFINISHED BIZ",
 	  vodLink: "https://youtu.be/Ky5kovUUfyU?t=25536",
 	  notes: [
 		"DELISTED"
