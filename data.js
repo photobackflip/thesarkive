@@ -4108,6 +4108,24 @@ const gamesById = {
 	  shortDescription: "Explore the world of backrooms from this solo developed game. explore creepy and eerie levels, and also calm and liminal levels, but be careful, you're not the only one there.",
 	  durationPlayed: "D038.G03 - 20.07.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3755920: {
+	  appId: 3755920,
+	  archiveNumber: "222",
+	  title: "Walking In",
+	  assetHash: "fe79f1287cd69302e3ab275332711483aaf1f1e9",
+	  releaseDate: "July 8, 2025",
+	  publishers: "tuchi",
+	  developers: "tuchi",
+	  shortDescription: "This is a walking type game developed and produced by a single player, which only requires walking and appreciation, with slight decryption. But please rest assured that there are no monsters or protruding face elements in the game, so feel free to play.",
+	  durationPlayed: "D038.G04 - 20.07.26",
+	  playedWith: "SARK",
 	  outcome: "",
 	  vodLink: "",
 	  notes: [
@@ -4154,6 +4172,6 @@ const dayMenus = {
   DAY035_150726: [3657530,3038290,3657530,3322980],
   DAY036_160726: [3038290,3322980,2559530,3303230,3746210],
   DAY037_180726: [3140990,3723160,3775610,3282700],
-  DAY038_200726: [3282700,3227460,3162000]
+  DAY038_200726: [3282700,3227460,3162000,3755920]
 };
 
