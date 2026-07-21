@@ -1,4 +1,4 @@
-const totalGames = 304;
+const totalGames = 306;
 
 const gamesById = {
 	
@@ -2804,10 +2804,11 @@ const gamesById = {
 	  developers: "Fancy Games, Blackbird Interactive",
 	  shortDescription: "Escape the Backrooms is a 1-4 player co-op horror exploration game. Traverse 30+ eerie backrooms levels while avoiding entities and other dangers. Try to escape but be warned: survival isn't guaranteed. ",
 	  durationPlayed: "D023.G14 - 13.06.26",
-	  playedWith: "SARK - STU - NFEN",
+	  playedWith: "SARK - STU - NFEN - NANNERS",
 	  outcome: "DNF",
 	  vodLink: "https://youtu.be/Ky5kovUUfyU?t=15647",
 	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=27369",
+	  vodLink3: "https://youtu.be/oH3SpQnKWeo?t=2091",
 	  notes: [
 		"Actually a good game."
 	  ]
@@ -4073,7 +4074,7 @@ const gamesById = {
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/7n4OitqL4Bw?t=30044",
-	  vodLink2: "",
+	  vodLink2: "https://youtu.be/QFW7UNykrz4?t=1087",
 	  notes: [
 		""
 	  ]
@@ -4091,7 +4092,7 @@ const gamesById = {
 	  durationPlayed: "D038.G02 - 20.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QFW7UNykrz4?t=17108",
 	  notes: [
 		""
 	  ]
@@ -4109,7 +4110,7 @@ const gamesById = {
 	  durationPlayed: "D038.G03 - 20.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QFW7UNykrz4?t=21776",
 	  notes: [
 		""
 	  ]
@@ -4127,7 +4128,43 @@ const gamesById = {
 	  durationPlayed: "D038.G04 - 20.07.26",
 	  playedWith: "SARK",
 	  outcome: "",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/QFW7UNykrz4?t=23180",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3794460: {
+	  appId: 3794460,
+	  archiveNumber: "223",
+	  title: "The Bigback Room",
+	  assetHash: "2ebb71136bc32fdafe63fc453109feb2197e2de9",
+	  releaseDate: "July 11, 2025",
+	  publishers: "TravisFatMan",
+	  developers: "TravisFatMan",
+	  shortDescription: "A comedy horror game about falling into the backrooms while trying to head to the store to find something to eat. You will need to find food and solve simple puzzles to survive and hopefully find your way out.",
+	  durationPlayed: "D039.G02 - 21.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "https://youtu.be/oH3SpQnKWeo?t=24034",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3568550: {
+	  appId: 3568550,
+	  archiveNumber: "224",
+	  title: "Tainted Pools",
+	  assetHash: "",
+	  releaseDate: "July 14, 2025",
+	  publishers: "Stray Fox Games",
+	  developers: "Stray Fox Games",
+	  shortDescription: "Tainted Pools is a first-person survival horror set in the eerie poolrooms of Backrooms Level 130. A stalking entity lurks in the shadows, drawn to every sound. Scavenge for resources and survive long enough to find your way out.",
+	  durationPlayed: "D039.G04 - 21.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "https://youtu.be/oH3SpQnKWeo?t=27552",
 	  notes: [
 		""
 	  ]
@@ -4172,6 +4209,8 @@ const dayMenus = {
   DAY035_150726: [3657530,3038290,3657530,3322980],
   DAY036_160726: [3038290,3322980,2559530,3303230,3746210],
   DAY037_180726: [3140990,3723160,3775610,3282700],
-  DAY038_200726: [3282700,3227460,3162000,3755920]
+  DAY038_200726: [3282700,3227460,3162000,3755920],
+  DAY039_210726: [1943950,3794460,3568550],
+  DAY040_220726: []
 };
 
