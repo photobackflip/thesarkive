@@ -2810,7 +2810,8 @@ const gamesById = {
 	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=27369",
 	  vodLink3: "https://youtu.be/oH3SpQnKWeo?t=2091",
 	  notes: [
-		"Actually a good game."
+		"Actually a good game.",
+		"VOD3 is with Nanners and Bruce"
 	  ]
 	},
 	
