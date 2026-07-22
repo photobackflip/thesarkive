@@ -4169,6 +4169,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3510750: {
+	  appId: 3510750,
+	  archiveNumber: "225",
+	  title: "Chained Backrooms",
+	  assetHash: "",
+	  releaseDate: "Apr 15, 2025",
+	  publishers: "Rosa Special Studio",
+	  developers: "Rosa Special Studio ",
+	  shortDescription: "CHAINED BACKROOMS is a horror game where players are chained together, forced to survive and explore procedurally generated Backrooms levels. Only coordinated teamwork can help avoid dangers and find an escape. Co-op for 1-4 players.",
+	  durationPlayed: "D040.G01 - 22.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		"Delisted from Steam"
+	  ]
 	}
 };
 
@@ -4212,6 +4230,6 @@ const dayMenus = {
   DAY037_180726: [3140990,3723160,3775610,3282700],
   DAY038_200726: [3282700,3227460,3162000,3755920],
   DAY039_210726: [1943950,3794460,3568550],
-  DAY040_220726: []
+  DAY040_220726: [3510750]
 };
 
