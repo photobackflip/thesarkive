@@ -1423,7 +1423,7 @@ const gamesById = {
 	  outcome: "NEXT",
 	  vodLink: "https://youtu.be/7WOc-I7fTC0?t=21659",
 	  notes: [
-		""
+		"Delisted from Steam"
 	  ]
 	},
 
@@ -1641,7 +1641,7 @@ const gamesById = {
 	  outcome: "NEXT!",
 	  vodLink: "https://youtu.be/50i3W0XEMK0?t=1305",
 	  notes: [
-		""
+		"Delisted from Steam"
 	  ]
 	},
 
