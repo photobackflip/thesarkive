@@ -4019,7 +4019,7 @@ const gamesById = {
 	  shortDescription: "You and your crew are tasked with cleaning up after the last exploration team's ill-fated journey into the Backrooms. Dodge deadly incursions, scrub every surface, and leave no trace.",
 	  durationPlayed: "D037.G01 - 18.07.26",
 	  playedWith: "SARK - NFEN - GASSY - BETH",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/7n4OitqL4Bw?t=1209",
 	  notes: [
 		""
@@ -4037,7 +4037,7 @@ const gamesById = {
 	  shortDescription: "🧠 BRAINROOMS is a grotesque horror born from a twisted internet: rotten memes, entities laughing at you, rooms that feel all wrong. A trashy, surreal nightmare where you scream, laugh, and lose your mind. Survive… if you can even grasp what’s happening.",
 	  durationPlayed: "D037.G02 - 18.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/7n4OitqL4Bw?t=20323",
 	  notes: [
 		""
@@ -4055,7 +4055,7 @@ const gamesById = {
 	  shortDescription: "Enter the Mysterious World of the Backrooms! Find weapons left behind by other wanderers, fight off dangerous entities, and make your way to the exit!",
 	  durationPlayed: "D037.G03 - 18.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/7n4OitqL4Bw?t=28672",
 	  notes: [
 		""
@@ -4128,7 +4128,7 @@ const gamesById = {
 	  shortDescription: "This is a walking type game developed and produced by a single player, which only requires walking and appreciation, with slight decryption. But please rest assured that there are no monsters or protruding face elements in the game, so feel free to play.",
 	  durationPlayed: "D038.G04 - 20.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/QFW7UNykrz4?t=23180",
 	  notes: [
 		""
@@ -4146,7 +4146,7 @@ const gamesById = {
 	  shortDescription: "A comedy horror game about falling into the backrooms while trying to head to the store to find something to eat. You will need to find food and solve simple puzzles to survive and hopefully find your way out.",
 	  durationPlayed: "D039.G02 - 21.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/oH3SpQnKWeo?t=24034",
 	  notes: [
 		""
@@ -4164,7 +4164,7 @@ const gamesById = {
 	  shortDescription: "Tainted Pools is a first-person survival horror set in the eerie poolrooms of Backrooms Level 130. A stalking entity lurks in the shadows, drawn to every sound. Scavenge for resources and survive long enough to find your way out.",
 	  durationPlayed: "D039.G04 - 21.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/oH3SpQnKWeo?t=27552",
 	  notes: [
 		""
@@ -4200,7 +4200,7 @@ const gamesById = {
 	  shortDescription: " When a routine expedition into The Complex goes horribly wrong, you're left alone and lost, wandering the seemingly infinite maze of hallways, otherwise known as the Backrooms. Might there be something following you? ",
 	  durationPlayed: "D040.G02 - 22.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
+	  outcome: "-",
 	  vodLink: "https://youtu.be/fsamtN4qoec?t=12214",
 	  notes: [
 		""
