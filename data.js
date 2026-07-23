@@ -4182,10 +4182,28 @@ const gamesById = {
 	  shortDescription: "CHAINED BACKROOMS is a horror game where players are chained together, forced to survive and explore procedurally generated Backrooms levels. Only coordinated teamwork can help avoid dangers and find an escape. Co-op for 1-4 players.",
 	  durationPlayed: "D040.G01 - 22.07.26",
 	  playedWith: "SARK",
-	  outcome: "",
-	  vodLink: "",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/fsamtN4qoec?t=985",
 	  notes: [
 		"Delisted from Steam"
+	  ]
+	},
+	
+	2172260: {
+	  appId: 2172260,
+	  archiveNumber: "226",
+	  title: "The Complex: Expedition",
+	  assetHash: "",
+	  releaseDate: "Jul 18, 2025",
+	  publishers: "pgWave",
+	  developers: "pgWave",
+	  shortDescription: " When a routine expedition into The Complex goes horribly wrong, you're left alone and lost, wandering the seemingly infinite maze of hallways, otherwise known as the Backrooms. Might there be something following you? ",
+	  durationPlayed: "D040.G02 - 22.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "https://youtu.be/fsamtN4qoec?t=12214",
+	  notes: [
+		""
 	  ]
 	}
 };
@@ -4230,6 +4248,7 @@ const dayMenus = {
   DAY037_180726: [3140990,3723160,3775610,3282700],
   DAY038_200726: [3282700,3227460,3162000,3755920],
   DAY039_210726: [1943950,3794460,3568550],
-  DAY040_220726: [3510750]
+  DAY040_220726: [3510750,2172260],
+  DAY041_240726: []
 };
 
