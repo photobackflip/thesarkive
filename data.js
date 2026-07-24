@@ -4332,7 +4332,25 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
-	}
+	},
+	
+	3628360: {
+	  appId: 3628360,
+	  archiveNumber: "234",
+	  title: "Backrooms: No Way Out",
+	  assetHash: "616b3b1e6f445ae7c59e0c2cf9daa5fc6178dad2",
+	  releaseDate: "Mar 28, 2026",
+	  publishers: "ShreddedDev",
+	  developers: "ShreddedDev",
+	  shortDescription: "Backrooms: No Way Out is a 1-4 player liminal horror game. Explore various backrooms levels, avoid entities, solve puzzles, and search for a way out.",
+	  durationPlayed: "D042.G01 - 25.07.26",
+	  playedWith: "SARK - STU",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
 };
 
 const dayMenus = {
@@ -4376,6 +4394,7 @@ const dayMenus = {
   DAY038_200726: [3282700,3227460,3162000,3755920],
   DAY039_210726: [1943950,3794460,3568550],
   DAY040_220726: [3510750,2172260],
-  DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850]
+  DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
+  DAY042_250726: [3628360]
 };
 
