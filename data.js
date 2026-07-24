@@ -4309,7 +4309,25 @@ const gamesById = {
 	  shortDescription: "Welcome to The Lost Painter, A single player, first person, atmospheric walking simulator exploring liminal spaces. Enter your Paintings and explore a world full of mystery and Horror. Storm the beaches of Normandy, Get lost in the Backroooms and Survive the Devils Labyrinth.",
 	  durationPlayed: "D041.G08 - 24.07.26",
 	  playedWith: "SARK",
-	  outcome: "-",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3654850: {
+	  appId: 3654850,
+	  archiveNumber: "233",
+	  title: "AQUARIUMS",
+	  assetHash: "d78ceecf51da9fda717ea972a9f93cdbc12a63f2",
+	  releaseDate: "Sep 25, 2025",
+	  publishers: "98 REDD GAMES",
+	  developers: "98 REDD GAMES",
+	  shortDescription: "Aquariums is a liminal space horror adventure with elements of thalassophobia and poolrooms. You find yourself in a mysterious facility full of oversized Aquariums and Sea Life. Navigate the flooded rooms to find out the secret behind this sinister place.",
+	  durationPlayed: "D041.G09 - 24.07.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
 		""
@@ -4358,6 +4376,6 @@ const dayMenus = {
   DAY038_200726: [3282700,3227460,3162000,3755920],
   DAY039_210726: [1943950,3794460,3568550],
   DAY040_220726: [3510750,2172260],
-  DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630]
+  DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850]
 };
 
