@@ -4237,6 +4237,24 @@ const gamesById = {
 	  shortDescription: "A loner's journey by foot is about to get lonelier and lengthier! Liminal Salvation puts you in a vast labyrinth of pools where finding the exit route will require absolute patience & zeal. Can you make it to the very end... or out of deep conflict, give up the ghost?",
 	  durationPlayed: "D041.G04 - 24.07.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3044220: {
+	  appId: 3044220,
+	  archiveNumber: "229",
+	  title: "Liminal Exit",
+	  assetHash: "",
+	  releaseDate: "Aug 1, 2025",
+	  publishers: "LittleRedDread",
+	  developers: "LittleRedDread",
+	  shortDescription: "Step into an uncanny building trapped in endless loops. Use the elevator, uncover unsettling anomalies, and evade the Entity lurking behind you. Liminal Exit is an immersive game inspired by liminal spaces and Exit 8. Explore 3 liminal space floors and track anomalies to escape, but watch your back!",
+	  durationPlayed: "D041.G05 - 24.07.26",
+	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -4286,6 +4304,6 @@ const dayMenus = {
   DAY038_200726: [3282700,3227460,3162000,3755920],
   DAY039_210726: [1943950,3794460,3568550],
   DAY040_220726: [3510750,2172260],
-  DAY041_240726: [2172260,3568550,3857770,3856320]
+  DAY041_240726: [2172260,3568550,3857770,3856320,3044220]
 };
 
