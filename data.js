@@ -4260,6 +4260,42 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3952680: {
+	  appId: 3952680,
+	  archiveNumber: "230",
+	  title: "Backrooms Maze 2D",
+	  assetHash: "25e83fb46353a3e08a91db4734b9cff957e4df8c",
+	  releaseDate: "Sep 6, 2025",
+	  publishers: "Insanity Studios LLC",
+	  developers: "Insanity Studios LLC",
+	  shortDescription: "Backrooms Maze 2D is a tense survival maze game where you navigate shifting halls, evade relentless enemies, and race to the exit before your sanity drains away. Multiple difficulty levels, pixel art style, and eerie ambience keep you on edge every step of the way.",
+	  durationPlayed: "D041.G06 - 24.07.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3765730: {
+	  appId: 3765730,
+	  archiveNumber: "231",
+	  title: "The Backrooms: Reset",
+	  assetHash: "56c2c094867529bdad1816bcca8cb8948cbfa7d3",
+	  releaseDate: "Sep 6, 2025",
+	  publishers: "Permafried Games",
+	  developers: "Permafried Games",
+	  shortDescription: "A first person 2.5D survival-horror exploration roguelike.",
+	  durationPlayed: "D041.G07 - 24.07.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4304,6 +4340,6 @@ const dayMenus = {
   DAY038_200726: [3282700,3227460,3162000,3755920],
   DAY039_210726: [1943950,3794460,3568550],
   DAY040_220726: [3510750,2172260],
-  DAY041_240726: [2172260,3568550,3857770,3856320,3044220]
+  DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730]
 };
 
