@@ -4167,6 +4167,7 @@ const gamesById = {
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/oH3SpQnKWeo?t=27552",
+	  vodLink2: "https://youtu.be/ZEN7I7q9AAc?t=4097",
 	  notes: [
 		""
 	  ]
@@ -4203,7 +4204,7 @@ const gamesById = {
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/fsamtN4qoec?t=12214",
-	  vodLink2: "",
+	  vodLink2: "https://youtu.be/ZEN7I7q9AAc?t=1396",
 	  notes: [
 		""
 	  ]
@@ -4221,7 +4222,7 @@ const gamesById = {
 	  durationPlayed: "D041.G03 - 24.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=6147",
 	  notes: [
 		""
 	  ]
@@ -4239,7 +4240,7 @@ const gamesById = {
 	  durationPlayed: "D041.G04 - 24.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=10050",
 	  notes: [
 		""
 	  ]
@@ -4256,8 +4257,8 @@ const gamesById = {
 	  shortDescription: "Step into an uncanny building trapped in endless loops. Use the elevator, uncover unsettling anomalies, and evade the Entity lurking behind you. Liminal Exit is an immersive game inspired by liminal spaces and Exit 8. Explore 3 liminal space floors and track anomalies to escape, but watch your back!",
 	  durationPlayed: "D041.G05 - 24.07.26",
 	  playedWith: "SARK",
-	  outcome: "-",
-	  vodLink: "",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=15071",
 	  notes: [
 		""
 	  ]
@@ -4275,7 +4276,7 @@ const gamesById = {
 	  durationPlayed: "D041.G06 - 24.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=19204",
 	  notes: [
 		""
 	  ]
@@ -4292,8 +4293,8 @@ const gamesById = {
 	  shortDescription: "A first person 2.5D survival-horror exploration roguelike.",
 	  durationPlayed: "D041.G07 - 24.07.26",
 	  playedWith: "SARK",
-	  outcome: "-",
-	  vodLink: "",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=19610",
 	  notes: [
 		""
 	  ]
@@ -4311,7 +4312,7 @@ const gamesById = {
 	  durationPlayed: "D041.G08 - 24.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=23687",
 	  notes: [
 		""
 	  ]
@@ -4329,7 +4330,7 @@ const gamesById = {
 	  durationPlayed: "D041.G09 - 24.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/ZEN7I7q9AAc?t=28569",
 	  notes: [
 		""
 	  ]
