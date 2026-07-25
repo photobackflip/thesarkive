@@ -4351,6 +4351,24 @@ const gamesById = {
 		""
 	  ]
 	},
+	
+	3267550: {
+	  appId: 3267550,
+	  archiveNumber: "235",
+	  title: "The Backrooms: Rescue Expedition",
+	  assetHash: "",
+	  releaseDate: "Oct 21, 2025",
+	  publishers: "{CRYTIME}",
+	  developers: "{CRYTIME}",
+	  shortDescription: "The Backrooms: Rescue Expedition is a realistic first-person horror game up to 4 players. You and your team are tasked with saving the lives of the missing expedition unit, Echo-7 North. Ruthless entities and the madness of infinite halls create an atmosphere of relentless terror.",
+	  durationPlayed: "D042.G02 - 25.07.26",
+	  playedWith: "SARK - STU",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
 };
 
 const dayMenus = {
@@ -4395,6 +4413,6 @@ const dayMenus = {
   DAY039_210726: [1943950,3794460,3568550],
   DAY040_220726: [3510750,2172260],
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
-  DAY042_250726: [3628360]
+  DAY042_250726: [3628360,3267550]
 };
 
