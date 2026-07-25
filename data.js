@@ -3725,8 +3725,9 @@ const gamesById = {
 	  shortDescription: "Backrooms Lost Runners is a co-op survival horror with team play, voice-reactive AI, and immersive puzzles. This isn’t a “walking simulator”: explore liminal spaces, outsmart entities, and remember—even a whisper can give you away.",
 	  durationPlayed: "D033.G06 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "UNFINISHED BIZ",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=13089",
+	  vodLink2: "",
 	  notes: [
 		""
 	  ]
@@ -4369,6 +4370,24 @@ const gamesById = {
 		""
 	  ]
 	},
+	
+	4015300: {
+	  appId: 4015300,
+	  archiveNumber: "236",
+	  title: "LIMINAL WATERS",
+	  assetHash: "67e03eae814799387ca4cb986966aa917eef8150",
+	  releaseDate: "Oct 14, 2025",
+	  publishers: "DK Productions",
+	  developers: "DK Productions, Silent Snake",
+	  shortDescription: "Explore, Listen and Observe. LIMINAL WATERS is a liminal space exploration game. Discover a large facility with diverse rooms and themes and be enchanted by the radiant beauty of Unreal Engine 5.6. Relaxation, anxiety, confusion or familiarity? The mysterious Poolrooms are waiting for you.",
+	  durationPlayed: "D042.G04 - 25.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	}
 };
 
 const dayMenus = {
@@ -4413,6 +4432,6 @@ const dayMenus = {
   DAY039_210726: [1943950,3794460,3568550],
   DAY040_220726: [3510750,2172260],
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
-  DAY042_250726: [3628360,3267550]
+  DAY042_250726: [3628360,3267550,3072120,4015300]
 };
 
