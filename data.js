@@ -4346,7 +4346,7 @@ const gamesById = {
 	  shortDescription: "Backrooms: No Way Out is a 1-4 player liminal horror game. Explore various backrooms levels, avoid entities, solve puzzles, and search for a way out.",
 	  durationPlayed: "D042.G01 - 25.07.26",
 	  playedWith: "SARK - STU",
-	  outcome: "",
+	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
 		""
@@ -4364,7 +4364,7 @@ const gamesById = {
 	  shortDescription: "The Backrooms: Rescue Expedition is a realistic first-person horror game up to 4 players. You and your team are tasked with saving the lives of the missing expedition unit, Echo-7 North. Ruthless entities and the madness of infinite halls create an atmosphere of relentless terror.",
 	  durationPlayed: "D042.G02 - 25.07.26",
 	  playedWith: "SARK - STU",
-	  outcome: "",
+	  outcome: "DONE",
 	  vodLink: "",
 	  notes: [
 		""
