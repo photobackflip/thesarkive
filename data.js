@@ -4388,6 +4388,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	1925940: {
+	  appId: 1925940,
+	  archiveNumber: "237",
+	  title: "THE OFFICE ROOMS",
+	  assetHash: "87b89d42e79bdb4097b49980a54f4ac464dafe2b",
+	  releaseDate: "Oct 27, 2025",
+	  publishers: "Lowkey GameDev",
+	  developers: "Lowkey GameDev",
+	  shortDescription: "A short exploration game blending liminal spaces and corporate dystopia. Explore an abandoned anomaly control facility and uncover its past and purpose!",
+	  durationPlayed: "D043.G01 - 28.07.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4434,6 +4452,6 @@ const dayMenus = {
   DAY040_220726: [3510750,2172260],
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
   DAY042_250726: [3628360,3267550,3072120,4015300],
-  DAY043_280726: []
+  DAY043_280726: [1925940]
 };
 
