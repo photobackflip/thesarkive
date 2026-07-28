@@ -4437,6 +4437,24 @@ const gamesById = {
 	  shortDescription: "Liminal The Forgotten Maze is a first-person psychological horror survival game. Elias is pulled into a space outside of reality. He awakens in a place that shouldn't exist—a network of endless, yellowed corridors lit by buzzing lights, where time and space seem to fold in on themselves.",
 	  durationPlayed: "D043.G03 - 28.07.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		"END GAME"
+	  ]
+	},
+	
+	2293260: {
+	  appId: 2293260,
+	  archiveNumber: "240",
+	  title: "The Backrooms: Investigate and Escape",
+	  assetHash: "",
+	  releaseDate: "Nov 4, 2025",
+	  publishers: "GoNFTY",
+	  developers: "NEBULA Games",
+	  shortDescription: "Backrooms Investigate and Escape is action-survival horror experience. You are at the mercy of the entities lurking and must do whatever it takes to survive while completing each level's objectives. Multiple new levels will be added each month as we develop the true Backrooms experience.",
+	  durationPlayed: "D043.G04 - 28.07.26",
+	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -4488,6 +4506,6 @@ const dayMenus = {
   DAY040_220726: [3510750,2172260],
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
   DAY042_250726: [3628360,3267550,3072120,4015300],
-  DAY043_280726: [1925940,3919010,4016420]
+  DAY043_280726: [1925940,3919010,4016420,2293260]
 };
 
