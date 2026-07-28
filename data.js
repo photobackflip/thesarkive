@@ -4455,6 +4455,24 @@ const gamesById = {
 	  shortDescription: "Backrooms Investigate and Escape is action-survival horror experience. You are at the mercy of the entities lurking and must do whatever it takes to survive while completing each level's objectives. Multiple new levels will be added each month as we develop the true Backrooms experience.",
 	  durationPlayed: "D043.G04 - 28.07.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3642730: {
+	  appId: 3642730,
+	  archiveNumber: "241",
+	  title: "Backrooms: Exit from Supermarket",
+	  assetHash: "278abdb21991b0deff338dc8b9a7d2ad1b99cbe0",
+	  releaseDate: "Nov 19, 2025",
+	  publishers: "CGI LAB GAMES",
+	  developers: "CGI LAB GAMES",
+	  shortDescription: "In the Backrooms: Exit from Supermarket, you find yourself trapped in a labyrinth of endless, flickering aisles. Unearth dark secrets behind every shelf while evading lurking apparitions and supernatural terrors. Can you survive the haunted corridors and escape before the nightmare consumes?",
+	  durationPlayed: "D043.G05 - 28.07.26",
+	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -4506,6 +4524,6 @@ const dayMenus = {
   DAY040_220726: [3510750,2172260],
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
   DAY042_250726: [3628360,3267550,3072120,4015300],
-  DAY043_280726: [1925940,3919010,4016420,2293260]
+  DAY043_280726: [1925940,3919010,4016420,2293260,3642730]
 };
 
