@@ -4402,7 +4402,7 @@ const gamesById = {
 	  durationPlayed: "D043.G01 - 28.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/xX6MRTxN65A?t=1599",
 	  notes: [
 		""
 	  ]
@@ -4420,7 +4420,7 @@ const gamesById = {
 	  durationPlayed: "D043.G02 - 28.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/xX6MRTxN65A?t=11877",
 	  notes: [
 		""
 	  ]
@@ -4438,7 +4438,7 @@ const gamesById = {
 	  durationPlayed: "D043.G03 - 28.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/xX6MRTxN65A?t=18472",
 	  notes: [
 		"END GAME"
 	  ]
@@ -4456,7 +4456,7 @@ const gamesById = {
 	  durationPlayed: "D043.G04 - 28.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/xX6MRTxN65A?t=20423",
 	  notes: [
 		""
 	  ]
@@ -4474,7 +4474,7 @@ const gamesById = {
 	  durationPlayed: "D043.G05 - 28.07.26",
 	  playedWith: "SARK",
 	  outcome: "-",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/xX6MRTxN65A?t=22557",
 	  notes: [
 		""
 	  ]
