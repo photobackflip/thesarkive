@@ -4492,7 +4492,7 @@ const gamesById = {
 	  durationPlayed: "D044.G01 - 31.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=1809",
 	  notes: [
 		""
 	  ]
@@ -4510,7 +4510,7 @@ const gamesById = {
 	  durationPlayed: "D044.G02 - 31.07.26",
 	  playedWith: "SARK",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=4137",
 	  notes: [
 		""
 	  ]
@@ -4528,7 +4528,25 @@ const gamesById = {
 	  durationPlayed: "D044.G03 - 31.07.26",
 	  playedWith: "SARK",
 	  outcome: "-",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=15147",
+	  notes: [
+		""
+	  ]
+	},
+	
+	2875820: {
+	  appId: 2875820,
+	  archiveNumber: "245",
+	  title: "P4ST3L",
+	  assetHash: "",
+	  releaseDate: "Dec 24, 2025",
+	  publishers: "UsaginO",
+	  developers: "UsaginO",
+	  shortDescription: "Pastel is a FPS/TPS horror game where you experience a beautiful liminal space and sub-mechanophobia towards underwater and above-water objects.",
+	  durationPlayed: "D044.G04 - 31.07.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=23066",
 	  notes: [
 		""
 	  ]
@@ -4579,6 +4597,6 @@ const dayMenus = {
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
   DAY042_250726: [3628360,3267550,3072120,4015300],
   DAY043_280726: [1925940,3919010,4016420,2293260,3642730],
-  DAY044_310726: [3966870,3604260,2787110]
+  DAY044_310726: [3966870,3604260,2787110,2875820]
 };
 
