@@ -1,4 +1,4 @@
-const totalGames = 308;
+const totalGames = 310;
 
 const gamesById = {
 	
@@ -4478,7 +4478,25 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
-	}
+	},
+	
+	3966870: {
+	  appId: 3966870,
+	  archiveNumber: "242",
+	  title: "Liminal Explorer",
+	  assetHash: "1c2c3f450a3d497bb461642acaaa55ab2ddf6d32",
+	  releaseDate: "Nov 29, 2025",
+	  publishers: "compact",
+	  developers: "compact",
+	  shortDescription: "Wander through a variety of eerie liminal spaces whilst completing puzzles and discovering secrets. Each level is designed to be explored to its fullest, packed with hidden details and objectives for true Liminal Explorers.",
+	  durationPlayed: "D044.G01 - 31.07.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
 };
 
 const dayMenus = {
@@ -4524,6 +4542,7 @@ const dayMenus = {
   DAY040_220726: [3510750,2172260],
   DAY041_240726: [2172260,3568550,3857770,3856320,3044220,3952680,3765730,3973630,3654850],
   DAY042_250726: [3628360,3267550,3072120,4015300],
-  DAY043_280726: [1925940,3919010,4016420,2293260,3642730]
+  DAY043_280726: [1925940,3919010,4016420,2293260,3642730],
+  DAY044_310726: [3966870]
 };
 
