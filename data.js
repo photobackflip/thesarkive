@@ -1,4 +1,4 @@
-const totalGames = 311;
+const totalGames = 310;
 
 const gamesById = {
 	
@@ -4020,8 +4020,9 @@ const gamesById = {
 	  shortDescription: "You and your crew are tasked with cleaning up after the last exploration team's ill-fated journey into the Backrooms. Dodge deadly incursions, scrub every surface, and leave no trace.",
 	  durationPlayed: "D037.G01 - 18.07.26",
 	  playedWith: "SARK - NFEN - GASSY - BETH",
-	  outcome: "-",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/7n4OitqL4Bw?t=1209",
+	  vodLink2: "",
 	  notes: [
 		""
 	  ]
@@ -4598,6 +4599,6 @@ const dayMenus = {
   DAY042_250726: [3628360,3267550,3072120,4015300],
   DAY043_280726: [1925940,3919010,4016420,2293260,3642730],
   DAY044_310726: [3966870,3604260,2787110,2875820],
-  DAY045_010826: [3140990]
+  DAY045_010826: [3140990,2875820]
 };
 
