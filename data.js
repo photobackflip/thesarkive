@@ -4546,8 +4546,26 @@ const gamesById = {
 	  shortDescription: "Pastel is a FPS/TPS horror game where you experience a beautiful liminal space and sub-mechanophobia towards underwater and above-water objects.",
 	  durationPlayed: "D044.G04 - 31.07.26",
 	  playedWith: "SARK",
-	  outcome: "-",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=23066",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4154630: {
+	  appId: 4154630,
+	  archiveNumber: "246",
+	  title: "Backrooms: Realism",
+	  assetHash: "c44c6374171020c1298d3595f0aa7c53b9e68d40",
+	  releaseDate: "Jan 9, 2026",
+	  publishers: "Stuart Dupree",
+	  developers: "Georgeisthebest",
+	  shortDescription: "You’ve slipped into the Backrooms — an endless maze that watches your back. Keep your sanity, hunger, and thirst in check as horrific entities stalk you throughout the halls.",
+	  durationPlayed: "D045.G03 - 01.08.26",
+	  playedWith: "SARK",
+	  outcome: "",
+	  vodLink: "",
 	  notes: [
 		""
 	  ]
@@ -4599,6 +4617,6 @@ const dayMenus = {
   DAY042_250726: [3628360,3267550,3072120,4015300],
   DAY043_280726: [1925940,3919010,4016420,2293260,3642730],
   DAY044_310726: [3966870,3604260,2787110,2875820],
-  DAY045_010826: [3140990,2875820]
+  DAY045_010826: [3140990,2875820,4154630]
 };
 
