@@ -4528,7 +4528,7 @@ const gamesById = {
 	  shortDescription: "Backrooms - 2005 is a chapter-based Backrooms exploration game.",
 	  durationPlayed: "D044.G03 - 31.07.26",
 	  playedWith: "SARK",
-	  outcome: "-",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=15147",
 	  notes: [
 		""
@@ -4565,10 +4565,10 @@ const gamesById = {
 	  shortDescription: "You’ve slipped into the Backrooms — an endless maze that watches your back. Keep your sanity, hunger, and thirst in check as horrific entities stalk you throughout the halls.",
 	  durationPlayed: "D045.G03 - 01.08.26",
 	  playedWith: "SARK",
-	  outcome: "",
-	  vodLink: "",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/09L3gxuYif4?t=21748",
 	  notes: [
-		"https://youtu.be/09L3gxuYif4?t=21748"
+		""
 	  ]
 	}
 };
