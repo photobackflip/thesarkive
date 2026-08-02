@@ -4022,7 +4022,7 @@ const gamesById = {
 	  playedWith: "SARK - NFEN - GASSY - BETH",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/7n4OitqL4Bw?t=1209",
-	  vodLink2: "",
+	  vodLink2: "https://youtu.be/09L3gxuYif4?t=643",
 	  notes: [
 		""
 	  ]
@@ -4548,6 +4548,7 @@ const gamesById = {
 	  playedWith: "SARK",
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=23066",
+	  vodLink2: "https://youtu.be/09L3gxuYif4?t=14860",
 	  notes: [
 		""
 	  ]
@@ -4567,7 +4568,7 @@ const gamesById = {
 	  outcome: "",
 	  vodLink: "",
 	  notes: [
-		""
+		"https://youtu.be/09L3gxuYif4?t=21748"
 	  ]
 	}
 };
