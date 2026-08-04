@@ -4552,6 +4552,7 @@ const gamesById = {
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=23066",
 	  vodLink2: "https://youtu.be/09L3gxuYif4?t=14860",
+	  vodLink3: "",
 	  notes: [
 		""
 	  ]
@@ -4577,7 +4578,7 @@ const gamesById = {
 	
 	4720850: {
 	  appId: 4720850,
-	  archiveNumber: "246",
+	  archiveNumber: "247",
 	  title: "Backrooms: The Wrong Reality",
 	  assetHash: "362b679ca67cc34390e53df030b98df5c1a53de7",
 	  releaseDate: "Jul 30, 2026",
@@ -4640,6 +4641,6 @@ const dayMenus = {
   DAY043_280726: [1925940,3919010,4016420,2293260,3642730],
   DAY044_310726: [3966870,3604260,2787110,2875820],
   DAY045_010826: [3140990,2875820,4154630],
-  DAY046_040826: [1943950,4720850,3812010,2875820]
+  DAY046_040826: [1943950,4720850,3812010,2875820,3423660]
 };
 
