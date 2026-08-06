@@ -2804,15 +2804,16 @@ const gamesById = {
 	  developers: "Fancy Games, Blackbird Interactive",
 	  shortDescription: "Escape the Backrooms is a 1-4 player co-op horror exploration game. Traverse 30+ eerie backrooms levels while avoiding entities and other dangers. Try to escape but be warned: survival isn't guaranteed. ",
 	  durationPlayed: "D023.G14 - 13.06.26",
-	  playedWith: "SARK - STU - NFEN - NANNERS",
+	  playedWith: "SARK - STU - NFEN - NANNERS - XCAL",
 	  outcome: "DNF",
 	  vodLink: "https://youtu.be/Ky5kovUUfyU?t=15647",
 	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=27369",
 	  vodLink3: "https://youtu.be/oH3SpQnKWeo?t=2091",
-	  vodLink4: "",
+	  vodLink4: "https://youtu.be/zGR-mGzNLGA?t=2530",
 	  notes: [
 		"Actually a good game.",
-		"VOD3 is with Nanners and Bruce"
+		"VOD3 is with Nanners and Bruce",
+		"VOD4 is with NFEN and xcal"
 	  ]
 	},
 	
@@ -3545,8 +3546,9 @@ const gamesById = {
 	  shortDescription: "Backrooms: Exploration is a single-player horror game, which takes place in 2020. Two friends have lost their jobs due to COVID-19, but they still have to bring food to the table. After a failed heist, one of them ends up in the Backrooms. Now your only mission is to survive.",
 	  durationPlayed: "D032.G02 - 09.07.26",
 	  playedWith: "SARK",
-	  outcome: "NEXT!",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/3UsLINJjpPU?t=5863",
+	  vodLink2: "https://youtu.be/zGR-mGzNLGA?t=22765",
 	  notes: [
 		""
 	  ]
@@ -3767,9 +3769,9 @@ const gamesById = {
 	  shortDescription: "Backrooms: The Wrong Level is a cooperative horror game for 1–4 players. Alone or with friends, you will explore the game, trying to understand where you are, what is happening and how to survive on this hellish level.",
 	  durationPlayed: "D033.G08 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
-	  outcome: "NEXT!",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20013",
-	  vodLink2: "",
+	  vodLink2: "https://youtu.be/zGR-mGzNLGA?t=18853",
 	  notes: [
 		"VOD1 - Vanoss Nogla Terroriser",
 		"VOD2 - NFEN"
@@ -4552,7 +4554,7 @@ const gamesById = {
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/5TJ-DT8y1DY?t=23066",
 	  vodLink2: "https://youtu.be/09L3gxuYif4?t=14860",
-	  vodLink3: "",
+	  vodLink3: "https://youtu.be/zGR-mGzNLGA?t=21590",
 	  notes: [
 		""
 	  ]
@@ -4588,7 +4590,43 @@ const gamesById = {
 	  durationPlayed: "D046.G02 - 04.08.26",
 	  playedWith: "SARK - NFEN",
 	  outcome: "DONE",
-	  vodLink: "",
+	  vodLink: "https://youtu.be/zGR-mGzNLGA?t=18853",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4272200: {
+	  appId: 4272200,
+	  archiveNumber: "248",
+	  title: "Liminal:Escape Route",
+	  assetHash: "cef3593815a5565c739bca161430641f2e8b8529",
+	  releaseDate: "Jan 17, 2026",
+	  publishers: "Threshold Interactive",
+	  developers: "Threshold Interactive",
+	  shortDescription: "Your only goal is to find a door and advance to the next level. Sounds simple enough, right? But in these endless, unsettling liminal spaces, nothing is as it seems. What could possibly go wrong?",
+	  durationPlayed: "D047.G01 - 05.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "https://youtu.be/GS8cwpY98x0?t=1549",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4272700: {
+	  appId: 4272700,
+	  archiveNumber: "249",
+	  title: "Yellow",
+	  assetHash: "645871b0690f7187d0c6427e6328094079cea99a",
+	  releaseDate: "Jan 20, 2026",
+	  publishers: "SolitaryStudios",
+	  developers: "SolitaryStudios",
+	  shortDescription: "YELLOW is a liminal survival horror game. As a M.E.G. inspector in hazmat gear, explore unstable Backrooms zones to document \"Undocumented\" entities. With zero data available, you must study these lethal threats, uncover their origins, and solve the mystery of why new levels are appearing.",
+	  durationPlayed: "D047.G02 - 05.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "https://youtu.be/GS8cwpY98x0?t=8853",
 	  notes: [
 		""
 	  ]
@@ -4641,6 +4679,7 @@ const dayMenus = {
   DAY043_280726: [1925940,3919010,4016420,2293260,3642730],
   DAY044_310726: [3966870,3604260,2787110,2875820],
   DAY045_010826: [3140990,2875820,4154630],
-  DAY046_040826: [1943950,4720850,3812010,2875820,3423660]
+  DAY046_040826: [1943950,4720850,3812010,2875820,3423660],
+  DAY047_050826: [4272200,4272700]
 };
 
