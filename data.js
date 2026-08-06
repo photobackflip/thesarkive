@@ -4630,6 +4630,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	4219690: {
+	  appId: 4219690,
+	  archiveNumber: "250",
+	  title: "Level 37: The Ritewood Anomaly",
+	  assetHash: "286984e8be13b25ca93d21bdecd9db9e4a90f71b",
+	  releaseDate: "Jan 21, 2026",
+	  publishers: "Modern Vikings Studios",
+	  developers: "Flux Games",
+	  shortDescription: "Level 37: The Ritewood Anomaly is a first-person found-footage horror game set in a distorted imitation of the Backrooms’ poolrooms. As David, a Fluxora Dynamics intern, you follow the lost log tapes of Paul Ritewood through shifting halls, flooded corridors, and the surreal poolrooms.",
+	  durationPlayed: "D047.G03 - 05.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "https://youtu.be/GS8cwpY98x0?t=12838",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4680,6 +4698,6 @@ const dayMenus = {
   DAY044_310726: [3966870,3604260,2787110,2875820],
   DAY045_010826: [3140990,2875820,4154630],
   DAY046_040826: [1943950,4720850,3812010,2875820,3423660],
-  DAY047_050826: [4272200,4272700]
+  DAY047_050826: [4272200,4272700,4219690]
 };
 
