@@ -1800,7 +1800,7 @@ const gamesById = {
 	  archiveNumber: "099",
 	  title: "BACKROOMS: NO RETURN",
 	  assetHash: "",
-	  releaseDate: "May 9, 2024",
+	  releaseDate: "Aug 9, 2024",
 	  publishers: "FriedGPU",
 	  developers: "FriedGPU",
 	  shortDescription: "Explore the poolrooms in a inmersive cooperative horror game. Immerse yourself in the story of scientists who are exploring the depths of the poolrooms and end up encountering various obstacles in order to find a way back to reality.",
@@ -2727,7 +2727,7 @@ const gamesById = {
 	  archiveNumber: "148",
 	  title: "Backrooms: Glitchfield",
 	  assetHash: "bccebd8467397dbc6c31bba0c7b677f3d7ca454b",
-	  releaseDate: "Sep 20, 2025",
+	  releaseDate: "Oct 3, 2025",
 	  publishers: "SUDT Games",
 	  developers: "SUDT Games",
 	  shortDescription: "Backrooms: Glitchfield is a cooperative horror game for 1–4 players. You have to explore this level by yourself or with the help of your friends and complete it, have you ever encountered crashes? and if they have flooded the whole world will you be able to complete the game?",
@@ -2745,7 +2745,7 @@ const gamesById = {
 	  archiveNumber: "149",
 	  title: "Backrooms: Flicker",
 	  assetHash: "82a2b49ef58d554eab26f0a01d4719443d6ab702",
-	  releaseDate: "Sep 20, 2025",
+	  releaseDate: "Oct 21, 2025",
 	  publishers: "Skmaestro",
 	  developers: "Skmaestro",
 	  shortDescription: "Backrooms: Flicker is a cooperative horror game for 1–4 players. Navigate a fractured reality with no clear form or end. Whatever's keeping you here doesn't speak — it simply waits. Don't flicker, or you won't find yourself! ",
@@ -2805,7 +2805,7 @@ const gamesById = {
 	  shortDescription: "Escape the Backrooms is a 1-4 player co-op horror exploration game. Traverse 30+ eerie backrooms levels while avoiding entities and other dangers. Try to escape but be warned: survival isn't guaranteed. ",
 	  durationPlayed: "D023.G14 - 13.06.26",
 	  playedWith: "SARK - STU - NFEN - NANNERS - XCAL",
-	  outcome: "DNF",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/Ky5kovUUfyU?t=15647",
 	  vodLink2: "https://youtu.be/QUiV5NFQLKw?t=27369",
 	  vodLink3: "https://youtu.be/oH3SpQnKWeo?t=2091",
@@ -2822,7 +2822,7 @@ const gamesById = {
 	  archiveNumber: "153",
 	  title: "Explore Dreams: Dreamcore",
 	  assetHash: "",
-	  releaseDate: "Oct 23, 2025",
+	  releaseDate: "Dec 3, 2024",
 	  publishers: "Maxwell Play",
 	  developers: "Maxwell Play",
 	  shortDescription: "Now you can explore your dreams while solving puzzles... ",
@@ -3391,7 +3391,7 @@ const gamesById = {
 	  archiveNumber: "182",
 	  title: "The Exit of Nightmare",
 	  assetHash: "",
-	  releaseDate: "Feb 25, 2025",
+	  releaseDate: "Mar 4, 2025",
 	  publishers: "Goldlog Games",
 	  developers: "ZHANG FAN",
 	  shortDescription: "The Exit of Nightmare is a psychological horror game with collection and puzzle elements. You're trapped in nightmare world and your goal is to find your way back to reality.",
@@ -3668,7 +3668,7 @@ const gamesById = {
 	  archiveNumber: "197",
 	  title: "Backroom Warfare II",
 	  assetHash: "",
-	  releaseDate: "May 30, 2025",
+	  releaseDate: "Jan 28, 2023",
 	  publishers: "Naughty Clogs",
 	  developers: "Naughty Clogs",
 	  shortDescription: "Fight for survival in the Backrooms. Play with friends in multiplayer or solo against AI bots. Unearth the terrifying monster scorestreak and get ready for an intense experience!",
@@ -3770,7 +3770,7 @@ const gamesById = {
 	  durationPlayed: "D033.G08 - 11.07.26",
 	  playedWith: "SARK - VANOSS - NOGLA - TERRORISER",
 	  outcome: "DONE",
-	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=20013",
+	  vodLink: "https://youtu.be/QUiV5NFQLKw?t=15504",
 	  vodLink2: "https://youtu.be/zGR-mGzNLGA?t=18853",
 	  notes: [
 		"VOD1 - Vanoss Nogla Terroriser",
@@ -4184,7 +4184,7 @@ const gamesById = {
 	  archiveNumber: "225",
 	  title: "Chained Backrooms",
 	  assetHash: "",
-	  releaseDate: "Apr 15, 2025",
+	  releaseDate: "July 16, 2025",
 	  publishers: "Rosa Special Studio",
 	  developers: "Rosa Special Studio ",
 	  shortDescription: "CHAINED BACKROOMS is a horror game where players are chained together, forced to survive and explore procedurally generated Backrooms levels. Only coordinated teamwork can help avoid dangers and find an escape. Co-op for 1-4 players.",
@@ -4645,6 +4645,43 @@ const gamesById = {
 	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "https://youtu.be/GS8cwpY98x0?t=12838",
+	  vodLink2: "https://youtu.be/ivumk7reLPo?t=1193",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3412000: {
+	  appId: 3412000,
+	  archiveNumber: "251",
+	  title: "Liminal Department",
+	  assetHash: "",
+	  releaseDate: "Apr 3, 2025",
+	  publishers: "Digital Star Games",
+	  developers: "Digital Star Games",
+	  shortDescription: "Trapped in what seems to be an endless hospital department. Carefully observe your surroundings in each loop to escape the Liminal Department",
+	  durationPlayed: "D048.G02 - 07.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/ivumk7reLPo?t=7316",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4069480: {
+	  appId: 4069480,
+	  archiveNumber: "252",
+	  title: "The Backrooms: Liminal Space",
+	  assetHash: "461c76bf891d729578cd76832dde4ec612f626a9",
+	  releaseDate: "Jan 28, 2026",
+	  publishers: "117PS",
+	  developers: "117PS",
+	  shortDescription: "A short horror experience rendered with a real-time VHS filter (grain, scan lines). Freely explore the spaces of a strange yellow maze. Independently created by a 12-year-old developer using UE5, it immerses you in a purely liminal space atmosphere.",
+	  durationPlayed: "D048.G03 - 07.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/ivumk7reLPo?t=14604",
 	  notes: [
 		""
 	  ]
@@ -4699,6 +4736,6 @@ const dayMenus = {
   DAY045_010826: [3140990,2875820,4154630],
   DAY046_040826: [1943950,4720850,3812010,2875820,3423660],
   DAY047_050826: [4272200,4272700,4219690],
-  DAY048_070826: [4219690]
+  DAY048_070826: [4219690,3412000,4069480]
 };
 
