@@ -1,4 +1,4 @@
-const totalGames = 311;
+const totalGames = 310;
 
 const gamesById = {
 	
@@ -4607,7 +4607,7 @@ const gamesById = {
 	  shortDescription: "Your only goal is to find a door and advance to the next level. Sounds simple enough, right? But in these endless, unsettling liminal spaces, nothing is as it seems. What could possibly go wrong?",
 	  durationPlayed: "D047.G01 - 05.08.26",
 	  playedWith: "SARK",
-	  outcome: "-",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/GS8cwpY98x0?t=1549",
 	  notes: [
 		""
@@ -4625,7 +4625,7 @@ const gamesById = {
 	  shortDescription: "YELLOW is a liminal survival horror game. As a M.E.G. inspector in hazmat gear, explore unstable Backrooms zones to document \"Undocumented\" entities. With zero data available, you must study these lethal threats, uncover their origins, and solve the mystery of why new levels are appearing.",
 	  durationPlayed: "D047.G02 - 05.08.26",
 	  playedWith: "SARK",
-	  outcome: "-",
+	  outcome: "DONE",
 	  vodLink: "https://youtu.be/GS8cwpY98x0?t=8853",
 	  notes: [
 		""
