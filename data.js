@@ -4685,6 +4685,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	4252640: {
+	  appId: 4252640,
+	  archiveNumber: "253",
+	  title: "VOID81: The Backrooms",
+	  assetHash: "f7400a286512a5eb0cf6124de2b979524fb07613",
+	  releaseDate: "Feb 3, 2026",
+	  publishers: "Veaby",
+	  developers: "Veaby",
+	  shortDescription: "VOID81: The Backrooms is a 3D platform game with survival horror elements, where you explore ever-changing levels, solve puzzles, avoid dangers, and traverse surreal worlds inspired by the retro atmosphere of the 1980s.",
+	  durationPlayed: "D049.G01 - 08.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4736,6 +4754,7 @@ const dayMenus = {
   DAY045_010826: [3140990,2875820,4154630],
   DAY046_040826: [1943950,4720850,3812010,2875820,3423660],
   DAY047_050826: [4272200,4272700,4219690],
-  DAY048_070826: [4219690,3412000,4069480]
+  DAY048_070826: [4219690,3412000,4069480],
+  DAY049_080826: [4252640]
 };
 
