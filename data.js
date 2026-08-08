@@ -4703,6 +4703,60 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	4066790: {
+	  appId: 4066790,
+	  archiveNumber: "254",
+	  title: "The Backrooms Deluxe 2",
+	  assetHash: "dbeba4c4b43bd9c33b860321b5d8381824d1be96",
+	  releaseDate: "Dec 25, 2025",
+	  publishers: "Lory Games",
+	  developers: "Lory Games",
+	  shortDescription: "A roguelite multiplayer Backrooms game that bases itself on The Backrooms Deluxe's levels and expands on the mechanics, levels, networking and enemy AI.",
+	  durationPlayed: "D049.G02 - 08.08.26",
+	  playedWith: "SARK - NFEN",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4369660: {
+	  appId: 4369660,
+	  archiveNumber: "255",
+	  title: "Backrooms Not Escape",
+	  assetHash: "2577fb2e423814a89a142a0e8d77a0fa00c1fc69",
+	  releaseDate: "Feb 17, 2026",
+	  publishers: "TeamSerg",
+	  developers: "Serga",
+	  shortDescription: "Backrooms: Not Escape is a multiplayer horror game for 4 players with interesting mechanics that will allow you to have fun with your friends. Never enter the backrooms alone. Explore them and find a way out, but there is no guarantee that it exists.",
+	  durationPlayed: "D049.G03 - 08.08.26",
+	  playedWith: "SARK - NFEN",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4279040: {
+	  appId: 4279040,
+	  archiveNumber: "256",
+	  title: "Backrooms Lost Unit",
+	  assetHash: "0ddf1236030f5269bf0afb5bbcc118e73dc6cda0",
+	  releaseDate: "May 21, 2026",
+	  publishers: "JD Archives",
+	  developers: "JD Archives",
+	  shortDescription: "Find yourself lost in the Backrooms in this co-op journey for 1 to 4 players. Explore eerie levels, solve puzzles, and craft your escape using scavenged items. Entities lurk everywhere, and the deeper you go, the deadlier it gets.",
+	  durationPlayed: "D049.G04 - 08.08.26",
+	  playedWith: "SARK - NFEN",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4755,6 +4809,6 @@ const dayMenus = {
   DAY046_040826: [1943950,4720850,3812010,2875820,3423660],
   DAY047_050826: [4272200,4272700,4219690],
   DAY048_070826: [4219690,3412000,4069480],
-  DAY049_080826: [4252640]
+  DAY049_080826: [4252640,4066790,4369660,4279040]
 };
 
