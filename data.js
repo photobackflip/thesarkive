@@ -3370,7 +3370,7 @@ const gamesById = {
 	
 	3291890: {
 	  appId: 3291890,
-	  archiveNumber: "---",
+	  archiveNumber: "182",
 	  title: "Backrooms: 5 Missing Wanderers",
 	  assetHash: "",
 	  releaseDate: "Mar 1, 2025",
@@ -3388,7 +3388,7 @@ const gamesById = {
 	
 	3169330: {
 	  appId: 3169330,
-	  archiveNumber: "182",
+	  archiveNumber: "183",
 	  title: "The Exit of Nightmare",
 	  assetHash: "",
 	  releaseDate: "Mar 4, 2025",
@@ -3408,7 +3408,7 @@ const gamesById = {
 	
 	2900660: {
 	  appId: 2900660,
-	  archiveNumber: "183",
+	  archiveNumber: "184",
 	  title: "Ethereal Abyss",
 	  assetHash: "",
 	  releaseDate: "Mar 9, 2025",
@@ -3427,7 +3427,7 @@ const gamesById = {
 	
 	3119220: {
 	  appId: 3119220,
-	  archiveNumber: "184",
+	  archiveNumber: "185",
 	  title: "The Backrooms: Forsaken",
 	  assetHash: "",
 	  releaseDate: "Mar 19, 2025",
@@ -3445,7 +3445,7 @@ const gamesById = {
 	
 	3542420: {
 	  appId: 3542420,
-	  archiveNumber: "185",
+	  archiveNumber: "186",
 	  title: "Liminal Lane",
 	  assetHash: "",
 	  releaseDate: "Mar 20, 2025",
@@ -3464,7 +3464,7 @@ const gamesById = {
 	
 	3373750: {
 	  appId: 3373750,
-	  archiveNumber: "186",
+	  archiveNumber: "187",
 	  title: "LIMB: Origins",
 	  assetHash: "",
 	  releaseDate: "Mar 26, 2025",
@@ -3482,7 +3482,7 @@ const gamesById = {
 	
 	3424830: {
 	  appId: 3424830,
-	  archiveNumber: "187",
+	  archiveNumber: "188",
 	  title: "Backrooms Multi-Verses",
 	  assetHash: "",
 	  releaseDate: "Apr 13, 2025",
@@ -3500,7 +3500,7 @@ const gamesById = {
 	
 	2820390: {
 	  appId: 2820390,
-	  archiveNumber: "188",
+	  archiveNumber: "189",
 	  title: "Seclusion",
 	  assetHash: "",
 	  releaseDate: "Apr 19, 2025",
@@ -3519,7 +3519,7 @@ const gamesById = {
 	
 	3646280: {
 	  appId: 3646280,
-	  archiveNumber: "189",
+	  archiveNumber: "190",
 	  title: "World Alone: Dreampools",
 	  assetHash: "9cff000299eef8a241cb973cb20073a6ba7b93f0",
 	  releaseDate: "Apr 28, 2025",
@@ -3537,7 +3537,7 @@ const gamesById = {
 	
 	3423660: {
 	  appId: 3423660,
-	  archiveNumber: "190",
+	  archiveNumber: "191",
 	  title: "Backrooms: Exploration",
 	  assetHash: "",
 	  releaseDate: "May 2, 2025",
@@ -3556,7 +3556,7 @@ const gamesById = {
 	
 	3490820: {
 	  appId: 3490820,
-	  archiveNumber: "191",
+	  archiveNumber: "192",
 	  title: "Meme Survivors: Backrooms",
 	  assetHash: "",
 	  releaseDate: "May 8, 2025",
@@ -3574,7 +3574,7 @@ const gamesById = {
 	
 	3672540: {
 	  appId: 3672540,
-	  archiveNumber: "192",
+	  archiveNumber: "193",
 	  title: "Backrooms Loop",
 	  assetHash: "72e608889fbf598139e8179ecdcc676706ce3ee7",
 	  releaseDate: "May 9, 2025",
@@ -3592,7 +3592,7 @@ const gamesById = {
 	
 	2568000: {
 	  appId: 2568000,
-	  archiveNumber: "193",
+	  archiveNumber: "194",
 	  title: "漫游后室 Roaming Backrooms",
 	  assetHash: "",
 	  releaseDate: "May 11, 2025",
@@ -3610,7 +3610,7 @@ const gamesById = {
 	
 	2398260: {
 	  appId: 2398260,
-	  archiveNumber: "194",
+	  archiveNumber: "195",
 	  title: "池畔追思 Poolcore Reflection",
 	  assetHash: "",
 	  releaseDate: "Oct 14, 2023",
@@ -3628,10 +3628,10 @@ const gamesById = {
 	
 	2719940: {
 	  appId: 2719940,
-	  archiveNumber: "195",
+	  archiveNumber: "196",
 	  title: "The Bonerooms",
 	  assetHash: "",
-	  releaseDate: "Oct 14, 2023",
+	  releaseDate: "Oct 30, 2024",
 	  publishers: "Jasozz Games",
 	  developers: "Jasozz Games",
 	  shortDescription: "The Bonerooms is a goofy horror-themed multiplayer game about surviving in a living maze. What will be your downfall? The spooky inhabitants of the maze, or your fellow players?",
@@ -3646,7 +3646,7 @@ const gamesById = {
 	
 	3333740: {
 	  appId: 3333740,
-	  archiveNumber: "196",
+	  archiveNumber: "197",
 	  title: "Exit Together",
 	  assetHash: "",
 	  releaseDate: "May 30, 2025",
@@ -3665,7 +3665,7 @@ const gamesById = {
 	
 	2246350: {
 	  appId: 2246350,
-	  archiveNumber: "197",
+	  archiveNumber: "198",
 	  title: "Backroom Warfare II",
 	  assetHash: "",
 	  releaseDate: "Jan 28, 2023",
@@ -3683,7 +3683,7 @@ const gamesById = {
 	
 	2702190: {
 	  appId: 2702190,
-	  archiveNumber: "198",
+	  archiveNumber: "199",
 	  title: "Backrooms: Don't Look Away",
 	  assetHash: "1978f7b1f69db9ab4f555fba0aa0a1810a063519",
 	  releaseDate: "Jan 26, 2026",
@@ -3701,7 +3701,7 @@ const gamesById = {
 	
 	2835530: {
 	  appId: 2835530,
-	  archiveNumber: "199",
+	  archiveNumber: "200",
 	  title: "Backrooms: Extractions",
 	  assetHash: "",
 	  releaseDate: "May 1, 2025",
@@ -3719,7 +3719,7 @@ const gamesById = {
 	
 	3072120: {
 	  appId: 3072120,
-	  archiveNumber: "200",
+	  archiveNumber: "201",
 	  title: "Backrooms Lost Runners",
 	  assetHash: "",
 	  releaseDate: "Jun 18, 2026",
@@ -3738,7 +3738,7 @@ const gamesById = {
 	
 	3038290: {
 	  appId: 3038290,
-	  archiveNumber: "201",
+	  archiveNumber: "202",
 	  title: "Expedition to the Backrooms",
 	  assetHash: "",
 	  releaseDate: "Jul 21, 2025",
@@ -3760,7 +3760,7 @@ const gamesById = {
 	
 	3812010: {
 	  appId: 3812010,
-	  archiveNumber: "202",
+	  archiveNumber: "203",
 	  title: "Backrooms: The Wrong Level",
 	  assetHash: "bbd9c082b1d9e34de507bf7947756dfb9f72911b",
 	  releaseDate: "Feb 9, 2026",
@@ -3780,7 +3780,7 @@ const gamesById = {
 	
 	4720860: {
 	  appId: 4720860,
-	  archiveNumber: "203",
+	  archiveNumber: "204",
 	  title: "Backrooms: The Wrong Door",
 	  assetHash: "e7fb94ef507b599e70e08ccf908a01056d19a1dc",
 	  releaseDate: "May 31, 2026",
@@ -3798,7 +3798,7 @@ const gamesById = {
 	
 	4721000: {
 	  appId: 4721000,
-	  archiveNumber: "204",
+	  archiveNumber: "205",
 	  title: "Backrooms: Blackhole",
 	  assetHash: "76a7ca46d6fa39d72c31e3a7b21ad6c4c3167a6b",
 	  releaseDate: "June 5, 2026",
@@ -3816,7 +3816,7 @@ const gamesById = {
 	
 	4720870: {
 	  appId: 4720870,
-	  archiveNumber: "205",
+	  archiveNumber: "206",
 	  title: "Backrooms: Fade",
 	  assetHash: "02d9e157f8f5b85655681dcce5440df6cddeaf03",
 	  releaseDate: "Jul 10, 2026",
@@ -3834,7 +3834,7 @@ const gamesById = {
 	
 	4163010: {
 	  appId: 4163010,
-	  archiveNumber: "206",
+	  archiveNumber: "207",
 	  title: "Backrooms: Labyrinth Glitch",
 	  assetHash: "13898f16b0cd52ebbd0a9e3b72f3990fe850b035",
 	  releaseDate: "Nov 29, 2025",
@@ -3852,7 +3852,7 @@ const gamesById = {
 	
 	3811970: {
 	  appId: 3811970,
-	  archiveNumber: "207",
+	  archiveNumber: "208",
 	  title: "Backrooms: The True Level",
 	  assetHash: "1d7f4c147b4e2c72af6d609ff2c96e46d671ced9",
 	  releaseDate: "Jan 6, 2026",
@@ -3870,7 +3870,7 @@ const gamesById = {
 	
 	4618090: {
 	  appId: 4618090,
-	  archiveNumber: "208",
+	  archiveNumber: "209",
 	  title: "Backrooms: The Last Observer",
 	  assetHash: "f453295ac6061ff1abf4b3bce32ba48ece5415de",
 	  releaseDate: "May 15, 2026",
@@ -3888,7 +3888,7 @@ const gamesById = {
 	
 	4617040: {
 	  appId: 4617040,
-	  archiveNumber: "209",
+	  archiveNumber: "210",
 	  title: "Backrooms: Into the Hole",
 	  assetHash: "5565ecee92f7d36f974983e72999f6d1fb268f1d",
 	  releaseDate: "May 30, 2026",
@@ -3906,7 +3906,7 @@ const gamesById = {
 	
 	2950760: {
 	  appId: 2950760,
-	  archiveNumber: "210",
+	  archiveNumber: "211",
 	  title: "EXIT16: Byilhan Hotel ",
 	  assetHash: "",
 	  releaseDate: "Mar 26, 2025",
@@ -3924,7 +3924,7 @@ const gamesById = {
 	
 	3657530: {
 	  appId: 3657530,
-	  archiveNumber: "211",
+	  archiveNumber: "212",
 	  title: "BACKROOMS LIMINAL ESCAPE",
 	  assetHash: "c478ed5c097cf5c6d5d0518c7a682d17dfe113eb",
 	  releaseDate: "May 13, 2025",
@@ -3943,7 +3943,7 @@ const gamesById = {
 	
 	3322980: {
 	  appId: 3322980,
-	  archiveNumber: "212",
+	  archiveNumber: "213",
 	  title: "Hotel 188",
 	  assetHash: "",
 	  releaseDate: "May 20, 2025",
@@ -3962,7 +3962,7 @@ const gamesById = {
 	
 	2559530: {
 	  appId: 2559530,
-	  archiveNumber: "213",
+	  archiveNumber: "214",
 	  title: "Backrooms:Run For Your Life!",
 	  assetHash: "",
 	  releaseDate: "May 24, 2025",
@@ -3980,7 +3980,7 @@ const gamesById = {
 	
 	3303230: {
 	  appId: 3303230,
-	  archiveNumber: "214",
+	  archiveNumber: "215",
 	  title: "Backrooms Level X",
 	  assetHash: "",
 	  releaseDate: "May 29, 2025",
@@ -3998,7 +3998,7 @@ const gamesById = {
 	
 	3746210: {
 	  appId: 3746210,
-	  archiveNumber: "215",
+	  archiveNumber: "216",
 	  title: "Backrooms Bodycam",
 	  assetHash: "30839897e87745a225ff30881806f08b504a51a8",
 	  releaseDate: "Jun 7, 2025",
@@ -4016,7 +4016,7 @@ const gamesById = {
 	
 	3140990: {
 	  appId: 3140990,
-	  archiveNumber: "216",
+	  archiveNumber: "217",
 	  title: "Backrooms Cleanup Crew",
 	  assetHash: "",
 	  releaseDate: "Apr 17, 2025",
@@ -4035,7 +4035,7 @@ const gamesById = {
 	
 	3723160: {
 	  appId: 3723160,
-	  archiveNumber: "217",
+	  archiveNumber: "218",
 	  title: "BrainRooms - Brainrot Backrooms",
 	  assetHash: "1d1a3bc55fc95b4b56455f80f42c42991c3fd796",
 	  releaseDate: "June 7, 2025",
@@ -4053,7 +4053,7 @@ const gamesById = {
 	
 	3775610: {
 	  appId: 3775610,
-	  archiveNumber: "218",
+	  archiveNumber: "219",
 	  title: "Backrooms Bodycam 2",
 	  assetHash: "b46e0bb548f9e95b1e7bd618c0c479ca6a058bc9",
 	  releaseDate: "June 18, 2025",
@@ -4071,7 +4071,7 @@ const gamesById = {
 	
 	3282700: {
 	  appId: 3282700,
-	  archiveNumber: "219",
+	  archiveNumber: "220",
 	  title: "LIMINAL SHIFT",
 	  assetHash: "",
 	  releaseDate: "June 25, 2025",
@@ -4090,7 +4090,7 @@ const gamesById = {
 	
 	3227460: {
 	  appId: 3227460,
-	  archiveNumber: "220",
+	  archiveNumber: "221",
 	  title: "LIMSCAPE : THE LIMINAL SPACE EXPLORER",
 	  assetHash: "",
 	  releaseDate: "June 27, 2025",
@@ -4108,7 +4108,7 @@ const gamesById = {
 	
 	3162000: {
 	  appId: 3162000,
-	  archiveNumber: "221",
+	  archiveNumber: "222",
 	  title: "The Backrooms: Expedition",
 	  assetHash: "",
 	  releaseDate: "July 2, 2025",
@@ -4126,7 +4126,7 @@ const gamesById = {
 	
 	3755920: {
 	  appId: 3755920,
-	  archiveNumber: "222",
+	  archiveNumber: "223",
 	  title: "Walking In",
 	  assetHash: "fe79f1287cd69302e3ab275332711483aaf1f1e9",
 	  releaseDate: "July 8, 2025",
@@ -4144,7 +4144,7 @@ const gamesById = {
 	
 	3794460: {
 	  appId: 3794460,
-	  archiveNumber: "223",
+	  archiveNumber: "224",
 	  title: "The Bigback Room",
 	  assetHash: "2ebb71136bc32fdafe63fc453109feb2197e2de9",
 	  releaseDate: "July 11, 2025",
@@ -4162,7 +4162,7 @@ const gamesById = {
 	
 	3568550: {
 	  appId: 3568550,
-	  archiveNumber: "224",
+	  archiveNumber: "225",
 	  title: "Tainted Pools",
 	  assetHash: "",
 	  releaseDate: "July 14, 2025",
@@ -4181,7 +4181,7 @@ const gamesById = {
 	
 	3510750: {
 	  appId: 3510750,
-	  archiveNumber: "225",
+	  archiveNumber: "226",
 	  title: "Chained Backrooms",
 	  assetHash: "",
 	  releaseDate: "July 16, 2025",
@@ -4199,7 +4199,7 @@ const gamesById = {
 	
 	2172260: {
 	  appId: 2172260,
-	  archiveNumber: "226",
+	  archiveNumber: "227",
 	  title: "The Complex: Expedition",
 	  assetHash: "",
 	  releaseDate: "Jul 18, 2025",
@@ -4218,7 +4218,7 @@ const gamesById = {
 	
 	3857770: {
 	  appId: 3857770,
-	  archiveNumber: "227",
+	  archiveNumber: "228",
 	  title: "Backmooms",
 	  assetHash: "5f588ba48fa9175a0cadcd4e7b213f9c2e0cb0a2",
 	  releaseDate: "Jul 21, 2025",
@@ -4236,7 +4236,7 @@ const gamesById = {
 	
 	3856320: {
 	  appId: 3856320,
-	  archiveNumber: "228",
+	  archiveNumber: "229",
 	  title: "Liminal Salvation",
 	  assetHash: "de19dc1ab4094dcd0de2bd1656cfba466cfda220",
 	  releaseDate: "Aug 1, 2025",
@@ -4254,7 +4254,7 @@ const gamesById = {
 	
 	3044220: {
 	  appId: 3044220,
-	  archiveNumber: "229",
+	  archiveNumber: "230",
 	  title: "Liminal Exit",
 	  assetHash: "",
 	  releaseDate: "Aug 1, 2025",
@@ -4272,7 +4272,7 @@ const gamesById = {
 	
 	3952680: {
 	  appId: 3952680,
-	  archiveNumber: "230",
+	  archiveNumber: "231",
 	  title: "Backrooms Maze 2D",
 	  assetHash: "25e83fb46353a3e08a91db4734b9cff957e4df8c",
 	  releaseDate: "Sep 6, 2025",
@@ -4290,7 +4290,7 @@ const gamesById = {
 	
 	3765730: {
 	  appId: 3765730,
-	  archiveNumber: "231",
+	  archiveNumber: "232",
 	  title: "The Backrooms: Reset",
 	  assetHash: "56c2c094867529bdad1816bcca8cb8948cbfa7d3",
 	  releaseDate: "Sep 6, 2025",
@@ -4308,7 +4308,7 @@ const gamesById = {
 	
 	3973630: {
 	  appId: 3973630,
-	  archiveNumber: "232",
+	  archiveNumber: "233",
 	  title: "The Lost Painter",
 	  assetHash: "adf7d3b159e8557a1fae5e66e572241363b62400",
 	  releaseDate: "Sep 10, 2025",
@@ -4326,7 +4326,7 @@ const gamesById = {
 	
 	3654850: {
 	  appId: 3654850,
-	  archiveNumber: "233",
+	  archiveNumber: "234",
 	  title: "AQUARIUMS",
 	  assetHash: "d78ceecf51da9fda717ea972a9f93cdbc12a63f2",
 	  releaseDate: "Sep 25, 2025",
@@ -4344,7 +4344,7 @@ const gamesById = {
 	
 	3628360: {
 	  appId: 3628360,
-	  archiveNumber: "234",
+	  archiveNumber: "235",
 	  title: "Backrooms: No Way Out",
 	  assetHash: "616b3b1e6f445ae7c59e0c2cf9daa5fc6178dad2",
 	  releaseDate: "Mar 28, 2026",
@@ -4362,7 +4362,7 @@ const gamesById = {
 	
 	3267550: {
 	  appId: 3267550,
-	  archiveNumber: "235",
+	  archiveNumber: "236",
 	  title: "The Backrooms: Rescue Expedition",
 	  assetHash: "",
 	  releaseDate: "Oct 21, 2025",
@@ -4380,7 +4380,7 @@ const gamesById = {
 	
 	4015300: {
 	  appId: 4015300,
-	  archiveNumber: "236",
+	  archiveNumber: "237",
 	  title: "LIMINAL WATERS",
 	  assetHash: "67e03eae814799387ca4cb986966aa917eef8150",
 	  releaseDate: "Oct 14, 2025",
@@ -4398,7 +4398,7 @@ const gamesById = {
 	
 	1925940: {
 	  appId: 1925940,
-	  archiveNumber: "237",
+	  archiveNumber: "238",
 	  title: "THE OFFICE ROOMS",
 	  assetHash: "87b89d42e79bdb4097b49980a54f4ac464dafe2b",
 	  releaseDate: "Oct 27, 2025",
@@ -4416,7 +4416,7 @@ const gamesById = {
 	
 	3919010: {
 	  appId: 3919010,
-	  archiveNumber: "238",
+	  archiveNumber: "239",
 	  title: "Backrooms: Reminiscence",
 	  assetHash: "7a76aa826f3baf780bd91a5f0b2a84034565aa51",
 	  releaseDate: "Oct 31, 2025",
@@ -4434,7 +4434,7 @@ const gamesById = {
 	
 	4016420: {
 	  appId: 4016420,
-	  archiveNumber: "239",
+	  archiveNumber: "240",
 	  title: "Liminal:The Forgotten Maze",
 	  assetHash: "6f3642acf474454a1813c6ed0f755d26b04af859",
 	  releaseDate: "Oct 31, 2025",
@@ -4452,7 +4452,7 @@ const gamesById = {
 	
 	2293260: {
 	  appId: 2293260,
-	  archiveNumber: "240",
+	  archiveNumber: "241",
 	  title: "The Backrooms: Investigate and Escape",
 	  assetHash: "",
 	  releaseDate: "Nov 4, 2025",
@@ -4470,7 +4470,7 @@ const gamesById = {
 	
 	3642730: {
 	  appId: 3642730,
-	  archiveNumber: "241",
+	  archiveNumber: "242",
 	  title: "Backrooms: Exit from Supermarket",
 	  assetHash: "278abdb21991b0deff338dc8b9a7d2ad1b99cbe0",
 	  releaseDate: "Nov 19, 2025",
@@ -4488,7 +4488,7 @@ const gamesById = {
 	
 	3966870: {
 	  appId: 3966870,
-	  archiveNumber: "242",
+	  archiveNumber: "243",
 	  title: "Liminal Explorer",
 	  assetHash: "1c2c3f450a3d497bb461642acaaa55ab2ddf6d32",
 	  releaseDate: "Nov 29, 2025",
@@ -4506,7 +4506,7 @@ const gamesById = {
 	
 	3604260: {
 	  appId: 3604260,
-	  archiveNumber: "243",
+	  archiveNumber: "244",
 	  title: "Liminal City",
 	  assetHash: "09e419c63f9775c350cd79d8f745dc2b6be4cc0d",
 	  releaseDate: "Dec 9, 2025",
@@ -4524,7 +4524,7 @@ const gamesById = {
 	
 	2787110: {
 	  appId: 2787110,
-	  archiveNumber: "244",
+	  archiveNumber: "245",
 	  title: "Backrooms - 2005",
 	  assetHash: "2ce7745c6b2f44238d88c14f78f88e6b21170872",
 	  releaseDate: "Dec 17, 2025",
@@ -4542,7 +4542,7 @@ const gamesById = {
 	
 	2875820: {
 	  appId: 2875820,
-	  archiveNumber: "245",
+	  archiveNumber: "246",
 	  title: "P4ST3L",
 	  assetHash: "",
 	  releaseDate: "Dec 24, 2025",
@@ -4562,7 +4562,7 @@ const gamesById = {
 	
 	4154630: {
 	  appId: 4154630,
-	  archiveNumber: "246",
+	  archiveNumber: "247",
 	  title: "Backrooms: Realism",
 	  assetHash: "c44c6374171020c1298d3595f0aa7c53b9e68d40",
 	  releaseDate: "Jan 9, 2026",
@@ -4580,7 +4580,7 @@ const gamesById = {
 	
 	4720850: {
 	  appId: 4720850,
-	  archiveNumber: "247",
+	  archiveNumber: "248",
 	  title: "Backrooms: The Wrong Reality",
 	  assetHash: "362b679ca67cc34390e53df030b98df5c1a53de7",
 	  releaseDate: "Jul 30, 2026",
@@ -4598,7 +4598,7 @@ const gamesById = {
 	
 	4272200: {
 	  appId: 4272200,
-	  archiveNumber: "248",
+	  archiveNumber: "249",
 	  title: "Liminal:Escape Route",
 	  assetHash: "cef3593815a5565c739bca161430641f2e8b8529",
 	  releaseDate: "Jan 17, 2026",
@@ -4616,7 +4616,7 @@ const gamesById = {
 	
 	4272700: {
 	  appId: 4272700,
-	  archiveNumber: "249",
+	  archiveNumber: "250",
 	  title: "Yellow",
 	  assetHash: "645871b0690f7187d0c6427e6328094079cea99a",
 	  releaseDate: "Jan 20, 2026",
@@ -4634,7 +4634,7 @@ const gamesById = {
 	
 	4219690: {
 	  appId: 4219690,
-	  archiveNumber: "250",
+	  archiveNumber: "251",
 	  title: "Level 37: The Ritewood Anomaly",
 	  assetHash: "286984e8be13b25ca93d21bdecd9db9e4a90f71b",
 	  releaseDate: "Jan 21, 2026",
@@ -4653,7 +4653,7 @@ const gamesById = {
 	
 	3412000: {
 	  appId: 3412000,
-	  archiveNumber: "251",
+	  archiveNumber: "252",
 	  title: "Liminal Department",
 	  assetHash: "",
 	  releaseDate: "Apr 3, 2025",
@@ -4671,7 +4671,7 @@ const gamesById = {
 	
 	4069480: {
 	  appId: 4069480,
-	  archiveNumber: "252",
+	  archiveNumber: "253",
 	  title: "The Backrooms: Liminal Space",
 	  assetHash: "461c76bf891d729578cd76832dde4ec612f626a9",
 	  releaseDate: "Jan 28, 2026",
@@ -4689,7 +4689,7 @@ const gamesById = {
 	
 	4252640: {
 	  appId: 4252640,
-	  archiveNumber: "253",
+	  archiveNumber: "254",
 	  title: "VOID81: The Backrooms",
 	  assetHash: "f7400a286512a5eb0cf6124de2b979524fb07613",
 	  releaseDate: "Feb 3, 2026",
@@ -4701,6 +4701,7 @@ const gamesById = {
 	  outcome: "-",
 	  vodLink: "https://youtu.be/s78kC2j58_8?t=2495",
 	  vodLink2: "https://youtu.be/s78kC2j58_8?t=21612",
+	  vodLink3: "https://youtu.be/so1_BUxTqws?t=2852",
 	  notes: [
 		""
 	  ]
@@ -4708,7 +4709,7 @@ const gamesById = {
 	
 	4066790: {
 	  appId: 4066790,
-	  archiveNumber: "254",
+	  archiveNumber: "255",
 	  title: "The Backrooms Deluxe 2",
 	  assetHash: "dbeba4c4b43bd9c33b860321b5d8381824d1be96",
 	  releaseDate: "Dec 25, 2025",
@@ -4727,7 +4728,7 @@ const gamesById = {
 	
 	4279040: {
 	  appId: 4279040,
-	  archiveNumber: "255",
+	  archiveNumber: "256",
 	  title: "Backrooms Lost Unit",
 	  assetHash: "0ddf1236030f5269bf0afb5bbcc118e73dc6cda0",
 	  releaseDate: "May 21, 2026",
@@ -4738,6 +4739,60 @@ const gamesById = {
 	  playedWith: "SARK - NFEN",
 	  outcome: "-",
 	  vodLink: "https://youtu.be/s78kC2j58_8?t=9372",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3559920: {
+	  appId: 3559920,
+	  archiveNumber: "257",
+	  title: "Backrooms: Poolrooms",
+	  assetHash: "9c77e0cfd268200d82a5b4aefd71b66ab742bafc",
+	  releaseDate: "Feb 13, 2026",
+	  publishers: "Mascot Bro Studio",
+	  developers: "Mascot Bro Studio",
+	  shortDescription: "Welcome to the Poolrooms. You won't survive. Invisible enemies are roaming, and your only way to see them is by seeing the splashes that they make when they move. Can you survive the Poolrooms? Collect all the objectives and escape. Now is your only chance.",
+	  durationPlayed: "D050.G02 - 11.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/so1_BUxTqws?t=9907",
+	  notes: [
+		""
+	  ]
+	},
+	
+	4220490: {
+	  appId: 4220490,
+	  archiveNumber: "258",
+	  title: "Backrooms: Last Chance",
+	  assetHash: "9904d461073341b56e6cbb529ded3acf3b7cb66f",
+	  releaseDate: "Feb 15, 2026",
+	  publishers: "Qorinva Entertainment",
+	  developers: "Qorinva Entertainment",
+	  shortDescription: "Backrooms: Last Chance is a first-person horror and puzzle game. Collect 25 keys and 5 keycards across three levels to escape the maze and the dark hotel. A tense atmosphere and sudden jumpscares keep you on edge. Average playtime: 1–2 hours.",
+	  durationPlayed: "D050.G03 - 11.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/so1_BUxTqws?t=15972",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3351800: {
+	  appId: 3351800,
+	  archiveNumber: "259",
+	  title: "Backrooms in the Forest",
+	  assetHash: "e32ddd0e5936fcfe3450b60a67d36c66c30fa98c",
+	  releaseDate: "Feb 17, 2026",
+	  publishers: "Awecom, Kourov Vyacheslav",
+	  developers: "Awecom, Kourov Vyacheslav",
+	  shortDescription: "Backrooms in the Forest - a horror game where you must escape from a mysterious forest and find your way out of the anomalies!",
+	  durationPlayed: "D050.G04 - 11.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/so1_BUxTqws?t=21320",
 	  notes: [
 		""
 	  ]
@@ -4793,6 +4848,7 @@ const dayMenus = {
   DAY046_040826: [1943950,4720850,3812010,2875820,3423660],
   DAY047_050826: [4272200,4272700,4219690],
   DAY048_070826: [4219690,3412000,4069480],
-  DAY049_080826: [4252640,4066790,4279040,4252640]
+  DAY049_080826: [4252640,4066790,4279040,4252640],
+  DAY050_110826: [4252640,3559920,4220490,3351800]
 };
 
