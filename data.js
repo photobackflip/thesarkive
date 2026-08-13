@@ -4809,8 +4809,26 @@ const gamesById = {
 	  shortDescription: "Backrooms: Not Escape is a multiplayer horror game for 4 players with interesting mechanics that will allow you to have fun with your friends. Never enter the backrooms alone. Explore them and find a way out, but there is no guarantee that it exists.",
 	  durationPlayed: "D051.G01 - 12.08.26",
 	  playedWith: "SARK",
-	  outcome: "-",
-	  vodLink: "",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/iP8IkPUd0kY?t=1474",
+	  notes: [
+		""
+	  ]
+	},
+	
+	3203020: {
+	  appId: 3203020,
+	  archiveNumber: "262",
+	  title: "BACKROOMS STORIES",
+	  assetHash: "",
+	  releaseDate: "Feb 26, 2026",
+	  publishers: "liminal_games",
+	  developers: "liminal_games",
+	  shortDescription: "Read five horror stories set in the Backrooms. Experience existential horror and terrifying encounters while making choices that will alter your fate. Will you escape or be lost forever?",
+	  durationPlayed: "D051.G02 - 12.08.26",
+	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "https://youtu.be/iP8IkPUd0kY?t=6466",
 	  notes: [
 		""
 	  ]
@@ -4868,6 +4886,6 @@ const dayMenus = {
   DAY048_070826: [4219690,3412000,4069480],
   DAY049_080826: [4252640,4066790,4279040,4252640],
   DAY050_110826: [4252640,3559920,4220490,3351800],
-  DAY051_120826: [4369660]
+  DAY051_120826: [4369660,3203020]
 };
 
