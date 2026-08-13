@@ -1,4 +1,4 @@
-const totalGames = 311;
+const totalGames = 310;
 
 const gamesById = {
 	
@@ -4812,7 +4812,7 @@ const gamesById = {
 	  outcome: "DONE",
 	  vodLink: "https://youtu.be/iP8IkPUd0kY?t=1474",
 	  notes: [
-		""
+		"This game is a mess. Save system is borked. Multiplayer is borked. In-game feedback is bad or non-existent, like buttons that give no indication that they've been pressed and generators that give no clue to what they are powering, if anything. - Sark's Steam review"
 	  ]
 	},
 	
