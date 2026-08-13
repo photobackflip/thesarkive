@@ -4832,6 +4832,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	4247310: {
+	  appId: 4247310,
+	  archiveNumber: "263",
+	  title: "Project Liminal 2",
+	  assetHash: "36a600a1a961b4bc0348a05c0d0c41e737376913",
+	  releaseDate: "Mar 3, 2026",
+	  publishers: "TXC",
+	  developers: "AquaHeaven Studios",
+	  shortDescription: "Explore terrifying liminal spaces. Horror walking simulator with reality-bending platforming and supernatural threats. Get lost between dimensions.",
+	  durationPlayed: "D052.G01 - 14.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4886,6 +4904,7 @@ const dayMenus = {
   DAY048_070826: [4219690,3412000,4069480],
   DAY049_080826: [4252640,4066790,4279040,4252640],
   DAY050_110826: [4252640,3559920,4220490,3351800],
-  DAY051_120826: [4369660,3203020]
+  DAY051_120826: [4369660,3203020],
+  DAY052_140826: [4247310]
 };
 
