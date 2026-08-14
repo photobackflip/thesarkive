@@ -4868,6 +4868,24 @@ const gamesById = {
 	  notes: [
 		""
 	  ]
+	},
+	
+	3578460: {
+	  appId: 3578460,
+	  archiveNumber: "265",
+	  title: "Shifting To The Backrooms",
+	  assetHash: "771565a34dadb955fdff8d8dd97e91490950adbb",
+	  releaseDate: "Mar 14, 2026",
+	  publishers: "Oopsome Games",
+	  developers: "Oopsome Games",
+	  shortDescription: "Experience Will's complicated story, find a way out of the nightmare of liminal spaces by solving challenging puzzles and avoiding dangerous entities — all this awaits you in \"Shifting To The Backrooms\".",
+	  durationPlayed: "D052.G03 - 14.08.26",
+	  playedWith: "SARK",
+	  outcome: "-",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
 	}
 };
 
@@ -4923,6 +4941,6 @@ const dayMenus = {
   DAY049_080826: [4252640,4066790,4279040,4252640],
   DAY050_110826: [4252640,3559920,4220490,3351800],
   DAY051_120826: [4369660,3203020],
-  DAY052_140826: [4247310,2523460]
+  DAY052_140826: [4247310,2523460,3578460]
 };
 
