@@ -4845,6 +4845,24 @@ const gamesById = {
 	  shortDescription: "Explore terrifying liminal spaces. Horror walking simulator with reality-bending platforming and supernatural threats. Get lost between dimensions.",
 	  durationPlayed: "D052.G01 - 14.08.26",
 	  playedWith: "SARK",
+	  outcome: "DONE",
+	  vodLink: "",
+	  notes: [
+		""
+	  ]
+	},
+	
+	2523460: {
+	  appId: 2523460,
+	  archiveNumber: "264",
+	  title: "Backrooms Interception",
+	  assetHash: "",
+	  releaseDate: "Mar 13, 2026",
+	  publishers: "Giroshi Games",
+	  developers: "Giroshi Games",
+	  shortDescription: "Immerse yourself in a Bodycam first-person survival backrooms game. Unforgiving, systematic, and clinical, the game will challenge you at every step. Scavenge liminal worlds for valuables and resources; you will need them to survive ruthless encounters with their entities.",
+	  durationPlayed: "D052.G02 - 14.08.26",
+	  playedWith: "SARK",
 	  outcome: "-",
 	  vodLink: "",
 	  notes: [
@@ -4905,6 +4923,6 @@ const dayMenus = {
   DAY049_080826: [4252640,4066790,4279040,4252640],
   DAY050_110826: [4252640,3559920,4220490,3351800],
   DAY051_120826: [4369660,3203020],
-  DAY052_140826: [4247310]
+  DAY052_140826: [4247310,2523460]
 };
 
